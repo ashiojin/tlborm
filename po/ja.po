@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-09-17 15:35+0900\n"
+"PO-Revision-Date: 2023-09-18 15:44+0900\n"
 "Last-Translator: ashiojin@gmail.com\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -684,7 +684,6 @@ msgid "Macros in the AST"
 msgstr "AST内のマクロ"
 
 #: src/syntax-extensions/ast.md:3
-#, fuzzy
 msgid ""
 "As previously mentioned, macro processing in Rust happens _after_ the "
 "construction of the AST. As such, the syntax used to invoke a macro _must_ "
@@ -693,35 +692,29 @@ msgid ""
 "the following 4 forms (by way of examples):"
 msgstr ""
 "前述のとおり、Rust でのマクロ処理は AST の構築の後に行われます。そのため、マ"
-"クロを呼び出す構文は、言語の構文の適切な一部でなければなりません。実際、Rust "
-"の構文にはいくつかの「構文拡張」形式があります。具体的には、（例として）次の "
-"4 つの形式があります："
+"クロを呼び出す構文は、言語の構文の適切な一部で _なければなりません_ 。実際、"
+"Rust の構文にはいくつかの「構文拡張」形式があります。具体的には、次の 4 つの"
+"形式があります（例として）："
 
 #: src/syntax-extensions/ast.md:8
-#, fuzzy
 msgid "`# [ $arg ]`; _e.g._ `#[derive(Clone)]`, `#[no_mangle]`, …"
-msgstr "`# [ $arg ]`; _e.g._ `#[derive(Clone)]`, `#[no_mangle]`, ...."
+msgstr "`# [ $arg ]`; _e.g._ `#[derive(Clone)]`, `#[no_mangle]`, …"
 
 #: src/syntax-extensions/ast.md:9
-#, fuzzy
 msgid ""
 "`# ! [ $arg ]`; _e.g._ `#![allow(dead_code)]`, `#![crate_name=\"blang\"]`, …"
 msgstr ""
-"`# ![ $arg ]`; _e.g._ `#![allow(dead_code)]`, `#![crate_name=\"blang\"]`, ..."
+"`# ! [ $arg ]`; _e.g._ `#![allow(dead_code)]`, `#![crate_name=\"blang\"]`, …"
 
 #: src/syntax-extensions/ast.md:10
-#, fuzzy
 msgid "`$name ! $arg`; _e.g._ `println!(\"Hi!\")`, `concat!(\"a\", \"b\")`, …"
-msgstr ""
-"$name ！$arg`; _e.g._ `println!(\"Hi!\")`, `concat!(\"a\", \"b\")`, ...."
+msgstr "`$name ! $arg`; _e.g._ `println!(\"Hi!\")`, `concat!(\"a\", \"b\")`, …"
 
 #: src/syntax-extensions/ast.md:11
-#, fuzzy
 msgid "`$name ! $arg0 $arg1`; _e.g._ `macro_rules! dummy { () => {}; }`."
-msgstr "$name ！$arg0 $arg1`; _e.g._ `マクロルール！ダミー { () => {}; }`."
+msgstr "`$name ! $arg0 $arg1`; _e.g._ `macro_rules! dummy { () => {}; }`."
 
 #: src/syntax-extensions/ast.md:13
-#, fuzzy
 msgid ""
 "The first two are [attributes](https://doc.rust-lang.org/reference/"
 "attributes.html) which annotate items, expressions and statements. They can "
@@ -740,21 +733,20 @@ msgid ""
 "compiler."
 msgstr ""
 "最初の2つは[属性](https://doc.rust-lang.org/reference/attributes.html)で、ア"
-"イテム、式、ステートメントにアノテーションを付けます。これらの属性は、[組み込"
-"み属性](https://doc.rust-lang.org/reference/attributes.html#built-in-"
-"attributes-index)、[proc-macro属性](https://doc.rust-lang.org/reference/"
-"procedural-macros.html#attribute-macros)、[derive属性](https://doc.rust-lang."
-"org/reference/procedural-macros.html#derive-macro-helper-attributes)に分類さ"
-"れます。[proc-macro属性](https://doc.rust-lang.org/reference/procedural-"
-"macros.html#attribute-macros)と[derive属性](https://doc.rust-lang.org/"
-"reference/procedural-macros.html#derive-macro-helper-attributes)は、Rustが提"
-"供する2番目のマクロシステムである[手続きマクロ](https://doc.rust-lang.org/"
-"reference/procedural-macros.html)で実装できます。一方、[組み込み属性]"
+"イテム、式、文にアノテーションを付けます。これらの属性は、[ビルトイン属性]"
 "(https://doc.rust-lang.org/reference/attributes.html#built-in-attributes-"
-"index) はコンパイラによって実装される属性です。"
+"index)、[procマクロ属性](https://doc.rust-lang.org/reference/procedural-"
+"macros.html#attribute-macros)、[derive属性](https://doc.rust-lang.org/"
+"reference/procedural-macros.html#derive-macro-helper-attributes)に分類されま"
+"す。[procマクロ属性](https://doc.rust-lang.org/reference/procedural-macros."
+"html#attribute-macros)と[derive属性](https://doc.rust-lang.org/reference/"
+"procedural-macros.html#derive-macro-helper-attributes)は、Rustが提供する2番目"
+"のマクロシステムである[手続き的マクロ](https://doc.rust-lang.org/reference/"
+"procedural-macros.html)で実装できます。一方、[ビルトイン属性](https://doc."
+"rust-lang.org/reference/attributes.html#built-in-attributes-index) はコンパイ"
+"ラによって実装される属性です。"
 
 #: src/syntax-extensions/ast.md:19
-#, fuzzy
 msgid ""
 "The third form `$name ! $arg` are function-like macros. It is the form "
 "available for use with `macro_rules!`, `macro` and also procedural macros. "
@@ -765,26 +757,25 @@ msgid ""
 "(which is used to _implement_ [`format!`](https://doc.rust-lang.org/std/"
 "macro.format.html)) is _not_ as it is a compiler builtin."
 msgstr ""
-"第3の形式 `$name ！arg` は関数のようなマクロです。これは `macro_rules!`, "
-"`macro` や手続き型マクロで使用できる形式です。この書式は `macro_rules!` マク"
-"ロに限定されたものではないことに注意してください。例えば、[`format!`]"
-"(https://doc.rust-lang.org/std/macro.format.html) は `macro_rules!` マクロで"
-"すが、[`format_args!`](https://doc.rust-lang.org/std/macro.format_args.html) "
-"(_implement_ [`format!`](https://doc.rust-lang.org/std/macro.format.html)に使"
-"用されます) はコンパイラのビルトインであるため _not_ です。"
+"第3の形式 `$name ! arg` は関数のようなマクロです。これは `macro_rules!`, "
+"`macro` や手続き的マクロで使用できる形式です。この形式は `macro_rules!` マク"
+"ロに限定されたものではないことに注意してください：これは一般的な構文拡張形式"
+"です。例えば、[`format!`](https://doc.rust-lang.org/std/macro.format.html) "
+"は `macro_rules!` マクロですが、[`format_args!`](https://doc.rust-lang.org/"
+"std/macro.format_args.html) ([`format!`](https://doc.rust-lang.org/std/macro."
+"format.html)の実装に使用されます) はそうでは _なく_ 、コンパイラのビルトイン"
+"です。"
 
 #: src/syntax-extensions/ast.md:24
-#, fuzzy
 msgid ""
 "The fourth form is essentially a variation which is _not_ available to "
 "macros. In fact, the only case where this form is used _at all_ is with the "
 "`macro_rules!` construct itself."
 msgstr ""
-"第4の形式は、基本的にマクロでは使用できないバリエーションです。実際、この形式"
-"が使われるのは `macro_rules!"
+"第4の形式は、基本的にマクロでは使用 _できない_ バリエーションです。実際、この"
+"形式が _唯一_ 使われるのは `macro_rules!` 構文そのものだけです。"
 
 #: src/syntax-extensions/ast.md:27
-#, fuzzy
 msgid ""
 "So, starting with the third form, how does the Rust parser know what the "
 "`$arg` in (`$name ! $arg`) looks like for every possible syntax extension? "
@@ -794,15 +785,14 @@ msgid ""
 "knowledge, it should become apparent how the parser can understand all of "
 "the following invocation forms:"
 msgstr ""
-"では、3番目の形式から始めるとして、Rustパーサーは (`$name ! $arg`) の `$arg` "
-"がどのような構文拡張なのかをどうやって知るのでしょうか？答えは、その必要がな"
-"いからです。代わりに、構文拡張の呼び出しの引数は_単一の_トークンツリーです。"
-"より具体的には、`(...)`、`[...]`、`{...}`のような、単一の_非リーフトークンツ"
-"リーです。この知識があれば、パーサがどのようにして以下のすべての呼び出し形式"
-"を理解できるかがわかるはずです："
+"では、3番目の形式から始めるとして、Rustパーサは (`$name ! $arg`) の `$arg` が"
+"どのような構文拡張なのかをどうやって知るのでしょうか？答えは、その _必要がな"
+"い_ です。代わりに、構文拡張の呼び出しの引数は _単一の_ トークンツリーです。"
+"より具体的には、 `(...)` 、 `[...]` 、`{...}` のような、単一の _葉でない_ "
+"トークンツリーです。この知識があれば、以下のすべての呼び出し形式をどのように"
+"パーサが理解することが可能か、はっきりするはずです："
 
 #: src/syntax-extensions/ast.md:34
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "bitflags! {\n"
@@ -835,21 +825,20 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"錆、無視\n"
-"ビットフラグ{\n"
-"    struct 色: u8 {.\n"
-"        const RED = 0b0001、\n"
-"        const GREEN = 0b0010、\n"
-"        const BLUE = 0b0100、\n"
-"        const BRIGHT = 0b1000、\n"
+"```rust,ignore\n"
+"bitflags! {\n"
+"    struct Color: u8 {\n"
+"        const RED    = 0b0001,\n"
+"        const GREEN  = 0b0010,\n"
+"        const BLUE   = 0b0100,\n"
+"        const BRIGHT = 0b1000,\n"
 "    }\n"
 "}\n"
 "\n"
-"lazy_static！{\n"
-"    静的 ref FIB_100: u32 = { }.\n"
-"        fn fib(a: u32) -> u32 { { fn fib(a: u32) -> u32 { { fn fib(a: u32) -"
-"> u32\n"
-"            マッチ a {\n"
+"lazy_static! {\n"
+"    static ref FIB_100: u32 = {\n"
+"        fn fib(a: u32) -> u32 {\n"
+"            match a {\n"
 "                0 => 0,\n"
 "                1 => 1,\n"
 "                a => fib(a-1) + fib(a-2)\n"
@@ -861,27 +850,25 @@ msgstr ""
 "}\n"
 "\n"
 "fn main() {\n"
-"    Color::* を使用します；\n"
-"    let colors = vec![RED, GREEN, BLUE]；\n"
-"    println!(\"Hello, World!\")；\n"
+"    use Color::*;\n"
+"    let colors = vec![RED, GREEN, BLUE];\n"
+"    println!(\"Hello, World!\");\n"
 "}\n"
 "```"
 
 #: src/syntax-extensions/ast.md:65
-#, fuzzy
 msgid ""
 "Although the above invocations may _look_ like they contain various kinds of "
 "Rust code, the parser simply sees a collection of meaningless token trees. "
 "To make this clearer, we can replace all these syntactic \"black boxes\" "
 "with ⬚, leaving us with:"
 msgstr ""
-"上記の呼び出しは、様々な種類のRustコードを含んでいるように見えるかもしれませ"
-"んが、パーサーは単に無意味なトークンツリーの集まりを見ているだけです。これを"
-"明確にするために、これらの構文の「ブラックボックス」をすべて⬚に置き換えること"
-"ができます："
+"上記の呼び出しは、様々な種類のRustコードを含んでいるように _見える_ かもしれ"
+"ませんが、パーサは単に無意味なトークンツリーの集まりと見ているにすぎません。"
+"これを明確にするために、これらの構文の「ブラックボックス」をすべて⬚に置き換え"
+"ることが可能です："
 
 #: src/syntax-extensions/ast.md:68
-#, fuzzy
 msgid ""
 "```text\n"
 "bitflags! ⬚\n"
@@ -894,32 +881,30 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"テキスト\n"
-"ビットフラグ⬚\n"
+"```text\n"
+"bitflags! ⬚\n"
 "\n"
-"lazy_static！⬚\n"
+"lazy_static! ⬚\n"
 "\n"
 "fn main() {\n"
-"    let colors = vec！⬚;\n"
-"    println！⬚;\n"
+"    let colors = vec! ⬚;\n"
+"    println! ⬚;\n"
 "}\n"
 "```"
 
 #: src/syntax-extensions/ast.md:79
-#, fuzzy
 msgid ""
 "Just to reiterate: the parser does not assume _anything_ about ⬚; it "
 "remembers the tokens it contains, but doesn't try to _understand_ them. This "
 "means ⬚ can be anything, even invalid Rust! As to why this is a good thing, "
 "we will come back to that at a later point."
 msgstr ""
-"繰り返しますが、パーサーは⬚について何も仮定していません。パーサーは⬚に含まれ"
-"るトークンを記憶しますが、それを理解しようとはしません。つまり、⬚は無効なRust"
-"でも何でもあり得るということです！これがなぜ良いことなのかについては、また後"
-"ほど説明します。"
+"繰り返しますが、パーサは⬚について _何一つ_ 仮定していません。パーサは⬚に含ま"
+"れるトークンを記憶しますが、それを _理解_ しようとはしません。つまり、⬚は無効"
+"なRustでも何でもあり得るということです！これがなぜ良いことなのかについては、"
+"また後ほど説明します。"
 
 #: src/syntax-extensions/ast.md:84
-#, fuzzy
 msgid ""
 "So, does this also apply to `$arg` in form 1 and 2, and to the two args in "
 "form 4? Kind of. The `$arg` for form 1 and 2 is a bit different in that it "
@@ -931,64 +916,57 @@ msgid ""
 "that also makes use of token trees though. The specifics of this form do not "
 "matter at this point so we will skip them until they become relevant."
 msgstr ""
-"では、これはフォーム1と2の`$arg`とフォーム4の2つの引数にも適用されるのでしょ"
-"うか？そうですね。フォーム1と2の`$arg`は少し違っていて、直接トークンツリーで"
-"はなく、`=`トークンとリテラル式、またはトークンツリーが続く_simple path_で"
-"す。これについては、適切な proc-macro の章で詳しく説明します。ここで重要なの"
+"では、これは形式1と2の `$arg` と形式4の2つの引数にも適用されるのでしょうか？"
+"まぁそんな感じです。形式1と2の `$arg` は少し違っていて、単なるトークンツリー"
+"ではなく、 `=` トークンとリテラル式が続く _単純なパス_ か、トークンツリーで"
+"す。これについては、適切なprocマクロの章で詳しく説明します。ここで重要なの"
 "は、この形式でもトークンツリーを使って入力を記述するということです。一般的な"
-"第4の形式はもっと特殊で、トークンツリーを利用する非常に特殊な文法を受け入れま"
-"す。この形式の詳細についてはこの時点では重要ではないので、関係するようになる"
-"まで省略します。"
+"第4の形式はもっと特殊で、トークンツリーの利用もする非常に特殊な文法を受け入れ"
+"ます。この形式の詳細についてはこの時点では重要ではないので、関係するようにな"
+"るまで省略します。"
 
 #: src/syntax-extensions/ast.md:91
-#, fuzzy
 msgid "The important takeaways from this are:"
-msgstr "ここから得られる重要なことは"
+msgstr "ここから得られる重要なことは："
 
 #: src/syntax-extensions/ast.md:93
-#, fuzzy
 msgid "There are multiple kinds of syntax extensions in Rust."
 msgstr "Rustには複数の構文拡張があります。"
 
 #: src/syntax-extensions/ast.md:94
-#, fuzzy
 msgid ""
 "Just seeing something of the form `$name! $arg`, doesn't tell you what kind "
 "of syntax extension it might be. It could be a `macro_rules!` macro, a `proc-"
 "macro` or maybe even a builtin."
 msgstr ""
-"name！arg`という形を見ただけでは、それがどのような構文拡張なのかはわかりませ"
-"ん。macro_rules!`マクロかもしれないし、 `proc-macro` かもしれないし、組み込み"
-"関数かもしれません。"
+"`$name! $arg` という形を見ただけでは、それがどのような構文拡張なのかはわかり"
+"ません。 `macro_rules!` マクロかもしれないし、 `proc-macro` かもしれないし、"
+"ビルトインかもしれません。"
 
 #: src/syntax-extensions/ast.md:96
-#, fuzzy
 msgid ""
 "The input to every `!` macro invocation, that is form 3, is a single non-"
 "leaf token tree."
 msgstr ""
-"すべての `!` マクロ呼び出しの入力、つまりフォーム3は、1つの非リーフトークンツ"
+"すべての `!` マクロ呼び出しの入力、つまり形式3は、1つの、葉でないトークンツ"
 "リーです。"
 
 #: src/syntax-extensions/ast.md:97
-#, fuzzy
 msgid "Syntax extensions are parsed as _part_ of the abstract syntax tree."
-msgstr "構文拡張は抽象構文木の_part_として解析されます。"
+msgstr "構文拡張は抽象構文木の _一部_ として解析されます。"
 
 #: src/syntax-extensions/ast.md:99
-#, fuzzy
 msgid ""
 "The last point is the most important, as it has _significant_ implications. "
 "Because syntax extensions are parsed into the AST, they can **only** appear "
 "in positions where they are explicitly supported. Specifically syntax "
 "extensions can appear in place of the following:"
 msgstr ""
-"重要な意味を持つので、最後の点が最も重要です。構文拡張はASTにパースされるた"
-"め、明示的にサポートされている位置にのみ**出現させることができます。具体的に"
-"は、シンタックス・エクステンションは以下のような場所に現れます："
+"_重要な_ 暗示を持つので、最後の点が最も重要です。構文拡張はASTにパースされる"
+"ため、明示的にサポートされている位置に **のみ** 現れることできます。具体的に"
+"は、構文拡張は以下のような場所に現れます："
 
 #: src/syntax-extensions/ast.md:104
-#, fuzzy
 msgid "Statements"
 msgstr "文"
 
@@ -997,7 +975,6 @@ msgid "Expressions"
 msgstr "式"
 
 #: src/syntax-extensions/ast.md:106
-#, fuzzy
 msgid "Items(this includes `impl` items)"
 msgstr "アイテム(これは `impl` アイテムを含みます)"
 
@@ -1006,33 +983,27 @@ msgid "Types"
 msgstr "型"
 
 #: src/syntax-extensions/ast.md:109
-#, fuzzy
 msgid "Some things _not_ on this list:"
-msgstr "このリストにないものもあります："
+msgstr "このリストに _ない_ ものもあります："
 
 #: src/syntax-extensions/ast.md:111
-#, fuzzy
 msgid "Identifiers"
 msgstr "識別子"
 
 #: src/syntax-extensions/ast.md:112
-#, fuzzy
 msgid "Match arms"
 msgstr "マッチアーム"
 
 #: src/syntax-extensions/ast.md:113
-#, fuzzy
 msgid "Struct fields"
-msgstr "構造体フィールド"
+msgstr "構造体のフィールド"
 
 #: src/syntax-extensions/ast.md:115
-#, fuzzy
 msgid ""
 "There is absolutely, definitely _no way_ to use syntax extensions in any "
 "position _not_ on the first list."
 msgstr ""
-"シンタックス・エクステンションを最初のリスト以外の位置で使用する方法は、絶対"
-"に、絶対にありません。"
+"構文拡張を最初のリスト以外の位置で使用する方法は、確実に、絶対にありません。"
 
 #: src/syntax-extensions/expansion.md:3
 #, fuzzy
