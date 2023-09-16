@@ -10,6 +10,9 @@ edition = "2018"
 create-missing = true
 build-dir = "book"
 
+[preprocessor.gettext]
+after = ["links"]
+
 [output.linkcheck]
 traverse-parent-directories = false
 optional = true
