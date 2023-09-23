@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-09-23 15:42+0900\n"
+"PO-Revision-Date: 2023-09-24 15:14+0900\n"
 "Last-Translator: ashiojin@gmail.com\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -1329,7 +1329,6 @@ msgstr ""
 "することなく、どこでも呼び出せなければならないことを意味します。"
 
 #: src/syntax-extensions/hygiene.md:7
-#, fuzzy
 msgid ""
 "In a perfect world all syntax extensions in Rust would be fully hygienic, "
 "unfortunately this isn't the case, so care should be taken to avoid writing "
@@ -1337,16 +1336,18 @@ msgid ""
 "concepts here which will be touched upon in the corresponding hygiene chapters "
 "for the different syntax extensions Rust has to offer."
 msgstr ""
-"完璧な世界であれば、Rustのすべての構文拡張が完全に衛生的であるべきですが、残念"
-"ながらそうではありません。ここでは、Rustが提供するさまざまな構文拡張に対応する"
-"衛生の章で触れる、一般的な衛生の概念について説明します。"
+"完璧な世界であれば、Rustのすべての構文拡張が完全にハイジーン的であるでしょう"
+"が、残念ながらそうではありません。ここでは、Rustが提供するさまざまな構文拡張に"
+"対応するハイジーンの章で触れる、一般的なハイジーンの概念について説明します。"
 
 #: src/syntax-extensions/hygiene.md:10 src/decl-macros/macros-methodical.md:265
 msgid " "
 msgstr " "
 
+# あとで判断
+# ・最初の文の emitted は identifiers and paths と paths どちらに掛かっているか？
+# →後の文からidenfifiersにもかかっているっぽい
 #: src/syntax-extensions/hygiene.md:12
-#, fuzzy
 msgid ""
 "Hygiene mainly affects identifiers and paths emitted by syntax extensions. In "
 "short, if an identifier created by a syntax extension cannot be accessed by "
@@ -1357,12 +1358,11 @@ msgid ""
 msgstr ""
 "ハイジーンは主に構文拡張が生成する識別子とパスに影響します。要するに、構文拡張"
 "によって生成された識別子が、構文拡張が呼び出された環境からアクセスできない場"
-"合、その識別子に関してはハイジェニックです。同様に、構文拡張で使用される識別子"
-"が構文拡張の外部で定義されたものを参照できない場合、それは衛生的であるとみなさ"
-"れます。"
+"合、その識別子に関してはハイジーンであると言えます。同様に、構文拡張で使用され"
+"る識別子が、構文拡張の外部で定義されたものを参照できない場合、それはハイジーン"
+"であると考えられます。"
 
 #: src/syntax-extensions/hygiene.md:16
-#, fuzzy
 msgid ""
 "**Note**: The terms `create` and `use` refer to the position the identifier is "
 "in. That is the `Foo` in `struct Foo {}` or the `foo` in `let foo = …;` are "
@@ -1370,86 +1370,80 @@ msgid ""
 "`Foo` in `fn foo(_: Foo) {}` or the `foo` in `foo + 3` are usages in the sense "
 "that they are referring to something existing."
 msgstr ""
-"**注意**：create`と `use`という用語は、識別子がどの位置にあるかを表しています。"
-"つまり、`struct Foo {}` の `Foo` や `let foo = ...;` の `foo` は、その名前の下"
-"に何か新しいものを導入するという意味で、create されたものですが、`fn foo(_: "
-"Foo) {}` の `Foo` や `foo + 3` の `foo` は、既存のものを参照しているという意味"
-"で、usage されたものです。"
+"**注意**： `生成` と `使用` という言葉は、識別子がどの位置にあるかを表していま"
+"す。つまり、`struct Foo {}` の `Foo` や `let foo = ...;` の `foo` は、その名前"
+"の下に何か新しいものを導入するという意味で、create されたものです。しかし、`fn "
+"foo(_: Foo) {}` の `Foo` や `foo + 3` の `foo` は、既存のものを参照しているとい"
+"う意味で、使用されたものです。"
 
 #: src/syntax-extensions/hygiene.md:20
-#, fuzzy
 msgid "This is best shown by example."
 msgstr "これは例で示すのが一番です。"
 
 #: src/syntax-extensions/hygiene.md:22
-#, fuzzy
 msgid ""
 "Let's assume we have some syntax extension `make_local` that expands to `let "
 "local = 0;`, that is it _creates_ the identifier `local`. Then given the "
 "following snippet:"
 msgstr ""
-"例えば、`let local = 0;`に展開する構文拡張 `make_local` があるとします。次のよ"
-"うなスニペットがあるとします："
+"例えば、構文拡張 `make_local` があり、これが `let local = 0;` に展開されるもの"
+"とします。これは識別子 `local` を _生成_ します。そして、次のようなスニペットが"
+"あるとします："
 
 #: src/syntax-extensions/hygiene.md:24
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "make_local!();\n"
 "assert_eq!(local, 0);\n"
 "```"
 msgstr ""
-"錆、無視\n"
-"make_local!\n"
-"assert_eq!(local, 0)；\n"
+"```rust,ignore\n"
+"make_local!();\n"
+"assert_eq!(local, 0);\n"
 "```"
 
 #: src/syntax-extensions/hygiene.md:29
-#, fuzzy
 msgid ""
 "If the `local` in `assert_eq!(local, 0);` resolves to the local defined by the "
 "syntax extension, the syntax extension is not hygienic (at least in regards to "
 "local names/bindings)."
 msgstr ""
-"assert_eq!(local, 0);` の `local` が構文拡張で定義された local に解決される場"
-"合、構文拡張は (少なくともローカル名/バインディングに関して) 衛生的ではありませ"
-"ん。"
+"`assert_eq!(local, 0);` の中の `local` が構文拡張で定義された local に解決され"
+"る場合、構文拡張は (少なくともローカルの名前/束縛に関して) ハイジーンではありま"
+"せん。"
 
 #: src/syntax-extensions/hygiene.md:31
-#, fuzzy
 msgid ""
 "Now let's assume we have some syntax extension `use_local` that expands to "
 "`local = 42;`, that is it makes _use_ of the identifier `local`. Then given "
 "the following snippet:"
 msgstr ""
-"ここで、`local = 42;`に展開される構文拡張 `use_local` があるとします。すると、"
-"次のようなスニペットが与えられます："
+"ここで、構文拡張 `use_local` があり、これが `local = 42;` に展開されるとしま"
+"す。これは識別子 `local` の _使用_ を行うものです。そして、次のようなスニペット"
+"があるとします："
 
 #: src/syntax-extensions/hygiene.md:33
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "let mut local = 0;\n"
 "use_local!();\n"
 "```"
 msgstr ""
-"錆、無視\n"
-"mut local = 0；\n"
-"use_local!\n"
+"```rust,ignore\n"
+"let mut local = 0;\n"
+"use_local!();\n"
 "```"
 
 #: src/syntax-extensions/hygiene.md:38
-#, fuzzy
 msgid ""
 "If the `local` inside of the syntax extension for the given invocation "
 "resolves to the local defined before its invocation, the syntax extension is "
 "not hygienic either."
 msgstr ""
-"与えられた呼び出しの構文拡張の中の `local` が、その呼び出しの前に定義された "
-"local に解決される場合、その構文拡張もハイジェニックではありません。"
+"呼び出された構文拡張の中の `local` が、その呼び出しの前に定義されている local "
+"に解決される場合、この構文拡張もハイジーンではありません。"
 
 #: src/syntax-extensions/hygiene.md:40
-#, fuzzy
 msgid ""
 "This is a rather short introduction to the general concept of hygiene. It will "
 "be explained in more depth in the corresponding [`macro_rules!` `hygiene`](../"
@@ -1457,34 +1451,32 @@ msgid ""
 "hygiene.md) chapters, with their specific peculiarities."
 msgstr ""
 "これはハイジーンの一般的な概念についてのやや短い紹介です。これは、対応する"
-"[`macro_rules!`hygiene`](../decl-macros/minutiae/hygiene.md)と[proc-macro "
-"`hygiene`](../proc-macros/hygiene.md)の章において、その特有の特徴とともにより深"
-"く説明されます。"
+"[`macro_rules!` `ハイジーン`](../decl-macros/minutiae/hygiene.md)と[proc-macro "
+"`ハイジーン`](../proc-macros/hygiene.md)の章において、それら特有の特徴ととも"
+"に、より深く説明します。"
 
 #: src/syntax-extensions/debugging.md:3
-#, fuzzy
 msgid ""
 "`rustc` provides a number of tools to debug general syntax extensions, as well "
 "as some more specific ones tailored towards declarative and procedural macros "
 "respectively."
 msgstr ""
-"rustc`は、一般的な構文拡張をデバッグするためのツールや、宣言型マクロや手続き型"
-"マクロに特化したツールを提供しています。"
+"`rustc` は、一般的な構文拡張をデバッグするためのツールや、宣言型マクロや手続き"
+"型マクロに特化したツールを提供しています。"
 
 #: src/syntax-extensions/debugging.md:6
-#, fuzzy
 msgid ""
 "Sometimes, it is what the extension _expands to_ that proves problematic as "
 "you do not usually see the expanded code. Fortunately `rustc` offers the "
 "ability to look at the expanded code via the unstable `-Zunpretty=expanded` "
 "argument. Given the following code:"
 msgstr ""
-"通常、拡張されたコードを見ることができないので、拡張が問題になることがありま"
-"す。幸いなことに `rustc` は不安定な `-Zunpretty=expanded` 引数を使って展開され"
-"たコードを見ることができます。次のようなコードがあるとします："
+"ときに、構文拡張が何に展開されたのか、が問題になります。展開されたコードをみる"
+"ことができないためです。幸いなことに `rustc` は展開されたコードを見ることを可能"
+"にする機能を、不安定バージョンの `-Zunpretty=expanded` 引数を使えば、提供してい"
+"ます。次のようなコードがあるとします："
 
 #: src/syntax-extensions/debugging.md:10
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "// Shorthand for initializing a `String`.\n"
@@ -1498,41 +1490,37 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"ラスト,無視\n"
-"// 文字列を初期化するための省略記法。\n"
-"macro_rules！S {\n"
-"    ($e:expr) => {String::from($e)}；\n"
+"```rust,ignore\n"
+"// `String` 初期化の省略記法\n"
+"macro_rules! S {\n"
+"    ($e:expr) => {String::from($e)};\n"
 "}\n"
 "\n"
 "fn main() {\n"
-"    let world = S!(\"World\")；\n"
-"    println!(\"Hello, {}!\", world)；\n"
+"    let world = S!(\"World\");\n"
+"    println!(\"Hello, {}!\", world);\n"
 "}\n"
 "```"
 
 #: src/syntax-extensions/debugging.md:22
-#, fuzzy
 msgid "compiled with the following command:"
 msgstr "以下のコマンドでコンパイルされます："
 
 #: src/syntax-extensions/debugging.md:24
-#, fuzzy
 msgid ""
 "```shell\n"
 "rustc +nightly -Zunpretty=expanded hello.rs\n"
 "```"
 msgstr ""
-"シェル\n"
+"```shell\n"
 "rustc +nightly -Zunpretty=expanded hello.rs\n"
 "```"
 
 #: src/syntax-extensions/debugging.md:28
-#, fuzzy
 msgid "produces the following output (modified for formatting):"
-msgstr "は次のような出力を生成します（書式を変更）："
+msgstr "次のような出力を生成します（フォーマットを修正したものです）："
 
 #: src/syntax-extensions/debugging.md:30
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "#![feature(prelude_import)]\n"
@@ -1561,22 +1549,22 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"錆、無視\n"
+"```rust,ignore\n"
 "#![feature(prelude_import)]\n"
 "#[prelude_import]\n"
-"use std::prelude::rust_2018::*；\n"
-"マクロ使用] #[macro_use\n"
-"extern crate std；\n"
-"// 文字列 `String` を初期化するための省略記法。\n"
-"macro_rules！S { ($e : expr) => { String :: from($e) } ; }.\n"
+"use std::prelude::rust_2018::*;\n"
+"#[macro_use]\n"
+"extern crate std;\n"
+"// `String` 初期化の省略記法\n"
+"macro_rules! S { ($e : expr) => { String :: from($e) } ; }\n"
 "\n"
 "fn main() {\n"
-"    let world = String::from(\"World\")；\n"
+"    let world = String::from(\"World\");\n"
 "    {\n"
 "        ::std::io::_print(\n"
 "            ::core::fmt::Arguments::new_v1(\n"
-"                &[\"こんにちは、\", \"!］\n"
-"                マッチ (&world,) { {.\n"
+"                &[\"Hello, \", \"!\\n\"],\n"
+"                &match (&world,) {\n"
 "                    (arg0,) => [\n"
 "                        ::core::fmt::ArgumentV1::new(arg0, ::core::fmt::"
 "Display::fmt)\n"
@@ -1589,7 +1577,6 @@ msgstr ""
 "```"
 
 #: src/syntax-extensions/debugging.md:56
-#, fuzzy
 msgid ""
 "But not just `rustc` exposes means to aid in debugging syntax extensions. For "
 "the aforementioned `-Zunpretty=expanded` option, there exists a nice `cargo` "
@@ -1597,20 +1584,20 @@ msgid ""
 "by [`dtolnay`](https://github.com/dtolnay) which is basically just a wrapper "
 "around it."
 msgstr ""
-"しかし、構文拡張のデバッグを支援する手段は `rustc` だけではありません。前述の "
-"`-Zunpretty=expanded` オプションについては、[`dtolnay`](https://github.com/"
-"dtolnay) によって作られた [`cargo-expand`](https://github.com/dtolnay/cargo-"
-"expand) という素晴らしい `cargo` プラグインがあります。"
+"しかし、構文拡張のデバッグを支援する手段を公開しているのは `rustc` だけではあり"
+"ません。前述の `-Zunpretty=expanded` オプションについては、[`dtolnay`](https://"
+"github.com/dtolnay) によって作られた [`cargo-expand`](https://github.com/"
+"dtolnay/cargo-expand) という素晴らしい `cargo` プラグインがあります。これは基本"
+"的には単純なラッパーです。"
 
 #: src/syntax-extensions/debugging.md:59
-#, fuzzy
 msgid ""
 "You can also use the [playground](https://play.rust-lang.org/), clicking on "
 "its `TOOLS` button in the top right gives you the option to expand syntax "
 "extensions as well!"
 msgstr ""
-"また、[playground](https://play.rust-lang.org/)を使うこともできます。右上の"
-"`TOOLS`ボタンをクリックすると、構文拡張を展開するオプションが表示されます！"
+"また、[playground](https://play.rust-lang.org/)を使うこともできます。右上の "
+"`TOOLS` ボタンをクリックすると、構文拡張を展開するオプションが表示されます！"
 
 #: src/decl-macros.md:3
 #, fuzzy
