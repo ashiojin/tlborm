@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-09-23 15:10+0900\n"
+"PO-Revision-Date: 2023-09-23 15:42+0900\n"
 "Last-Translator: ashiojin@gmail.com\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -34,9 +34,8 @@ msgstr "展開"
 
 #: src/SUMMARY.md:9 src/SUMMARY.md:18 src/syntax-extensions/hygiene.md:1
 #: src/decl-macros/minutiae/hygiene.md:1 src/decl-macros/macros2.md:56
-#, fuzzy
 msgid "Hygiene"
-msgstr "衛生"
+msgstr "ハイジーン"
 
 #: src/SUMMARY.md:10 src/SUMMARY.md:20 src/syntax-extensions/debugging.md:1
 #: src/decl-macros/minutiae/debugging.md:1
@@ -1287,8 +1286,8 @@ msgid ""
 "The takeaway here is that expansion happens in \"passes\"; as many as is "
 "needed to completely expand all invocations."
 msgstr ""
-"ここで重要なことは、展開は「パス」で行われるということです；すべての呼び出しを"
-"完全に展開するのに必要な数だけ、「パス」が必要なのです。"
+"ここで重要なことは、展開は、すべての呼び出しを完全に展開するのに必要とされるだ"
+"けの「パス」で行われるということです。"
 
 #: src/syntax-extensions/expansion.md:107
 msgid ""
@@ -1298,10 +1297,10 @@ msgid ""
 "expansion contains a syntax extension invocation, the compiler will abort with "
 "an error indicating that the recursion limit was exceeded."
 msgstr ""
-"そうではありません。実際、コンパイラはこのような再帰パスの回数に、ギブアップす"
-"るまでの上限を設けています。これは構文拡張再帰制限として知られ、デフォルトは128"
-"です。128回目の展開に構文拡張の呼び出しが含まれていると、コンパイラは再帰制限を"
-"超えたことを示すエラーで中断します。"
+"まぁそれだけではありません。実際のところ、コンパイラはこのような再帰パスの回数"
+"に、ギブアップするまでの上限を設けています。これは構文拡張再帰制限として知ら"
+"れ、デフォルトは128です。128回目の展開に構文拡張の呼び出しが含まれていると、コ"
+"ンパイラは再帰制限を超えたことを示すエラーで中断します。"
 
 #: src/syntax-extensions/expansion.md:112
 msgid ""
@@ -1311,24 +1310,23 @@ msgid ""
 "is recommended to try and keep syntax extension below this limit wherever "
 "possible as it may impact compilation times."
 msgstr ""
-"この制限は `#![recursion_limit=\"…\"]` [attribute](https://doc.rust-lang.org/"
+"この制限は `#![recursion_limit=\"…\"]` [属性](https://doc.rust-lang.org/"
 "reference/attributes/limits.html#the-recursion_limit-attribute) を使って上げる"
 "ことができますが、クレート全体で行わなければ _なりません_ 。一般的に、コンパイ"
 "ル時間に影響を与える可能性があるため、可能な限り構文拡張をこの制限以下に抑える"
 "ことが推奨されます。"
 
 #: src/syntax-extensions/hygiene.md:3
-#, fuzzy
 msgid ""
 "Hygiene is an important concept for macros. It describes the ability for a "
 "macro to work in its own syntax context, not affecting nor being affected by "
 "its surroundings. In other words this means that a syntax extension should be "
 "invocable anywhere without interfering with its surrounding context."
 msgstr ""
-"ハイジーンはマクロにとって重要な概念です。これは、マクロがそれ自身の構文コンテ"
-"キストで動作し、周囲に影響を与えたり、影響を受けたりしないことを表します。言い"
-"換えれば、これは構文拡張が周囲のコンテキストに干渉することなく、どこでも呼び出"
-"せることを意味します。"
+"ハイジーン（衛生的なこと）はマクロにとって重要な概念です。これは、マクロがそれ"
+"自身の構文コンテキストで動作し、その周囲に影響を与えたり、周囲から影響を受けた"
+"りしないことを表します。言い換えれば、これは構文拡張が周囲のコンテキストに干渉"
+"することなく、どこでも呼び出せなければならないことを意味します。"
 
 #: src/syntax-extensions/hygiene.md:7
 #, fuzzy
