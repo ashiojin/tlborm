@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-09-24 15:34+0900\n"
+"PO-Revision-Date: 2023-09-30 19:31+0900\n"
 "Last-Translator: ashiojin@gmail.com\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -43,19 +43,16 @@ msgid "Debugging"
 msgstr "デバッキング"
 
 #: src/SUMMARY.md:11 src/decl-macros.md:1
-#, fuzzy
 msgid "Declarative Macros"
 msgstr "宣言的マクロ"
 
 #: src/SUMMARY.md:12 src/SUMMARY.md:37 src/proc-macros/methodical.md:1
-#, fuzzy
 msgid "A Methodical Introduction"
-msgstr "方法論的入門"
+msgstr "方法論的イントロダクション"
 
 #: src/SUMMARY.md:13 src/SUMMARY.md:41
-#, fuzzy
 msgid "A Practical Introduction"
-msgstr "実践入門"
+msgstr "実践的イントロダクション"
 
 #: src/SUMMARY.md:14 src/decl-macros/minutiae.md:1
 #, fuzzy
@@ -165,9 +162,8 @@ msgstr "手続き型マクロ"
 
 #: src/SUMMARY.md:38 src/SUMMARY.md:42
 #: src/proc-macros/methodical/function-like.md:1
-#, fuzzy
 msgid "Function-like"
-msgstr "機能的"
+msgstr "関数型"
 
 #: src/SUMMARY.md:39 src/SUMMARY.md:43 src/proc-macros/methodical/attr.md:1
 msgid "Attribute"
@@ -752,14 +748,13 @@ msgid ""
 "[`format!`](https://doc.rust-lang.org/std/macro.format.html)) is _not_ as it "
 "is a compiler builtin."
 msgstr ""
-"第3の形式 `$name ! arg` は関数のようなマクロです。これは `macro_rules!`, "
-"`macro` や手続き的マクロで使用できる形式です。この形式は `macro_rules!` マクロ"
-"に限定されたものではないことに注意してください：これは一般的な構文拡張形式で"
-"す。例えば、[`format!`](https://doc.rust-lang.org/std/macro.format.html) は "
-"`macro_rules!` マクロですが、[`format_args!`](https://doc.rust-lang.org/std/"
-"macro.format_args.html) ([`format!`](https://doc.rust-lang.org/std/macro."
-"format.html)の実装に使用されます) はそうでは _なく_ 、コンパイラのビルトインで"
-"す。"
+"第3の形式 `$name ! arg` は関数型マクロです。これは `macro_rules!`, `macro` や手"
+"続き的マクロで使用できる形式です。この形式は `macro_rules!` マクロに限定された"
+"ものではないことに注意してください：これは一般的な構文拡張形式です。例えば、"
+"[`format!`](https://doc.rust-lang.org/std/macro.format.html) は `macro_rules!` "
+"マクロですが、[`format_args!`](https://doc.rust-lang.org/std/macro.format_args."
+"html) ([`format!`](https://doc.rust-lang.org/std/macro.format.html)の実装に使用"
+"されます) はそうでは _なく_ 、コンパイラのビルトインです。"
 
 #: src/syntax-extensions/ast.md:24
 msgid ""
@@ -1604,7 +1599,7 @@ msgid ""
 "This chapter will introduce Rust's declarative macro system: [`macro_rules!`]"
 "(https://doc.rust-lang.org/reference/macros-by-example.html)."
 msgstr ""
-"この章ではRustの宣言型マクロシステム： [macro_rules!`](https://doc.rust-lang."
+"この章ではRustの宣言型マクロシステム： [`macro_rules!`](https://doc.rust-lang."
 "org/reference/macros-by-example.html) を紹介します。"
 
 #: src/decl-macros.md:5
@@ -1665,12 +1660,10 @@ msgstr ""
 "ます。"
 
 #: src/decl-macros/macros-methodical.md:1
-#, fuzzy
 msgid "Macros, A Methodical Introduction"
-msgstr "マクロ入門"
+msgstr "マクロ、方法論的イントロダクション"
 
 #: src/decl-macros/macros-methodical.md:3
-#, fuzzy
 msgid ""
 "This chapter will introduce Rust's declarative [Macro-By-Example](https://doc."
 "rust-lang.org/reference/macros-by-example.html) system by explaining the "
@@ -1679,32 +1672,25 @@ msgid ""
 "one should at least be aware of."
 msgstr ""
 "この章では、Rust の宣言型 [Macro-By-Example](https://doc.rust-lang.org/"
-"reference/macros-by-example.html) システムを紹介します。まず、マクロの構文と主"
-"要な部分について説明し、その後に、少なくとも知っておくべき一般的な情報を説明し"
-"ます。"
+"reference/macros-by-example.html) システムを、システム全体を説明する形で、紹介"
+"します。まず、構成要素の構文とその主要な部分について説明し、その後に、少なくと"
+"も知っておくべき一般的な情報を説明します。"
 
 #: src/decl-macros/macros-methodical.md:9
-#, fuzzy
 msgid "`macro_rules!`"
-msgstr ""
-"次の例では、 `n` 次元ベクタの[ユークリッド距離](https://en.wikipedia.org/wiki/"
-"Euclidean_distance) を計算する、単純な `macro_rules!` を作成します。\n"
-"`norm!(x,1,2)` と記述するのは、 `x,1,2` を `Vec` に詰め込んで、距離を計算する関"
-"数を呼び出すよりも表現が簡単で効率的です。"
+msgstr "`macro_rules!`"
 
 #: src/decl-macros/macros-methodical.md:11
-#, fuzzy
 msgid ""
 "With all that in mind, we can introduce `macro_rules!` itself. As noted "
 "previously, `macro_rules!` is _itself_ a syntax extension, meaning it is "
 "_technically_ not part of the Rust syntax. It uses the following forms:"
 msgstr ""
-"これを踏まえて、`macro_rules!`そのものを紹介します。前述したように、"
-"`macro_rules!`は構文拡張であり、技術的にはRustの構文の一部ではありません。以下"
-"の形式を使用します："
+"これを踏まえて、 `macro_rules!` そのものを紹介します。前述したように、"
+"`macro_rules!`は _それ自身_ 構文拡張であり、技術的にはRustの構文の一部ではあり"
+"ません。これは以下の形式を使用します："
 
 #: src/decl-macros/macros-methodical.md:15
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "macro_rules! $name {\n"
@@ -1715,53 +1701,48 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"錆、無視\n"
-"マクロルール名前 {\n"
-"    $rule0 ；\n"
-"    $rule1 ；\n"
-"    // ...\n"
-"    $ruleN ；\n"
+"```rust,ignore\n"
+"macro_rules! $name {\n"
+"    $rule0 ;\n"
+"    $rule1 ;\n"
+"    // …\n"
+"    $ruleN ;\n"
 "}\n"
 "```"
 
 #: src/decl-macros/macros-methodical.md:24
-#, fuzzy
 msgid ""
 "There must be _at least_ one rule, and you can omit the semicolon after the "
 "last rule. You can use brackets(`[]`), parentheses(`()`) or braces(`{}`)."
 msgstr ""
-"ルールは最低1つ必要で、最後のルールの後のセミコロンは省略できます。括弧(`[]`)、"
-"括弧(`()`)、または中括弧(`{}`)を使うことができます。"
+"ルールは _最低_ 1つ必要で、最後のルールの後のセミコロンは省略できます。角括弧"
+"(`[]`)、丸括弧(`()`)、または波括弧(`{}`)を使うことができます。"
 
 #: src/decl-macros/macros-methodical.md:27
-#, fuzzy
 msgid "Each _\"rule\"_ looks like the following:"
-msgstr "それぞれの_\"ルール\"_は以下のようなものです："
+msgstr "それぞれの_「ルール」_ は以下のようなものです："
 
 #: src/decl-macros/macros-methodical.md:29
-#, fuzzy
 msgid ""
 "```ignore\n"
 "    ($matcher) => {$expansion}\n"
 "```"
 msgstr ""
-"無視\n"
-"    ($matcher) => {$expansion} です。\n"
+"```ignore\n"
+"    ($matcher) => {$expansion}\n"
 "```"
 
 #: src/decl-macros/macros-methodical.md:33
-#, fuzzy
 msgid ""
 "Like before, the types of parentheses used can be any kind, but parentheses "
 "around the matcher and braces around the expansion are somewhat conventional. "
 "The expansion part of a rule is also called its _transcriber_."
 msgstr ""
 "先ほどと同様、使用する括弧の種類は何でもかまいませんが、マッチャを括弧で囲み、"
-"展開部を中括弧で囲むのが一般的です。ルールの展開部分は、_transcriber_ とも呼ば"
-"れます。"
+"展開部を中括弧で囲むのが慣習的なようです。ルールの展開部分は、_transcriber_ と"
+"も呼ばれます。"
 
 #: src/decl-macros/macros-methodical.md:36
-#, fuzzy
 msgid ""
 "Note that the choice of the parentheses does not matter in regards to how the "
 "mbe macro may be invoked. In fact, function-like macros can be invoked with "
@@ -1769,57 +1750,54 @@ msgid ""
 "notice the trailing semicolon, are special in that their expansion will "
 "_always_ be parsed as an _item_."
 msgstr ""
-"括弧の選択は mbe マクロの呼び出し方に関しては問題ではないことに注意してくださ"
-"い。実際、関数のようなマクロはどのような括弧でも呼び出すことができますが、 "
-"`{ ... }` と `( ... );` を使った呼び出しは特別です。}` と `( ... );` を使った呼"
-"び出しは特別で、最後にセミコロンがあることに注意してください。"
+"括弧の選択は mbe マクロの呼び出し方に関して重要でないことに注意してください。実"
+"際、関数型マクロはどのような括弧でも呼び出すことができますが、 `{ ... }` と "
+"`( ... );` （最後にセミコロンがあることに注意）を使った呼び出しは例外的で、その"
+"展開が常にアイテムとして解析されます。"
 
 #: src/decl-macros/macros-methodical.md:39
-#, fuzzy
 msgid ""
 "If you are wondering, the `macro_rules!` invocation expands to... _nothing_. "
 "At least, nothing that appears in the AST; rather, it manipulates compiler-"
 "internal structures to register the mbe macro. As such, you can _technically_ "
 "use `macro_rules!` in any position where an empty expansion is valid."
 msgstr ""
-"不思議に思うかもしれませんが、`macro_rules!に展開されます。少なくとも、ASTには"
-"何も表示されません。むしろ、mbeマクロを登録するためにコンパイラ内部の構造を操作"
-"します。そのため、`macro_rules!"
+"不思議に思うかもしれませんが、`macro_rules!` の呼び出しは ... _無_ に展開されま"
+"す。少なくとも、ASTには何も現れません；mbeマクロを登録するためにコンパイラ内部"
+"の構造を操作します。そのため、`macro_rules!` は _技術的には_ 空の式が有効なあら"
+"ゆる場所にて使用できます。"
 
 #: src/decl-macros/macros-methodical.md:43
-#, fuzzy
 msgid "Matching"
-msgstr "Matching"
+msgstr "マッチング"
 
 #: src/decl-macros/macros-methodical.md:45
-#, fuzzy
 msgid ""
 "When a `macro_rules!` macro is invoked, the `macro_rules!` interpreter goes "
 "through the rules one by one, in declaration order. For each rule, it tries to "
 "match the contents of the input token tree against that rule's `matcher`. A "
 "matcher must match the _entirety_ of the input to be considered a match."
 msgstr ""
-"macro_rules!`マクロが呼び出されると、 `macro_rules!各ルールに対して、入力された"
-"トークンツリーの内容とそのルールの `matcher` とのマッチを試みます。マッチャは入"
-"力の_entirety_にマッチしなければマッチしたとみなされません。"
+"`macro_rules!` マクロが呼び出されると、 `macro_rules!` インタプリタは、宣言順に"
+"１つ１つルールを調査します。各ルールに対し、ルールの `matcher` と、入力トークン"
+"ツリーの内容がマッチするか試します。matcher は入力の _全体_ とマッチしなけれ"
+"ば、マッチしたものと考えられません。"
 
 #: src/decl-macros/macros-methodical.md:49
-#, fuzzy
 msgid ""
 "If the input matches the matcher, the invocation is replaced by the "
 "`expansion`; otherwise, the next rule is tried. If all rules fail to match, "
 "the expansion fails with an error."
 msgstr ""
-"入力がマッチャにマッチした場合、その呼び出しは `expansion` に置き換えられます。"
-"すべてのルールがマッチしなかった場合、展開に失敗してエラーになります。"
+"入力が matcher にマッチした場合、その呼び出しは `expansion` に置き換えられま"
+"す。そうでなければ次のルールが試行されます。すべてのルールがマッチしなかった場"
+"合、展開に失敗してエラーになります。"
 
 #: src/decl-macros/macros-methodical.md:52
-#, fuzzy
 msgid "The simplest example is of an empty matcher:"
-msgstr "最も単純な例は空のマッチャーです："
+msgstr "最も単純な例は空の matcher です："
 
 #: src/decl-macros/macros-methodical.md:54
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "macro_rules! four {\n"
@@ -1827,46 +1805,44 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"錆、無視\n"
-"macro_rules!\n"
+"```rust,ignore\n"
+"macro_rules! four {\n"
 "    () => { 1 + 3 };\n"
 "}\n"
 "```"
 
 #: src/decl-macros/macros-methodical.md:60
-#, fuzzy
 msgid ""
 "This matches if and only if the input is also empty (_i.e._ `four!()`, `four!"
 "[]` or `four!{}`)."
 msgstr ""
-"これは入力も空である場合(_i._ `four!()`、`four![]`、`four!{}`)にのみマッチしま"
-"す。"
+"これは入力も空である場合(つまり `four!()`、`four![]`、`four!{}`)にのみマッチし"
+"ます。"
 
 #: src/decl-macros/macros-methodical.md:62
-#, fuzzy
 msgid ""
 "Note that the specific grouping tokens you use when you invoke the function-"
 "like macro _are not_ matched, they are in fact not passed to the invocation at "
 "all. That is, you can invoke the above macro as `four![]` and it will still "
 "match. Only the _contents_ of the input token tree are considered."
 msgstr ""
-"関数ライクなマクロを呼び出すときに使用する特定のグループ化トークンはマッチし な"
-"いことに注意してください。つまり、上記のマクロを `four![]` として呼び出しても"
-"マッチします。入力トークン・ツリーの _contents_ だけが考慮されます。"
+"関数型マクロを呼び出すときに使用するグループ化トークンはマッチ _せず_ 、実際呼"
+"び出しには一切渡されないことに注意してください。つまり、上記のマクロを `four!"
+"[]` として呼び出し可能で、これはマッチしています。入力トークンツリーの _内容_ "
+"だけが考慮されます。"
 
 #: src/decl-macros/macros-methodical.md:66
-#, fuzzy
 msgid ""
 "Matchers can also contain literal token trees, which must be matched exactly. "
 "This is done by simply writing the token trees normally. For example, to match "
 "the sequence `4 fn ['spang \"whammo\"] @_@`, you would write:"
 msgstr ""
-"マッチャーにはリテラル・トークンツリーを含めることもできます。これは単純にトー"
-"クンツリーを普通に書くことで可能です。例えば、`4 fn ['spang \"whammo\"] @_@` と"
-"いうシーケンスにマッチさせるには、次のように書きます："
+"matcher はリテラルトークンツリーを含めることもでき、ぴったりとマッチする必要が"
+"あります。これは、単純にトークンツリーを通常通り書くことで表現されます。例え"
+"ば、`4 fn ['spang \"whammo\"] @_@` というシーケンスにマッチさせるには、次のよう"
+"に書きます："
 
 #: src/decl-macros/macros-methodical.md:70
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "macro_rules! gibberish {\n"
@@ -1874,32 +1850,29 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"錆、無視\n"
-"macro_rules!\n"
-"    (4 fn ['spang \"whammo\"] @_@) => {...}；\n"
+"```rust,ignore\n"
+"macro_rules! gibberish {\n"
+"    (4 fn ['spang \"whammo\"] @_@) => {...};\n"
 "}\n"
 "```"
 
 #: src/decl-macros/macros-methodical.md:76
-#, fuzzy
 msgid "You can use any token tree that you can write."
-msgstr "あなたが書くことができる任意のトークンツリーを使用することができます。"
+msgstr "あなたが書くことができる任意のトークンツリーが使用可能です。"
 
 #: src/decl-macros/macros-methodical.md:78
-#, fuzzy
 msgid "Metavariables"
 msgstr "メタ変数"
 
 #: src/decl-macros/macros-methodical.md:80
-#, fuzzy
 msgid ""
 "Matchers can also contain captures. These allow input to be matched based on "
 "some general grammar category, with the result captured to a metavariable "
 "which can then be substituted into the output."
 msgstr ""
-"マッチャーはキャプチャを含むこともできます。これにより、一般的な文法カテゴリに"
-"基づいて入力をマッチングし、その結果をメタ変数にキャプチャして出力に代入するこ"
-"とができます。"
+"matcher はキャプチャを含むこともできます。これにより、一般的な文法カテゴリに基"
+"づいて入力をマッチングし、その結果をメタ変数にキャプチャして出力に代入すること"
+"ができます。"
 
 #: src/decl-macros/macros-methodical.md:83
 #, fuzzy
@@ -8685,13 +8658,12 @@ msgid "Textual Scope"
 msgstr "テキストの範囲"
 
 #: src/decl-macros/minutiae/scoping.md:11
-#, fuzzy
 msgid ""
 "Firstly, unlike everything else in the language, function-like macros will "
 "remain visible in sub-modules."
 msgstr ""
-"まず、他の言語とは異なり、関数に似たマクロはサブモジュールでも表示されたままに"
-"なります。"
+"まず、他の言語とは異なり、関数型マクロはサブモジュールでも表示されたままになり"
+"ます。"
 
 #: src/decl-macros/minutiae/scoping.md:13
 #, fuzzy
@@ -12298,14 +12270,13 @@ msgstr ""
 "`=>` トークンを削除して、名前の後に直接マッチャーを書くことができます。"
 
 #: src/decl-macros/macros2.md:47
-#, fuzzy
 msgid ""
 "Syntax for invoking `macro`s is the same as for `macro_rules` and function-"
 "like procedural macros, the name followed by a `!` followed by the macro input "
 "token tree."
 msgstr ""
-"マクロを呼び出す構文は `macro_rules` や関数のような手続き型マクロと同じで、名前"
-"の後に `!"
+"マクロを呼び出す構文は `macro_rules` や関数型手続き型マクロと同じで、名前の後"
+"に `!"
 
 #: src/decl-macros/macros2.md:49
 #, fuzzy
@@ -12563,13 +12534,11 @@ msgstr ""
 "ります。"
 
 #: src/proc-macros/methodical.md:27
-#, fuzzy
 msgid ""
 "_function-like_ proc-macros which are used to implement `$name ! $arg` "
 "invocable macros"
 msgstr ""
-"関数に似た proc マクロで、 `$name ！arg` を実装するために使われる proc マクロで"
-"す。"
+"関数型 proc マクロで、 `$name ！arg` を実装するために使われる proc マクロです。"
 
 #: src/proc-macros/methodical.md:28
 #, fuzzy
@@ -12598,9 +12567,8 @@ msgstr ""
 "する関数です。"
 
 #: src/proc-macros/methodical.md:34
-#, fuzzy
 msgid "_function-like_"
-msgstr "\"機能的な"
+msgstr "_関数型_"
 
 #: src/proc-macros/methodical.md:35
 #, fuzzy
@@ -12699,11 +12667,10 @@ msgstr ""
 "ングします。"
 
 #: src/proc-macros/methodical/function-like.md:3
-#, fuzzy
 msgid ""
 "Function-like procedural macros are invoked like declarative macros that is "
 "`makro!(…)`."
-msgstr "関数のような手続き型マクロは、宣言型マクロのように `makro!"
+msgstr "関数型手続き型マクロは、宣言型マクロのように `makro!"
 
 #: src/proc-macros/methodical/function-like.md:5
 #, fuzzy
@@ -12719,7 +12686,7 @@ msgstr ""
 #, fuzzy
 msgid ""
 "A simple skeleton of a function-like procedural macro looks like the following:"
-msgstr "関数のような手続き型マクロの簡単な骨格は以下のようになります："
+msgstr "関数型手続き型マクロの簡単な骨格は以下のようになります："
 
 #: src/proc-macros/methodical/function-like.md:9
 #, fuzzy
