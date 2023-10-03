@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-10-03 19:38+0900\n"
+"PO-Revision-Date: 2023-10-06 16:28+0900\n"
 "Last-Translator: ashiojin@gmail.com\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -201,7 +201,6 @@ msgid "The Little Book of Rust Macros"
 msgstr "The Little Book of Rust Macros"
 
 #: src/introduction.md:4
-#, fuzzy
 msgid ""
 "**Note**: This is a continuation of [Daniel Keep's Book](https://github.com/"
 "DanielKeep/tlborm) which has not been updated since the early summer of 2016, "
@@ -212,23 +211,20 @@ msgstr ""
 "mdBook)を利用するようにアレンジしたものです。"
 
 #: src/introduction.md:6
-#, fuzzy
 msgid ""
 "View the [rendered version here](https://veykril.github.io/tlborm/) and the "
 "[repository here](https://github.com/veykril/tlborm)."
 msgstr ""
-"レンダリング版はこちら](https://veykril.github.io/tlborm/)と[リポジトリはこち"
-"ら](https://github.com/veykril/tlborm)をご覧ください。"
+"[レンダリング版はこちら](https://veykril.github.io/tlborm/)、[リポジトリはこち"
+"ら](https://github.com/veykril/tlborm)です。"
 
 #: src/introduction.md:8
-#, fuzzy
 msgid ""
 "A chinese version of this book can be found [here](https://zjp-cn.github.io/"
 "tlborm/)."
 msgstr "本書の中国語版は[こちら](https://zjp-cn.github.io/tlborm/)。"
 
 #: src/introduction.md:10
-#, fuzzy
 msgid ""
 "This book is an attempt to distill the Rust community's collective knowledge "
 "of Rust macros, the `Macros by Example` ones as well as procedural "
@@ -238,14 +234,13 @@ msgid ""
 "to make an issue asking for clarification. The goal is for this book to become "
 "the best learning resource possible."
 msgstr ""
-"この本は、RustコミュニティのRustマクロに関する集合的な知識、「例によるマクロ」"
-"や手続き型マクロ(WIP)を抽出する試みです。そのため、（プルリクエストという形で"
-"の）追加や（issueという形での）要望は大歓迎です。不明な点、疑問点、書かれている"
-"ことが理解できない点などがあれば、issueを作成し、説明を求めてください。この本が"
-"最高の学習リソースになることが目標です。"
+"この本は、RustコミュニティのRustマクロ、すなわち「Macros by Example」と手続き型"
+"マクロ(WIP)、に関する集合的な知識を抽出する試みです。そのため、（プルリクエスト"
+"という形での）追加や（issueという形での）要望は大歓迎です。不明な点、疑問点、書"
+"かれていることが理解できない点などがあれば、issueを作成し、説明を求めてくださ"
+"い。この本が可能な限り最高の学習リソースになることが目標です。"
 
 #: src/introduction.md:15
-#, fuzzy
 msgid ""
 "The [original Little Book of Rust Macros](https://github.com/DanielKeep/"
 "tlborm) has helped me immensely with understanding _**Macros by Example**_ "
@@ -257,16 +252,15 @@ msgid ""
 "coming to Rust understanding its macro systems, a part of the language a "
 "people tend to have trouble with."
 msgstr ""
-"元祖Rustマクロ小辞典](https://github.com/DanielKeep/tlborm)は、私がまだ言語を学"
-"んでいる間、_**Macros by Example**_ スタイルのマクロを理解するのに非常に役立ち"
-"ました。しかし残念ながら、Rust言語とマクロシステムが進化し続ける中、この本は"
-"2016年4月から更新されていません。そのため、私はこの本を更新し、新しい発見を加え"
-"ながら、できる限り最新の状態に保つ仕事を引き受けました。この本が、これからRust"
-"を学ぼうとする人たちが、Rustのマクロシステムを理解する助けになることを願ってい"
-"ます。"
+"[オリジナルのLittle Book of Rust Macros](https://github.com/DanielKeep/tlborm)"
+"は、私がまだ言語を学んでいる間、　_**Macros by Example**_ スタイルのマクロを理"
+"解するのに非常に役立ちました。しかし残念ながら、Rust言語とマクロシステムが進化"
+"し続ける中、この本は2016年4月から更新されていません。そのため、私はこの本を更新"
+"し、新しい発見を加えながら、できる限り最新の状態に保つ仕事を引き受けました。こ"
+"の本が、これからRustを学ぼうとする人たちが、苦戦しがちなRustのマクロシステムを"
+"理解する助けになることを願っています。"
 
 #: src/introduction.md:20
-#, fuzzy
 msgid ""
 "This book expects you to have basic knowledge of Rust, it will not explain "
 "language features or constructs that are irrelevant to macros. No prior "
@@ -276,29 +270,27 @@ msgid ""
 msgstr ""
 "本書では、Rustの基本的な知識があることを前提としており、マクロに関係のない言語"
 "機能や構成要素については説明しません。マクロに関する予備知識は想定していませ"
-"ん。Rust Book](https://doc.rust-lang.org/stable/book/)の最初の7章を読んで理解し"
-"ていることは必須ですが、この本の大部分を読んでいることを推奨します。"
+"ん。[Rust Book](https://doc.rust-lang.org/stable/book/)の最初の7章を読んで理解"
+"していることは必須ですが、この本の大部分を読んでいることを推奨します。"
 
 #: src/introduction.md:24
 msgid "Thanks"
 msgstr "謝辞"
 
 #: src/introduction.md:26
-#, fuzzy
 msgid ""
 "A big thank you to Daniel Keep for the original work as well as all the "
 "contributors that added to the original which can be found [here](https://"
 "github.com/DanielKeep/tlborm)."
 msgstr ""
-"ダニエル・キープ氏の原作と、原作に加筆してくれたすべての貢献者に感謝します[こち"
-"ら](https://github.com/DanielKeep/tlborm)。"
+"ダニエル・キープ氏の原作([こちら](https://github.com/DanielKeep/tlborm))と、原"
+"作に加筆してくれたすべての貢献者に感謝します。"
 
 #: src/introduction.md:28
 msgid "License"
 msgstr "ライセンス"
 
 #: src/introduction.md:30
-#, fuzzy
 msgid ""
 "This work inherits the licenses of the original, hence it is licensed under "
 "both the [Creative Commons Attribution-ShareAlike 4.0 International License]"
@@ -2425,12 +2417,10 @@ msgstr ""
 "ください。"
 
 #: src/decl-macros/macros-practical.md:1
-#, fuzzy
 msgid "Macros, A Practical Introduction"
-msgstr "マクロ実践入門"
+msgstr "マクロ、実践的イントロダクション"
 
 #: src/decl-macros/macros-practical.md:3
-#, fuzzy
 msgid ""
 "This chapter will introduce Rust's declarative [Macro-By-Example](https://doc."
 "rust-lang.org/reference/macros-by-example.html) system using a relatively "
@@ -2440,38 +2430,35 @@ msgid ""
 msgstr ""
 "この章では、Rust の宣言型 [Macro-By-Example](https://doc.rust-lang.org/"
 "reference/macros-by-example.html) システムを、比較的シンプルで実用的な例を使っ"
-"て紹介します。この章のゴールは、マクロがどのように書かれ、なぜ書かれるのかを理"
+"て紹介します。この章はこのシステムの複雑なものすべてを説明しようとするもの _で"
+"はありません_ ; この章のゴールは、マクロがどのように、またなぜ書かれるのかを理"
 "解することです。"
 
 #: src/decl-macros/macros-practical.md:6
-#, fuzzy
 msgid ""
 "There is also the [Macros chapter of the Rust Book](https://doc.rust-lang.org/"
 "book/ch19-06-macros.html) which is another high-level explanation, and the "
 "[methodical introduction](../decl-macros.md) chapter of this book, which "
 "explains the macro system in detail."
 msgstr ""
-"また、[Rust Bookのマクロの章](https://doc.rust-lang.org/book/ch19-06-macros."
-"html)もハイレベルな説明ですし、本書の[方法序説](../decl-macros.md)の章もマクロ"
-"システムを詳しく説明しています。"
+"[Rust Bookのマクロの章](https://doc.rust-lang.org/book/ch19-06-macros.html)にも"
+"ハイレベルな説明があります。また、本書の[方法論的イントロダクション](../decl-"
+"macros.md)の章もマクロシステムを詳しく説明しています。"
 
 #: src/decl-macros/macros-practical.md:8
-#, fuzzy
 msgid "A Little Context"
 msgstr "ちょっとした背景"
 
 #: src/decl-macros/macros-practical.md:10
-#, fuzzy
 msgid ""
 "**Note**: don't panic! What follows is the only math that will be talked "
 "about. You can quite safely skip this section if you just want to get to the "
 "meat of the article."
 msgstr ""
-"**注**: パニックにならないでください！これから話すのは数学だけです。記事の本題"
-"に入りたいだけなら、このセクションは読み飛ばしてかまいません。"
+"**注**: どうか慌てずに！ただの数学についてこれから話します。記事の本題に入りた"
+"いだけなら、このセクションは読み飛ばしてかまいません。"
 
 #: src/decl-macros/macros-practical.md:13
-#, fuzzy
 msgid ""
 "If you aren't familiar, a recurrence relation is a sequence where each value "
 "is defined in terms of one or more _previous_ values, with one or more initial "
@@ -2479,39 +2466,37 @@ msgid ""
 "(https://en.wikipedia.org/wiki/Fibonacci_number) can be defined by the "
 "relation:"
 msgstr ""
-"ご存じないかもしれませんが、漸化式とは、各値が1つまたは複数の前の値で定義され、"
-"全体を開始するための1つまたは複数の初期値を持つ数列のことです。例えば、[フィボ"
-"ナッチ数列](https://en.wikipedia.org/wiki/Fibonacci_number) は、この関係で定義"
-"することができます:"
+"ご存じないかもしれませんが、漸化式とは、各値が1つまたは複数の _前の_ 値で定義さ"
+"れ、全体を開始するための1つまたは複数の初期値を持つ数列のことです。例えば、"
+"[フィボナッチ数列](https://en.wikipedia.org/wiki/Fibonacci_number) は、この式で"
+"定義できます:"
 
 #: src/decl-macros/macros-practical.md:16
-#, fuzzy
 msgid "\\\\\\[F\\_{n} = 0, 1, ..., F\\_{n-2} + F\\_{n-1}\\\\\\]"
-msgstr "\\\\\\fia{n} = 0, 1, ..., f_{n-2} + f_{n-1}Ω"
+msgstr "\\\\\\[F\\_{n} = 0, 1, ..., F\\_{n-2} + F\\_{n-1}\\\\\\]"
 
 #: src/decl-macros/macros-practical.md:18
-#, fuzzy
 msgid ""
 "Thus, the first two numbers in the sequence are 0 and 1, with the third being "
 "\\\\( F\\_{0} + F\\_{1} = 0 + 1 = 1\\\\), the fourth \\\\( F\\_{1} + F\\_{2} = "
 "1 + 1 = 2\\\\), and so on forever."
 msgstr ""
-"このように、数列の最初の2つは0と1で、3番目は㊟（ F_{0} + F_{1} = 0 + 1 = 1）、4"
-"番目は㊟（ F_{1} + F_{2} = 1 + 1 = 2）というように永遠に続きます。"
+"このように、数列の最初の2つは0と1で、3番目は \\\\( F\\_{0} + F\\_{1} = 0 + 1 = "
+"1\\\\) 、4番目は \\\\( F\\_{1} + F\\_{2} = 1 + 1 = 2\\\\) というように永遠に続"
+"きます。"
 
 #: src/decl-macros/macros-practical.md:20
-#, fuzzy
 msgid ""
 "Now, _because_ such a sequence can go on forever, that makes defining a "
 "`fibonacci` function a little tricky, since you obviously don't want to try "
 "returning a complete vector. What you _want_ is to return something which will "
 "lazily compute elements of the sequence as needed."
 msgstr ""
-"このような数列は永遠に続く可能性があるため、フィボナッチ関数を定義するのは少し"
-"厄介です。なぜなら、明らかに完全なベクトルを返したくないからです。"
+"さて、このような数列は永遠に続くこと _から_ 、フィボナッチ関数を定義するのは少"
+"し厄介です。なぜなら、明らかにベクタ全体を返すことを試みたくないからです。数列"
+"の要素を必要に応じて後から計算する何か、を _返したい_ はずです。"
 
 #: src/decl-macros/macros-practical.md:23
-#, fuzzy
 msgid ""
 "In Rust, that means producing an [`Iterator`](https://doc.rust-lang.org/std/"
 "iter/trait.Iterator.html). This is not especially _hard_, but there is a fair "
@@ -2520,40 +2505,38 @@ msgid ""
 "doc.rust-lang.org/std/iter/trait.Iterator.html) trait for it."
 msgstr ""
 "Rustでは、これは[`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator."
-"html)を生成することを意味します。カスタム型を定義し、どのような状態を格納する必"
-"要があるのかを調べ、[`Iterator`](https://doc.rust-lang.org/std/iter/trait."
+"html)を生成することを意味します。これは特別 _難しい_ ことではありませんが、かな"
+"りのボイラーテンプレートを要します: カスタム型を定義し、どのような状態を格納す"
+"る必要があるのかを調べ、[`Iterator`](https://doc.rust-lang.org/std/iter/trait."
 "Iterator.html) を実装する必要があります。"
 
 #: src/decl-macros/macros-practical.md:26
-#, fuzzy
 msgid ""
 "However, recurrence relations are simple enough that almost all of these "
 "details can be abstracted out with a little `macro_rules!` macro-based code "
 "generation."
-msgstr "しかし、再帰関係は単純なので、マクロベースのコード生成 `macro_rules!"
+msgstr ""
+"しかし、漸化式は十分単純なため、 `macro_rules!` マクロベースのコード生成にて、"
+"これら詳細をほとんどすべて抽象化できます。"
 
 #: src/decl-macros/macros-practical.md:28
-#, fuzzy
 msgid "So, with all that having been said, let's get started."
-msgstr "さて、それでは始めましょう。"
+msgstr "さて、以上のことを踏まえて、始めましょう。"
 
 #: src/decl-macros/macros-practical.md:32
-#, fuzzy
 msgid "Construction"
 msgstr "構築"
 
 #: src/decl-macros/macros-practical.md:34
-#, fuzzy
 msgid ""
 "Usually, when working on a new `macro_rules!` macro, the first thing I do is "
 "decide what the invocation should look like. In this specific case, my first "
 "attempt looked like this:"
 msgstr ""
-"通常、新しい`macro_rules!この具体的なケースでは、私の最初の試みは次のようなもの"
-"でした:"
+"通常、新しい `macro_rules!` マクロを作成するとき、最初に行うことは呼び出しの形"
+"を決めることです。この場合、私の最初の試みは次のようなものでした:"
 
 #: src/decl-macros/macros-practical.md:37
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "let fib = recurrence![a[n] = 0, 1, ..., a[n-2] + a[n-1]];\n"
@@ -2561,26 +2544,24 @@ msgid ""
 "for e in fib.take(10) { println!(\"{}\", e) }\n"
 "```"
 msgstr ""
-"ラスト,無視\n"
-"let fib = recurrence![a[n] = 0, 1, ..., a[n-2] + a[n-1]]; \n"
+"```rust,ignore\n"
+"let fib = recurrence![a[n] = 0, 1, ..., a[n-2] + a[n-1]];\n"
 "\n"
-"for e in fib.take(10) { println!(\"{}\", e) }.\n"
+"for e in fib.take(10) { println!(\"{}\", e) }\n"
 "```"
 
 #: src/decl-macros/macros-practical.md:43
-#, fuzzy
 msgid ""
 "From that, we can take a stab at how the `macro_rules!` macro should be "
 "defined, even if we aren't sure of the actual expansion. This is useful "
 "because if you can't figure out how to parse the input syntax, then _maybe_ "
 "you need to change it."
 msgstr ""
-"これによって、実際の展開がよくわからなくても、`macro_rules!`マクロをどのように"
-"定義すべきかがわかります。入力された構文を解析する方法がわからない場合は、構文"
-"を変更する必要があるかもしれないので、これは便利です。"
+"ここから、実際の展開がよくわからなくても、`macro_rules!` マクロをどのように定義"
+"すべきかがわかります。入力された構文を解析する方法がわからない場合は、構文を変"
+"更する必要がある _かもしれない_ ため、これは有用です。"
 
 #: src/decl-macros/macros-practical.md:46
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "macro_rules! recurrence {\n"
@@ -2589,15 +2570,14 @@ msgid ""
 "# fn main() {}\n"
 "```"
 msgstr ""
-"錆、無視\n"
-"マクロ規則\n"
-"    ( a[n] = $($inits:expr),+ , ..., $recur:expr ) => { /* ... */ };\n"
+"```rust,ignore\n"
+"macro_rules! recurrence {\n"
+"    ( a[n] = $($inits:expr),+ , ... , $recur:expr ) => { /* ... */ };\n"
 "}\n"
-"# fn main() [0］\n"
+"# fn main() {}\n"
 "```"
 
 #: src/decl-macros/macros-practical.md:53
-#, fuzzy
 msgid ""
 "Assuming you aren't familiar with the syntax, allow me to elucidate. This is "
 "defining a syntax extension, using the [`macro_rules!`](./macros-methodical."
@@ -2605,58 +2585,52 @@ msgid ""
 "parsing rule. That rule says the input to the invocation must match:"
 msgstr ""
 "あなたが構文に詳しくないことを前提に、説明させてください。これは、"
-"[`macro_rules!`](./macros-methodical.md)システムを使って、`recurrence!`という構"
-"文拡張を定義しています。この `macro_rules!` マクロには構文解析ルールが 1 つあり"
-"ます。そのルールとは、呼び出しの入力が一致しなければならないというものです:"
+"[`macro_rules!`](./macros-methodical.md)システムを使って、`recurrence!` という"
+"構文拡張を定義しています。この `macro_rules!` マクロには構文解析ルールが 1 つあ"
+"ります。そのルールは、呼び出しの入力が以下に一致しなければならないというもので"
+"す:"
 
 #: src/decl-macros/macros-practical.md:58
-#, fuzzy
 msgid "the literal token sequence `a` `[` `n` `]` `=`,"
-msgstr "リテラルトークン列 `a` `[`n` `]`=`、"
+msgstr "リテラルトークンのシーケンス `a` `[` `n` `]` `=` 、"
 
 #: src/decl-macros/macros-practical.md:59
-#, fuzzy
 msgid ""
 "a [repeating](./macros-methodical.md#repetitions) (the `$( ... )`) sequence, "
 "using `,` as a separator, and one or more (`+`) repeats of:"
 msgstr ""
-"a [repeating](./macros-methodical.md#repetitions) (`$( ... )`) シーケンスで、区"
-"切り文字として `,` を使用し、1つ以上の (`+`) リピート:"
+"[反復](./macros-methodical.md#repetitions) (`$( ... )`) シーケンス、区切り文字"
+"として `,` を使用し、1度以上 (`+`) 反復される:"
 
 #: src/decl-macros/macros-practical.md:60
-#, fuzzy
 msgid ""
 "a valid _expression_ captured into the [metavariable](./macros-methodical."
 "md#metavariables) `inits` (`$inits:expr`)"
 msgstr ""
-"メタ変数](./macros-methodical.md#metavariables) の `inits` (`$inits:expr`) に取"
-"り込まれた有効な _expression_ 。"
+"[メタ変数](./macros-methodical.md#metavariables) `inits` (`$inits:expr`) にキャ"
+"プチャされた有効な _式_ 。"
 
 #: src/decl-macros/macros-practical.md:61
-#, fuzzy
 msgid "the literal token sequence `,` `...` `,`,"
-msgstr "リテラルトークン列 `,` `...` `,`、"
+msgstr "リテラルトークンのシーケンス `,` `...` `,` 、"
 
 #: src/decl-macros/macros-practical.md:62
-#, fuzzy
 msgid ""
 "a valid _expression_ captured into the [metavariable](./macros-methodical."
 "md#metavariables) `recur` (`$recur:expr`)."
 msgstr ""
-"メタ変数](./macros-methodical.md#metavariables) の `recur` (`$recur:expr`) に取"
-"り込まれた有効な _expression_ です。"
+"[メタ変数](./macros-methodical.md#metavariables) `recur` (`$recur:expr`) にキャ"
+"プチャされた有効な _式_ 。"
 
 #: src/decl-macros/macros-practical.md:67
-#, fuzzy
 msgid ""
 "Finally, the rule says that _if_ the input matches this rule, then the "
 "invocation should be replaced by the token sequence `/* ... */`."
 msgstr ""
 "最後に、入力がこのルールにマッチする場合、その呼び出しはトークン列 `/* .... */"
-"`."
+"` に置き換えられると定義されています。"
 
 #: src/decl-macros/macros-practical.md:69
-#, fuzzy
 msgid ""
 "It's worth noting that `inits`, as implied by the name, actually contains "
 "_all_ the expressions that match in this position, not just the first or last. "
@@ -2665,13 +2639,13 @@ msgid ""
 "repetition by using `*` instead of `+` and even optional, \"zero or one\" with "
 "`?`."
 msgstr ""
-"注目すべき点は、`inits`という名前から想像されるように、実際にはこの位置でマッチ"
-"した式を最初や最後だけでなく、_すべて_含むということです。さらに、例えば不可逆"
-"的にまとめて貼り付けるのとは対照的に、_シーケンスとしてキャプチャします。また、"
-"`+`の代わりに`*`を使用することで、繰り返しを「0以上」にすることができます。"
+"注目すべき点として、`inits` は、この位置でマッチした式を最初や最後だけでなく、"
+"その名前から想像されるように実際に _すべて_ 含めます。さらにそれらを、例えば不"
+"可逆的にまとめて貼り付けるといった形ではなく、 _シーケンスとして_ キャプチャし"
+"ます。また、`+`の代わりに`*`を使用することで、繰り返しを「0以上」にすることがで"
+"きます。 `?` を使用すれば「0か1」となります。"
 
 #: src/decl-macros/macros-practical.md:73
-#, fuzzy
 msgid ""
 "As an exercise, let's take the proposed input and feed it through the rule, to "
 "see how it is processed. The \"Position\" column will show which part of the "
@@ -2680,34 +2654,32 @@ msgid ""
 "against. \"Input\" will contain all of the tokens that have _not_ been "
 "consumed yet. `inits` and `recur` will contain the contents of those bindings."
 msgstr ""
-"練習として、提案された入力をルールに通して、それがどのように処理されるかを見て"
-"みましょう。位置」列は、構文パターンのどの部分と次にマッチする必要があるかを示"
-"します。場合によっては、マッチする \"next \"要素が複数あるかもしれないことに注"
-"意してください。「Input \"には、まだ_消費されていないすべてのトークンが含まれま"
-"す。inits`と `recur`にはそれらのバインディングの内容が格納されます。"
+"練習として、検討した入力にルールを適用して、それがどのように処理されるかを見て"
+"みましょう。「Position」列は、構文パターンのどの部分と次にマッチする必要がある"
+"かを「⌂」によって示します。場合によっては、マッチする「次」要素が複数あるかもし"
+"れないことに注意してください。「Input」 には、まだ消費されて _いない_ すべての"
+"トークンが含まれます。 `inits` と `recur` にはそれらのバインディングの内容が格"
+"納されます。"
 
 #: src/decl-macros/macros-practical.md:265
-#, fuzzy
 msgid ""
 "The key take-away from this is that the macro system will _try_ to "
 "incrementally match the tokens provided as input to the macro against the "
 "provided rules. We'll come back to the \"try\" part."
 msgstr ""
-"ここから得られる重要な点は、マクロ システムが、マクロへの入力として提供された"
-"トークンを、提供されたルールに対してインクリメンタルに照合しようと試みるという"
-"ことです。try」の部分については、また後で説明します。"
+"ここから得られる重要な点は、マクロシステムが、マクロへの入力として提供された"
+"トークンを、提供されたルールに対してインクリメンタルにマッチさせようと _試みる"
+"_ ということです。「試みる」の部分については、また後で説明します。"
 
 #: src/decl-macros/macros-practical.md:268
-#, fuzzy
 msgid ""
 "Now, let's begin writing the final, fully expanded form. For this expansion, I "
 "was looking for something like:"
 msgstr ""
-"では、最終的な完全な展開形を書き始めましょう。この展開のために、私は次のような"
-"ものを探していました:"
+"では、最終的で完全な展開後の形を書き始めましょう。この展開のために、私は次のよ"
+"うなものを探索しました:"
 
 #: src/decl-macros/macros-practical.md:271
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "let fib = {\n"
@@ -2717,36 +2689,33 @@ msgid ""
 "    }\n"
 "```"
 msgstr ""
-"錆,無視\n"
+"```rust,ignore\n"
 "let fib = {\n"
 "    struct Recurrence {\n"
 "        mem: [u64; 2],\n"
-"        pos: usize、\n"
+"        pos: usize,\n"
 "    }\n"
 "```"
 
 #: src/decl-macros/macros-practical.md:279
-#, fuzzy
 msgid ""
 "This will be the actual iterator type. `mem` will be the memo buffer to hold "
 "the last few values so the recurrence can be computed. `pos` is to keep track "
 "of the value of `n`."
 msgstr ""
-"これが実際のイテレータ型になります。mem` はメモバッファで、再帰を計算できるよう"
-"に直近のいくつかの値を保持します。pos` は `n` の値を保持します。"
+"これが実際のイテレータ型になります。 `mem` はメモバッファで、再帰を計算できるよ"
+"うに直近のいくつかの値を保持します。`pos` は `n` の値を保持します。"
 
 #: src/decl-macros/macros-practical.md:283
-#, fuzzy
 msgid ""
 "**Aside**: I've chosen `u64` as a \"sufficiently large\" type for the elements "
 "of this sequence. Don't worry about how this will work out for _other_ "
 "sequences; we'll come to it."
 msgstr ""
-"**余談**: この配列の要素には「十分に大きい」型として `u64` を選びました。これが"
-"他の_配列でどうなるかについては心配しないでください。"
+"**余談**: 配列の要素には「十分に大きい」型として `u64` を選びました。これが他の"
+"_配列でどう作用するかについては心配しないでください; 後で考えましょう。"
 
 #: src/decl-macros/macros-practical.md:286
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "    impl Iterator for Recurrence {\n"
@@ -2759,25 +2728,23 @@ msgid ""
 "                Some(next_val)\n"
 "```"
 msgstr ""
-"錆、無視\n"
-"    暗黙の反復子\n"
-"        型 Item = u64; \n"
+"```rust,ignore\n"
+"    impl Iterator for Recurrence {\n"
+"        type Item = u64;\n"
 "\n"
-"        fn next(&amp;mut self) -&gt; オプション<Self::Item> {。\n"
-"            if self.pos &lt; 2 { if self.pos &lt; 2\n"
-"                let next_val = self.mem[self.pos]; \n"
-"                self.pos += 1; \n"
-"                some(next_val)\n"
+"        fn next(&mut self) -> Option<Self::Item> {\n"
+"            if self.pos < 2 {\n"
+"                let next_val = self.mem[self.pos];\n"
+"                self.pos += 1;\n"
+"                Some(next_val)\n"
 "```"
 
 #: src/decl-macros/macros-practical.md:297
-#, fuzzy
 msgid ""
 "We need a branch to yield the initial values of the sequence; nothing tricky."
-msgstr "難しいことは何もありません。"
+msgstr "シーケンスの初期値を返す分岐が必要です; 難しいことはないですね。"
 
 #: src/decl-macros/macros-practical.md:299
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "            } else {\n"
@@ -2794,35 +2761,34 @@ msgid ""
 "    }\n"
 "```"
 msgstr ""
-"錆、無視\n"
+"```rust,ignore\n"
 "            } else {\n"
-"                let a = /* 何か */; \n"
-"                let n = self.pos; \n"
-"                let next_val = a[n-2] + a[n-1]; \n"
+"                let a = /* something */;\n"
+"                let n = self.pos;\n"
+"                let next_val = a[n-2] + a[n-1];\n"
 "\n"
-"                self.mem.TODO_shuffle_down_and_append(next_val); \n"
+"                self.mem.TODO_shuffle_down_and_append(next_val);\n"
 "\n"
-"                self.pos += 1; \n"
-"                some(next_val)\n"
+"                self.pos += 1;\n"
+"                Some(next_val)\n"
 "            }\n"
 "        }\n"
 "    }\n"
 "```"
 
 #: src/decl-macros/macros-practical.md:314
-#, fuzzy
 msgid ""
 "This is a bit harder; we'll come back and look at _how_ exactly to define `a`. "
 "Also, `TODO_shuffle_down_and_append` is another placeholder; I want something "
 "that places `next_val` on the end of the array, shuffling the rest down by one "
 "space, dropping the 0th element."
 msgstr ""
-"これは少し難しいので、`a`をどのように正確に定義するかについては、また後で説明し"
-"ます。また、`TODO_shuffle_down_and_append`もプレースホルダです。`next_val`を配"
-"列の末尾に配置し、残りの要素を1つ下にシャッフルして、0番目の要素を削除します。"
+"これは少し難しいです; `a`を _どのように_ 正確に定義するかについては、また後で説"
+"明します。また、`TODO_shuffle_down_and_append` もプレースホルダです。"
+"`next_val` を配列の末尾に配置し、残りの要素を1つ下にシャッフルして、0番目の要素"
+"を削除するものが必要です。"
 
 #: src/decl-macros/macros-practical.md:318
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "\n"
@@ -2832,25 +2798,23 @@ msgid ""
 "for e in fib.take(10) { println!(\"{}\", e) }\n"
 "```"
 msgstr ""
-"錆、無視\n"
+"```rust,ignore\n"
 "\n"
-"    再帰{ mem: [0, 1], pos: 0 }\n"
+"    Recurrence { mem: [0, 1], pos: 0 }\n"
 "};\n"
 "\n"
-"for e in fib.take(10) { println!(\"{}\", e) }.\n"
+"for e in fib.take(10) { println!(\"{}\", e) }\n"
 "```"
 
 #: src/decl-macros/macros-practical.md:326
-#, fuzzy
 msgid ""
 "Lastly, return an instance of our new structure, which can then be iterated "
 "over. To summarize, the complete expansion is:"
 msgstr ""
-"最後に、新しい構造体のインスタンスを返します。要約すると、完全な展開は次のよう"
-"になります:"
+"最後に、イテレーション可能な新しい構造体のインスタンスを返します。要約すると、"
+"完全な展開は次のようになります:"
 
 #: src/decl-macros/macros-practical.md:329
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "let fib = {\n"
@@ -2886,53 +2850,51 @@ msgid ""
 "for e in fib.take(10) { println!(\"{}\", e) }\n"
 "```"
 msgstr ""
-"錆,無視\n"
+"```rust,ignore\n"
 "let fib = {\n"
 "    struct Recurrence {\n"
 "        mem: [u64; 2],\n"
-"        pos: usize、\n"
+"        pos: usize,\n"
 "    }\n"
 "\n"
-"    impl Iterator for Recurrence { { {: アイテム\n"
-"        型 Item = u64; \n"
+"    impl Iterator for Recurrence {\n"
+"        type Item = u64;\n"
 "\n"
-"        fn next(&amp;mut self) -&gt; オプション<u64> {。\n"
-"            if self.pos &lt; 2 { if self.pos &lt; 2\n"
-"                let next_val = self.mem[self.pos]; \n"
-"                self.pos += 1; \n"
-"                some(next_val)\n"
+"        fn next(&mut self) -> Option<u64> {\n"
+"            if self.pos < 2 {\n"
+"                let next_val = self.mem[self.pos];\n"
+"                self.pos += 1;\n"
+"                Some(next_val)\n"
 "            } else {\n"
-"                let a = /* 何か */; \n"
-"                let n = self.pos; \n"
-"                let next_val = (a[n-2] + a[n-1]); \n"
+"                let a = /* something */;\n"
+"                let n = self.pos;\n"
+"                let next_val = (a[n-2] + a[n-1]);\n"
 "\n"
-"                self.mem.TODO_shuffle_down_and_append(next_val.clone()); \n"
+"                self.mem.TODO_shuffle_down_and_append(next_val.clone());\n"
 "\n"
-"                self.pos += 1; \n"
-"                ある(next_val)\n"
+"                self.pos += 1;\n"
+"                Some(next_val)\n"
 "            }\n"
 "        }\n"
 "    }\n"
 "\n"
-"    再帰 { mem: [0, 1], pos: 0 }\n"
+"    Recurrence { mem: [0, 1], pos: 0 }\n"
 "};\n"
 "\n"
-"for e in fib.take(10) { println!(\"&lt;0/&gt;\", e) }.\n"
+"for e in fib.take(10) { println!(\"{}\", e) }\n"
 "```"
 
 #: src/decl-macros/macros-practical.md:363
-#, fuzzy
 msgid ""
 "**Aside**: Yes, this _does_ mean we're defining a different `Recurrence` "
 "struct and its implementation for each invocation. Most of this will optimise "
 "away in the final binary."
 msgstr ""
 "**余談ですが**: そうですね、これは呼び出しごとに異なる `Recurrence` 構造体とそ"
-"の実装を定義していることを意味します。このほとんどは最終的なバイナリで最適化さ"
-"れます。"
+"の実装を _定義している_ ことを意味します。このほとんどは最終的なバイナリで最適"
+"化されます。"
 
 #: src/decl-macros/macros-practical.md:366
-#, fuzzy
 msgid ""
 "It's also useful to check your expansion as you're writing it. If you see "
 "anything in the expansion that needs to vary with the invocation, but _isn't_ "
@@ -2941,13 +2903,12 @@ msgid ""
 "the user wants, nor is it in the macro syntax. So let's fix that."
 msgstr ""
 "書きながら展開をチェックするのも便利です。展開の中に、マクロの呼び出しによって"
-"変化する必要があるが、マクロの実際の構文にはないものがあれば、それをどこに導入"
-"すればよいかを検討する必要があります。この場合、`u64`を追加しましたが、これは必"
-"ずしもユーザーが望むものではありませんし、マクロ構文にもありません。ですから、"
-"それを修正しましょう。"
+"変化する必要があり、それでいてマクロの実際の構文には _ない_ ものがあれば、それ"
+"をどこに導入すればよいかを検討する必要があります。この場合、`u64` を追加しまし"
+"たが、これは必ずしもユーザーが望むものではありませんし、マクロ構文にもありませ"
+"ん。ですから、それを修正しましょう。"
 
 #: src/decl-macros/macros-practical.md:370
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! recurrence {\n"
@@ -2963,39 +2924,37 @@ msgid ""
 "# fn main() {}\n"
 "```"
 msgstr ""
-"ラスト\n"
-"macro_rules!\n"
-"    ( a[n]: $sty:ty = $($inits:expr),+ , ..., $recur:expr ) => { /* ... */ };\n"
+"```rust\n"
+"macro_rules! recurrence {\n"
+"    ( a[n]: $sty:ty = $($inits:expr),+ , ... , $recur:expr ) => { /* ... "
+"*/ };\n"
 "}\n"
 "\n"
 "/*\n"
-"let fib = recurrence![a[n]: u64 = 0, 1, ..., a[n-2] + a[n-1]]; \n"
+"let fib = recurrence![a[n]: u64 = 0, 1, ..., a[n-2] + a[n-1]];\n"
 "\n"
-"for e in fib.take(10) { println!(\"{}\", e) } /* let fib = recurrence!\n"
+"for e in fib.take(10) { println!(\"{}\", e) }\n"
 "*/\n"
-"# fn main() {}.\n"
+"# fn main() {}\n"
 "```"
 
 #: src/decl-macros/macros-practical.md:383
-#, fuzzy
 msgid "Here, I've added a new metavariable: `sty` which should be a type."
-msgstr "ここでは、新しいメタ変数を追加しました: これは型であるべきです。"
+msgstr "ここでは、新しいメタ変数を追加しました: `sty` は型である必要があります。"
 
 #: src/decl-macros/macros-practical.md:385
-#, fuzzy
 msgid ""
 "**Aside**: if you're wondering, the bit after the colon in a metavariable can "
 "be one of several kinds of syntax matchers. The most common ones are `item`, "
 "`expr`, and `ty`. A complete explanation can be found in [Macros, A Methodical "
 "Introduction; `macro_rules!` (Matchers)](./macros-methodical.md#metavariables)."
 msgstr ""
-"**余談**: もし気になるようでしたら、メタ変数のコロンの後のビットはいくつかの種"
-"類の構文マッチャのうちの1つになります。最も一般的なものは `item`、`expr`、`ty` "
-"です。完全な説明は [Macros, A Methodical Introduction; `macro_rules!` "
+"**余談**: 気になっているかも知れませんが、メタ変数のコロンの後のビットはいくつ"
+"かの構文 matcher のうちの1つになります。最も一般的なものは `item`、`expr`、"
+"`ty` です。完全な説明は [Macros, A Methodical Introduction; `macro_rules!` "
 "(Matchers)](./macros-methodical.md#metavariables) にあります。"
 
 #: src/decl-macros/macros-practical.md:389
-#, fuzzy
 msgid ""
 "There's one other thing to be aware of: in the interests of future-proofing "
 "the language, the compiler restricts what tokens you're allowed to put _after_ "
@@ -3003,13 +2962,13 @@ msgid ""
 "to match expressions or statements; those can _only_ be followed by one of "
 "`=>`, `,`, and `;`."
 msgstr ""
-"もう1つ注意しなければならないことがあります。コンパイラは将来的な言語の安全性を"
-"確保するために、マッチャーの種類に応じて、マッチャーの後にどのようなトークンを"
-"置くことができるかを制限しています。一般的には、式や文にマッチさせようとすると"
-"きにこのようなことが起こります。"
+"もう1つ注意しなければならないことがあります: コンパイラは将来的な言語の安全性を"
+"確保するために、matcher の後にどのようなトークンを置くことができるかを、"
+"matcher の種類に応じて制限しています。一般的に、式や文にマッチさせようとすると"
+"きに現れるものです; `=>` と `,` および `;` のうち1つ _しか_ 後に置くことができ"
+"ません。"
 
 #: src/decl-macros/macros-practical.md:393
-#, fuzzy
 msgid ""
 "A complete list can be found in [Macros, A Methodical Introduction; Minutiae;"
 "Metavariables and Expansion Redux](./minutiae/metavar-and-expansion.md)."
