@@ -3365,25 +3365,11 @@ msgid "Now, let's expand the invocation."
 msgstr ""
 
 #: src/decl-macros/macros-practical.md:1298
-msgid "As you can see, the "
-msgstr ""
-
-#: src/decl-macros/macros-practical.md:1298
-#: src/decl-macros/macros-practical.md:1298
-#: src/decl-macros/minutiae/hygiene.md:33
-#: src/decl-macros/minutiae/hygiene.md:33
-msgid "a"
-msgstr ""
-
-#: src/decl-macros/macros-practical.md:1298
-msgid " that's defined by the macro invocation is in a different context to the "
-msgstr ""
-
-#: src/decl-macros/macros-practical.md:1298
 msgid ""
-" we provided in our invocation. As such, the compiler treats them as "
-"completely different identifiers, _even though they have the same lexical "
-"appearance_."
+"As you can see, the `a` that's defined by the macro invocation is in a "
+"different context to the `a` we provided in our invocation. As such, the "
+"compiler treats them as completely different identifiers, _even though they "
+"have the same lexical appearance_."
 msgstr ""
 
 #: src/decl-macros/macros-practical.md:1301
@@ -4886,6 +4872,11 @@ msgid ""
 "given a new, unique syntax context for its contents. As a result, there are "
 "_two different `a`s_ in the expanded code: one in the first syntax context, "
 "the second in the other. In other words, "
+msgstr ""
+
+#: src/decl-macros/minutiae/hygiene.md:33
+#: src/decl-macros/minutiae/hygiene.md:33
+msgid "a"
 msgstr ""
 
 #: src/decl-macros/minutiae/hygiene.md:33
