@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-10-17 12:19+0900\n"
+"PO-Revision-Date: 2023-10-17 17:58+0900\n"
 "Last-Translator: MORI, Yuji <ashiojin@gmail.com>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -59,7 +59,6 @@ msgid "Minutiae"
 msgstr "詳細"
 
 #: src/SUMMARY.md:15 src/decl-macros/minutiae/fragment-specifiers.md:1
-#, fuzzy
 msgid "Fragment Specifiers"
 msgstr "フラグメント指定子"
 
@@ -1728,9 +1727,9 @@ msgid ""
 "around the matcher and braces around the expansion are somewhat conventional. "
 "The expansion part of a rule is also called its _transcriber_."
 msgstr ""
-"先ほどと同様、使用する括弧の種類は何でもかまいませんが、matcher を括弧で囲み、"
-"展開部を中括弧で囲むのが慣習的なようです。ルールの展開部分は、_transcriber_ と"
-"も呼ばれます。"
+"先ほどと同様、使用する括弧の種類は何でもかまいませんが、 マッチャー（matcher） "
+"を括弧で囲み、展開部を中括弧で囲むのが慣習的なようです。ルールの展開部分は、"
+"_transcriber_ とも呼ばれます。"
 
 #: src/decl-macros/macros-methodical.md:36
 msgid ""
@@ -1770,7 +1769,7 @@ msgid ""
 msgstr ""
 "`macro_rules!` マクロが呼び出されると、 `macro_rules!` インタプリタは、宣言順に"
 "１つ１つルールを調査します。各ルールに対し、ルールの `matcher` と、入力トークン"
-"ツリーの内容がマッチするか試します。matcher は入力の _全体_ とマッチしなけれ"
+"ツリーの内容がマッチするか試します。マッチャーは入力の _全体_ とマッチしなけれ"
 "ば、マッチしたものと考えられません。"
 
 #: src/decl-macros/macros-methodical.md:49
@@ -1779,13 +1778,13 @@ msgid ""
 "`expansion`; otherwise, the next rule is tried. If all rules fail to match, "
 "the expansion fails with an error."
 msgstr ""
-"入力が matcher にマッチした場合、その呼び出しは `expansion` に置き換えられま"
+"入力がマッチャーにマッチした場合、その呼び出しは `expansion` に置き換えられま"
 "す。そうでなければ次のルールが試行されます。すべてのルールがマッチしなかった場"
 "合、展開に失敗してエラーになります。"
 
 #: src/decl-macros/macros-methodical.md:52
 msgid "The simplest example is of an empty matcher:"
-msgstr "最も単純な例は空の matcher です:"
+msgstr "最も単純な例は空のマッチャーです:"
 
 #: src/decl-macros/macros-methodical.md:54
 msgid ""
@@ -1827,8 +1826,8 @@ msgid ""
 "This is done by simply writing the token trees normally. For example, to match "
 "the sequence `4 fn ['spang \"whammo\"] @_@`, you would write:"
 msgstr ""
-"matcher はリテラルトークンツリーを含めることもでき、ぴったりとマッチする必要が"
-"あります。これは、単純にトークンツリーを通常通り書くことで表現されます。例え"
+"マッチャーはリテラルトークンツリーを含めることもでき、ぴったりとマッチする必要"
+"があります。これは、単純にトークンツリーを通常通り書くことで表現されます。例え"
 "ば、`4 fn ['spang \"whammo\"] @_@` というシーケンスにマッチさせるには、次のよう"
 "に書きます:"
 
@@ -1860,9 +1859,9 @@ msgid ""
 "some general grammar category, with the result captured to a metavariable "
 "which can then be substituted into the output."
 msgstr ""
-"matcher はキャプチャを含むこともできます。これにより、一般的な文法カテゴリに基"
-"づいて入力をマッチングし、その結果をメタ変数にキャプチャして出力に代入すること"
-"ができます。"
+"マッチャーはキャプチャを含むこともできます。これにより、一般的な文法カテゴリに"
+"基づいて入力をマッチングし、その結果をメタ変数にキャプチャして出力に代入するこ"
+"とができます。"
 
 #: src/decl-macros/macros-methodical.md:83
 msgid ""
@@ -2010,7 +2009,7 @@ msgid ""
 "To refer to a metavariable you simply write `$name`, as the type of the "
 "variable is already specified in the matcher. For example:"
 msgstr ""
-"メタ変数を参照するには、変数の型は matcher にすでに指定されていますから、単に "
+"メタ変数を参照するには、変数の型はマッチャーにすでに指定されていますから、単に "
 "`$name` と書きます。例えば:"
 
 #: src/decl-macros/macros-methodical.md:116
@@ -2038,7 +2037,7 @@ msgstr ""
 
 #: src/decl-macros/macros-methodical.md:125
 msgid "You can also have multiple metavariables in a single matcher:"
-msgstr "1つの matcher に複数のメタ変数を指定することもできます:"
+msgstr "1つのマッチャーに複数のメタ変数を指定することもできます:"
 
 #: src/decl-macros/macros-methodical.md:127
 msgid ""
@@ -2095,8 +2094,8 @@ msgid ""
 "Matchers can contain repetitions. These allow a sequence of tokens to be "
 "matched. These have the general form `$ ( ... ) sep rep`."
 msgstr ""
-"matcher には反復を含めることができます。これらは一連のトークンにマッチさせるこ"
-"とができます。これは一般的な形式 `$ ( ... ) sep rep` を持ちます。"
+"マッチャーには反復を含めることができます。これらは一連のトークンにマッチさせる"
+"ことができます。これは一般的な形式 `$ ( ... ) sep rep` を持ちます。"
 
 #: src/decl-macros/macros-methodical.md:154
 msgid "`$` is a literal dollar token."
@@ -2104,7 +2103,7 @@ msgstr "`$` はリテラルのドル記号トークンです。"
 
 #: src/decl-macros/macros-methodical.md:155
 msgid "`( ... )` is the paren-grouped matcher being repeated."
-msgstr "`( ... )` は括弧でグループ化された反復対象の matcher です。"
+msgstr "`( ... )` は括弧でグループ化された反復対象のマッチャーです。"
 
 #: src/decl-macros/macros-methodical.md:156
 msgid ""
@@ -2142,7 +2141,7 @@ msgid ""
 "trees, metavariables, and other repetitions allowing arbitrary nesting."
 msgstr ""
 "反復には、リテラル・トークン・ツリー、メタ変数、任意の入れ子が可能な他の反復な"
-"ど、他の有効な matcher を含めることができます。"
+"ど、他の有効なマッチャーを含めることができます。"
 
 #: src/decl-macros/macros-methodical.md:167
 msgid ""
@@ -2949,7 +2948,7 @@ msgid ""
 "Introduction; `macro_rules!` (Matchers)](./macros-methodical.md#metavariables)."
 msgstr ""
 "**余談**: 気になっているかも知れませんが、メタ変数のコロンの後のビットはいくつ"
-"かの構文 matcher のうちの1つになります。最も一般的なものは `item`、`expr`、"
+"かの構文マッチャーのうちの1つになります。最も一般的なものは `item`、`expr`、"
 "`ty` です。完全な説明は [Macros, A Methodical Introduction; `macro_rules!` "
 "(Matchers)](./macros-methodical.md#metavariables) にあります。"
 
@@ -2962,7 +2961,7 @@ msgid ""
 "`=>`, `,`, and `;`."
 msgstr ""
 "もう1つ注意しなければならないことがあります: コンパイラは将来的な言語の安全性を"
-"確保するために、matcher の後にどのようなトークンを置くことができるかを、"
+"確保するために、マッチャーの後にどのようなトークンを置くことができるかを、"
 "matcher の種類に応じて制限しています。一般的に、式や文にマッチさせようとすると"
 "きに現れるものです; これらは `=>` と `,` および `;` のうち1つ _しか_ 後に置くこ"
 "とができません。"
@@ -5452,119 +5451,99 @@ msgstr ""
 "とも、これらの詳細や問題点について認識だけでもしておくべきです。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:3
-#, fuzzy
 msgid ""
 "As mentioned in the [`methodical introduction`](../macros-methodical.md) "
 "chapter, Rust, as of 1.60, has 14 fragment specifiers. This section will go a "
 "bit more into detail for some of them and shows a few example inputs of what "
 "each matcher matches."
 msgstr ""
-"メソッド紹介`](../macros-methodical.md)の章で述べたように、Rust 1.60では14個の"
-"フラグメント指定子があります。このセクションでは、そのうちのいくつかについても"
-"う少し詳しく説明し、各マッチャーがマッチする入力例をいくつか示します。"
+"[`方法論的イントロダクション`](../macros-methodical.md)の章で述べたように、"
+"Rust 1.60には14個のフラグメント指定子があります。このセクションでは、そのうちの"
+"いくつかについてもう少し詳しく説明し、各マッチャーがマッチする入力例をいくつか"
+"示します。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:6
-#, fuzzy
 msgid ""
 "**Note**: Capturing with anything but the `ident`, `lifetime` and `tt` "
 "fragments will render the captured AST opaque, making it impossible to further "
 "match it with other fragment specifiers in future macro invocations."
 msgstr ""
-"**注意**: ident`、`lifetime`、`tt`以外のフラグメントでキャプチャすると、キャプ"
-"チャした AST が不透明になり、今後マクロを呼び出す際に他のフラグメント指定子と"
-"マッチさせることができなくなります。"
+"**注意**: `ident`、`lifetime`、`tt`以外のフラグメントでキャプチャすると、キャプ"
+"チャされた AST が不透明になり、以降のマクロを呼び出し時に他のフラグメント指定子"
+"とマッチさせることができなくなります。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:8
-#, fuzzy
 msgid "[`block`](#block)"
-msgstr "[ブロック`](#ブロック)"
+msgstr "[`block`](#block)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:9
-#, fuzzy
 msgid "[`expr`](#expr)"
 msgstr "[`expr`](#expr)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:10
-#, fuzzy
 msgid "[`ident`](#ident)"
-msgstr "[ident`](#ident)"
+msgstr "[`ident`](#ident)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:11
-#, fuzzy
 msgid "[`item`](#item)"
-msgstr "[アイテム`](#item)"
+msgstr "[`item`](#item)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:12
-#, fuzzy
 msgid "[`lifetime`](#lifetime)"
-msgstr "[ライフタイム`](#lifetime)"
+msgstr "[`lifetime`](#lifetime)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:13
-#, fuzzy
 msgid "[`literal`](#literal)"
-msgstr "[リテラル`](#literal)"
+msgstr "[`literal`](#literal)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:14
-#, fuzzy
 msgid "[`meta`](#meta)"
-msgstr "[meta`](#meta)"
+msgstr "[`meta`](#meta)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:15
-#, fuzzy
 msgid "[`pat`](#pat)"
-msgstr "[pat`](#pat)"
+msgstr "[`pat`](#pat)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:16
-#, fuzzy
 msgid "[`pat_param`](#pat_param)"
-msgstr "[pat_param`](#pat_param)"
+msgstr "[`pat_param`](#pat_param)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:17
-#, fuzzy
 msgid "[`path`](#path)"
-msgstr "[パス`](#path)"
+msgstr "[`path`](#path)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:18
-#, fuzzy
 msgid "[`stmt`](#stmt)"
-msgstr "[stmt`](#stmt)。"
+msgstr "[`stmt`](#stmt)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:19
-#, fuzzy
 msgid "[`tt`](#tt)"
-msgstr "[tt`](#tt)"
+msgstr "[`tt`](#tt)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:20
-#, fuzzy
 msgid "[`ty`](#ty)"
-msgstr "(#ty)"
+msgstr "[`ty`](#ty)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:21
-#, fuzzy
 msgid "[`vis`](#vis)"
-msgstr "[ヴィス`](#ヴィス)"
+msgstr "[`vis`](#vis)"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:23
-#, fuzzy
 msgid "`block`"
-msgstr ""
-"ネストされたブロックは、ブロックの本体に追加のインデントが必要になります。\n"
-"ブロックからデータを返したり、変数を再定義するに、追加の1行が必要です。"
+msgstr "`block`"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:25
-#, fuzzy
 msgid ""
 "The `block` fragment solely matches a [block expression](https://doc.rust-lang."
 "org/reference/expressions/block-expr.html), which consists of an opening `{` "
 "brace, followed by any number of statements and finally followed by a closing "
 "`}` brace."
 msgstr ""
-"ブロック`フラグメントは[ブロック式](https://doc.rust-lang.org/reference/"
-"expressions/block-expr.html)にのみマッチします。ブロック式は中括弧`{`で始まり、"
-"任意の数のステートメントが続き、最後に中括弧`}`で終わります。"
+"`block` フラグメントは[ブロック式](https://doc.rust-lang.org/reference/"
+"expressions/block-expr.html)にのみマッチします。ブロック式は開き括弧 `{` で始ま"
+"り、任意の数のステートメントが続き、最後に閉じ括弧 `}` で終わります。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:27
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! blocks {\n"
@@ -5581,23 +5560,22 @@ msgid ""
 "# fn main() {}\n"
 "```"
 msgstr ""
-"ラスト\n"
-"マクロルール！ブロック {\n"
-"    ($($block:block)*) => (); \n"
+"```rust\n"
+"macro_rules! blocks {\n"
+"    ($($block:block)*) => ();\n"
 "}\n"
 "\n"
-"ブロックを作成します！{\n"
+"blocks! {\n"
 "    {}\n"
 "    {\n"
-"        zig; \n"
+"        let zig;\n"
 "    }\n"
 "    { 2 }\n"
 "}\n"
-"# fn main() [1］\n"
+"# fn main() {}\n"
 "```"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:42
-#, fuzzy
 msgid "`expr`"
 msgstr "`expr`"
 
@@ -6622,18 +6600,16 @@ msgstr ""
 "```"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:3
-#, fuzzy
 msgid ""
 "Once the parser begins consuming tokens for a metavariable, _it cannot stop or "
 "backtrack_. This means that the second rule of the following macro _cannot "
 "ever match_, no matter what input is provided:"
 msgstr ""
-"いったんパーサーがメタ変数のトークンを消費し始めると、_停止したりバックトラック"
-"することはできません。つまり、次のマクロの2番目のルールは、どのような入力が提供"
-"されたとしても、決してマッチしません:"
+"いったんパーサがメタ変数のトークンを消費し始めると、 _中断したりバックトラック"
+"することはできません_ 。これは、次のマクロの2番目のルールは、どのような入力が与"
+"えられたとしても _決してマッチしない_ 、ということです:"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:6
-#, fuzzy
 msgid ""
 "```ignore\n"
 "macro_rules! dead_rule {\n"
@@ -6642,15 +6618,14 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"無視\n"
-"マクロルール！ dead_rule { ($e:expr) => { ...\n"
-"    ($e:expr) => { ...};\n"
-"    ($i:ident +) => { ...};\n"
+"```ignore\n"
+"macro_rules! dead_rule {\n"
+"    ($e:expr) => { ... };\n"
+"    ($i:ident +) => { ... };\n"
 "}\n"
 "```"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:13
-#, fuzzy
 msgid ""
 "Consider what happens if this macro is invoked as `dead_rule!(x+)`. The "
 "interpreter will start at the first rule, and attempt to parse the input as an "
@@ -6659,27 +6634,25 @@ msgid ""
 msgstr ""
 "このマクロを `dead_rule!(x+)` として呼び出したらどうなるか考えてみましょう。イ"
 "ンタープリタは最初のルールから開始し、入力を式として解析しようとします。最初の"
-"トークン `x` は式として有効です。2番目のトークンも式として有効であり、2進数の加"
-"算ノードを形成します。"
+"トークン `x` は式として有効です。2番目のトークンも式の中にて有効であり、2項加算"
+"のノードを構成します。"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:18
-#, fuzzy
 msgid ""
 "At this point, given that there is no right-hand side of the addition, you "
 "might expect the parser to give up and try the next rule. Instead, the parser "
 "will panic and abort the entire compilation, citing a syntax error."
 msgstr ""
-"この時点で、加算の右辺がないことを考えると、パーサーはあきらめて次のルールを試"
-"すと思うかもしれません。しかしパーサーはパニックを起こし、構文エラーを理由にコ"
-"ンパイル全体を中断します。"
+"さてここで、加算の右辺がないことを考えると、パーサはあきらめて次のルールを試す"
+"と期待しているかもしれません。しかしそうではなく、パーサはパニックを起こし、コ"
+"ンパイル全体を中断し、構文エラーを提示します。"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:21
-#, fuzzy
 msgid ""
 "As such, it is important in general that you write macro rules from most-"
 "specific to least-specific."
 msgstr ""
-"そのため、一般的には、最も特殊なものから最も特殊でないものへとマクロルールを記"
+"そのため、一般的には、最も特殊なものから特殊でないものへと順にマクロルールを記"
 "述することが重要です。"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:23
@@ -9767,7 +9740,6 @@ msgstr ""
 "```"
 
 #: src/decl-macros/patterns/internal-rules.md:46
-#, fuzzy
 msgid ""
 "This is definitely not the nicest solution we could have for this macro, as it "
 "pollutes the global macro namespace as mentioned earlier. In this specific "
@@ -9783,7 +9755,7 @@ msgstr ""
 "最も良い解決策ではありません。この特定のケースでは `as_expr` も一度しか使用しな"
 "い非常に単純なマクロなので、このマクロを内部ルールで `foo` マクロに \"埋め込み"
 "\" ましょう！このマクロは `as_expr` マクロで使用されているマッチャーを少し追加"
-"したものです。これは `as_expr` マクロで使用されている matcher から構成されてい"
+"したものです。これは `as_expr` マクロで使用されているマッチャーから構成されてい"
 "ますが、少し追加されています。特に要求された場合にのみマッチするようにトークン"
 "ツリーを追加しています。この場合、例えば `@as_expr` を使うことができるので、"
 "マッチャーは `(@as_expr $e:expr) => {$e};` となります。これで、このページの一番"
