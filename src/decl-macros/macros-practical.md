@@ -1111,7 +1111,7 @@ Now, let's expand the invocation.
 
 <pre class="rust rust-example-rendered"><span class="synctx-0"><span class="kw">let</span> <span class="ident">four</span> <span class="op">=</span> </span><span class="synctx-1">{&#xa;    <span class="kw">let</span> <span class="ident">a</span> <span class="op">=</span> <span class="number">42</span>;&#xa;    </span><span class="synctx-0"><span class="ident">a</span> <span class="op">/</span> <span class="number">10</span></span><span class="synctx-1">&#xa;}</span><span class="synctx-0">;</span></pre>
 
-As you can see, the <code><span class="synctx-1">a</span></code> that's defined by the macro invocation is in a different context to the <code><span class="synctx-0">a</span></code> we provided in our invocation.
+As you can see, the `a` that's defined by the macro invocation is in a different context to the `a` we provided in our invocation.
 As such, the compiler treats them as completely different identifiers, *even though they have the same lexical appearance*.
 
 This is something to be *really* careful of when working on `macro_rules!` macros, syntax extensions in general even: they can produce ASTs which
