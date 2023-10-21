@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-10-21 19:02+0900\n"
+"PO-Revision-Date: 2023-10-22 13:17+0900\n"
 "Last-Translator: MORI, Yuji <ashiojin@gmail.com>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -98,9 +98,8 @@ msgid "Callbacks"
 msgstr "コールバック"
 
 #: src/SUMMARY.md:25 src/decl-macros/patterns/tt-muncher.md:1
-#, fuzzy
 msgid "Incremental TT Munchers"
-msgstr "インクリメンタルTTマンチャー"
+msgstr "漸進的TT消化器"
 
 #: src/SUMMARY.md:26 src/decl-macros/patterns/internal-rules.md:1
 #, fuzzy
@@ -2140,8 +2139,8 @@ msgid ""
 "Repetitions can contain any other valid matcher, including literal token "
 "trees, metavariables, and other repetitions allowing arbitrary nesting."
 msgstr ""
-"反復には、リテラル・トークン・ツリー、メタ変数、任意の入れ子が可能な他の反復な"
-"ど、他の有効なマッチャーを含めることができます。"
+"反復には、リテラルトークンツリー、メタ変数、任意の入れ子が可能な他の反復など、"
+"他の有効なマッチャーを含めることができます。"
 
 #: src/decl-macros/macros-methodical.md:167
 msgid ""
@@ -5628,8 +5627,8 @@ msgid ""
 "The `ident` fragment matches an [identifier](https://doc.rust-lang.org/"
 "reference/identifiers.html) or _keyword_."
 msgstr ""
-"ident` フラグメントは [識別子](https://doc.rust-lang.org/reference/identifiers."
-"html) または _キーワード_ にマッチします。"
+"`ident` フラグメントは [識別子](https://doc.rust-lang.org/reference/"
+"identifiers.html) または _キーワード_ にマッチします。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:64
 msgid ""
@@ -5861,7 +5860,7 @@ msgid ""
 msgstr ""
 "**docコメント の真実**: docコメント の `/// ...` や `//! ...` は実はアトリ"
 "ビュートのためのシンタックスシュガーです！これらはそれぞれ `#[doc=\"...\"]` と "
-"`#![doc=\"...\"]` に脱糖されるため、アトリビュートのようにマッチさせられます。"
+"`#![doc=\"...\"]` に脱糖されるため、アトリビュートのようにマッチさせられます！"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:161
 msgid "`pat`"
@@ -6176,12 +6175,10 @@ msgid "See the [debugging chapter](./debugging.md) for tips on how to do this."
 msgstr "やり方は、[デバッグの章](./debugging.md)を参照してください。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:284
-#, fuzzy
 msgid "`tt`"
-msgstr "tt`"
+msgstr "`tt`"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:286
-#, fuzzy
 msgid ""
 "The `tt` fragment matches a TokenTree. If you need a refresher on what exactly "
 "a TokenTree was you may want to revisit the [TokenTree chapter](../../syntax-"
@@ -6189,39 +6186,35 @@ msgid ""
 "one of the most powerful fragments, as it can match nearly anything while "
 "still allowing you to inspect the contents of it at a later state in the macro."
 msgstr ""
-"tt` フラグメントは TokenTree にマッチします。もしTokenTreeが何なのか再確認した"
-"い場合は、この本の[TokenTreeの章](../../syntax-extensions/source-analysis."
-"md#token-trees)をもう一度読んでみてください。tt` フラグメントは最も強力なフラグ"
-"メントの1つで、ほぼすべてのものにマッチすることができ、マクロの後の段階でその内"
-"容を検査することができます。"
+"`tt` フラグメントはトークンツリーにマッチします。もしトークンツリーが何なのか再"
+"確認したい場合は、この本の[トークンツリーの章](../../syntax-extensions/source-"
+"analysis.md#token-trees)をもう一度読んでみてください。 `tt` フラグメントは最も"
+"強力なフラグメントの1つで、ほぼすべてのものにマッチすることができ、マクロの後段"
+"にてその内容を調査することもできます。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:290
-#, fuzzy
 msgid ""
 "This allows one to make use of very powerful patterns like the [tt-muncher](../"
 "patterns/tt-muncher.md) or the [push-down-accumulator](../patterns/push-down-"
 "acc.md)."
 msgstr ""
-"これにより、[tt-muncher](../patterns/tt-muncher.md)や[push-down-accumulator]"
-"(../patterns/push-down-acc.md)のような非常に強力なパターンを利用することができ"
-"ます。"
+"これにより、[tt消化器](../patterns/tt-muncher.md)や[プッシュダウンアキュムレー"
+"ター](../patterns/push-down-acc.md)のような非常に強力なパターンを利用することが"
+"できます。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:292
-#, fuzzy
 msgid "`ty`"
-msgstr "ty`。"
+msgstr "`ty`"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:294
-#, fuzzy
 msgid ""
 "The `ty` fragment matches any kind of [type expression](https://doc.rust-lang."
 "org/reference/types.html#type-expressions)."
 msgstr ""
-"ty`フラグメントはあらゆる種類の[型表現](https://doc.rust-lang.org/reference/"
+"`ty` フラグメントはあらゆる種類の[型式](https://doc.rust-lang.org/reference/"
 "types.html#type-expressions)にマッチします。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:296
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! types {\n"
@@ -6237,36 +6230,33 @@ msgid ""
 "# fn main() {}\n"
 "```"
 msgstr ""
-"ラスト\n"
-"macro_rules!\n"
-"    ($($type:ty)*) => (); \n"
+"```rust\n"
+"macro_rules! types {\n"
+"    ($($type:ty)*) => ();\n"
 "}\n"
 "\n"
-"型！{\n"
+"types! {\n"
 "    foo::bar\n"
-"    ブール\n"
+"    bool\n"
 "    [u8]\n"
-"    impl IntoIterator<Item = u32>.\n"
+"    impl IntoIterator<Item = u32>\n"
 "}\n"
-"# fn main() [0］\n"
+"# fn main() {}\n"
 "```"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:310
-#, fuzzy
 msgid "`vis`"
-msgstr "vis`。"
+msgstr "`vis`"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:312
-#, fuzzy
 msgid ""
 "The `vis` fragment matches a _possibly empty_ [Visibility qualifier](https://"
 "doc.rust-lang.org/reference/visibility-and-privacy.html)."
 msgstr ""
-"vis`フラグメントは_possibly empty_ [Visibility qualifier](https://doc.rust-"
-"lang.org/reference/visibility-and-privacy.html)にマッチします。"
+"`vis`フラグメントは _空を含めた_ [可視性修飾子](https://doc.rust-lang.org/"
+"reference/visibility-and-privacy.html)にマッチします。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:314
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! visibilities {\n"
@@ -6284,42 +6274,39 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"ラスト\n"
-"macro_rules!\n"
-"    // vis` フラグメントを単独で繰り返すことはできないので、このコンマに注意し"
-"てください。\n"
-"    ($($vis:vis,)*) => (); \n"
+"```rust\n"
+"macro_rules! visibilities {\n"
+"    //         ∨~~カンマに注意。 `vis` フラグメントのみを繰り返すことは不可能で"
+"す。\n"
+"    ($($vis:vis,)*) => ();\n"
 "}\n"
 "\n"
-"visibilities！{\n"
-"    // 暗黙の `?\n"
-"    pub、\n"
-"    pub(crate)、\n"
-"    pub(in super)、\n"
-"    pub(in some_path)、\n"
+"visibilities! {\n"
+"    , // 暗黙の `?` によって、 vis なしはOK\n"
+"    pub,\n"
+"    pub(crate),\n"
+"    pub(in super),\n"
+"    pub(in some_path),\n"
 "}\n"
 "```"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:329
-#, fuzzy
 msgid ""
 "While able to match empty sequences of tokens, the fragment specifier still "
 "acts quite different from [optional repetitions](../macros-methodical."
 "md#repetitions) which is described in the following:"
 msgstr ""
-"このフラグメント指定子は、空のトークンのシーケンスにマッチさせることができます"
-"が、以下で説明する[optional repetitions](../macros-methodical.md#repetitions)と"
-"は全く異なる動作をします:"
+"このフラグメント指定子は、空のトークンのシーケンスにマッチしますが、以下で説明"
+"する[任意の反復](../macros-methodical.md#repetitions)とは全く異なる動作をしま"
+"す:"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:331
-#, fuzzy
 msgid ""
 "If it is being matched against no left over tokens the entire macro matching "
 "fails."
-msgstr "残っているトークンがない場合、マクロ・マッチング全体が失敗します。"
+msgstr "もし残っているトークンがない場合、マクロのマッチ自体が失敗します。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:332
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! non_optional_vis {\n"
@@ -6329,23 +6316,23 @@ msgid ""
 "// ^^^^^^^^^^^^^^^^ error: missing tokens in macro arguments\n"
 "```"
 msgstr ""
-"ラスト\n"
-"マクロルール！ non_optional_vis { ($vis:vis) => (;;)\n"
-"    ($vis:vis) => (); \n"
+"```rust\n"
+"macro_rules! non_optional_vis {\n"
+"    ($vis:vis) => ();\n"
 "}\n"
-"non_optional_vis!\n"
-"// エラー: マクロ引数にトークンがありません。\n"
+"non_optional_vis!();\n"
+"// ^^^^^^^^^^^^^^^^ error: missing tokens in macro arguments\n"
 "```"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:340
-#, fuzzy
 msgid ""
 "`$vis:vis $ident:ident` matches fine, unlike `$(pub)? $ident:ident` which is "
 "ambiguous, as `pub` denotes a valid identifier."
-msgstr "vis:vis $ident:ident` は、`$(pub)?ident:ident`とは異なり、`$(pub)?"
+msgstr ""
+"`$vis:vis $ident:ident` はマッチします。対して `$(pub)? $ident:ident` は曖昧で"
+"す。`pub` は有効な識別子を表すためです。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:341
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! vis_ident {\n"
@@ -6361,31 +6348,29 @@ msgid ""
 "parsing options: built-in NTs ident ('ident') or 1 other option.\n"
 "```"
 msgstr ""
-"ラスト\n"
-"マクロルール！ vis_ident {\n"
-"    ($vis:vis $ident:ident) => (); \n"
+"```rust\n"
+"macro_rules! vis_ident {\n"
+"    ($vis:vis $ident:ident) => ();\n"
 "}\n"
-"vis_ident!(pub foo); // これは問題なく動作します。\n"
+"vis_ident!(pub foo); // これは動作します\n"
 "\n"
-"macro_rules!\n"
-"    ($(pub)?ident:ident) => (); \n"
+"macro_rules! pub_ident {\n"
+"    ($(pub)? $ident:ident) => ();\n"
 "}\n"
-"pub_ident!(pub foo); \n"
+"pub_ident!(pub foo);\n"
 "        // ^^^ error: local ambiguity when calling macro `pub_ident`: multiple "
-"parsing options: 組み込み NT の ident ('ident') または他の 1 つのオプション。\n"
+"parsing options: built-in NTs ident ('ident') or 1 other option.\n"
 "```"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:354
-#, fuzzy
 msgid ""
 "Being a fragment that matches the empty token sequence also gives it a very "
 "interesting quirk in combination with `tt` fragments and recursive expansions."
 msgstr ""
-"空のトークン列にマッチするフラグメントであることは、`tt`フラグメントや再帰的展"
-"開と組み合わせて、非常に興味深い癖を与えます。"
+"空のトークン列にマッチするフラグメントであることは、 `tt` フラグメントや再帰的"
+"展開と組み合わせたとき、非常に興味深い奇妙な動作を引き起こします。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:356
-#, fuzzy
 msgid ""
 "When matching the empty token sequence, the metavariable will still count as a "
 "capture and since it is not a `tt`, `ident` or `lifetime` fragment it will "
@@ -6393,13 +6378,12 @@ msgid ""
 "another macro invocation that captures it as a `tt` you effectively end up "
 "with token tree that contains nothing!"
 msgstr ""
-"空のトークンシーケンスにマッチする場合、メタ変数はキャプチャとしてカウントさ"
-"れ、 `tt`、`ident`、`lifetime` フラグメントではないため、それ以降の展開には不透"
-"明になります。つまり、このキャプチャを `tt` としてキャプチャする別のマクロに渡"
-"すと、何も含まないトークンツリーになってしまいます！"
+"空のトークンシーケンスにマッチする場合、メタ変数はキャプチャに含まれつつ、これ"
+"は `tt`、`ident`、`lifetime` フラグメントではないために、更なる展開には不透明に"
+"なります。つまり、このキャプチャを `tt` としてキャプチャする別のマクロに渡す"
+"と、何も含まないトークンツリーになってしまいます！"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:359
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! it_is_opaque {\n"
@@ -6415,17 +6399,17 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"錆\n"
-"マクロルール！ it_is_opaque {\n"
+"```rust\n"
+"macro_rules! it_is_opaque {\n"
 "    (()) => { \"()\" };\n"
-"    (($tt:tt)) => { concat!(\"$tt is \", stringify!($tt))};\n"
-"    ($vis:vis ,) => { it_is_opaque!( ($vis) ); }.\n"
+"    (($tt:tt)) => { concat!(\"$tt is \", stringify!($tt)) };\n"
+"    ($vis:vis ,) => { it_is_opaque!( ($vis) ); }\n"
 "}\n"
 "fn main() {\n"
-"    再帰呼び出しでは 2 番目の分岐で空の tt が返されるため、 // \"$tt is \" と表"
-"示されます。\n"
-"    // と表示されます！\n"
-"    println!(\"{}\", it_is_opaque!(,)); \n"
+"    // これは \"$tt is \" を出力します。再帰呼び出しにて１つめのブランチにマッ"
+"チせず、\n"
+"    // ２つめのブランチに空の tt としてヒットするためです！\n"
+"    println!(\"{}\", it_is_opaque!(,));\n"
 "}\n"
 "```"
 
@@ -6807,18 +6791,16 @@ msgstr ""
 "それ以降その結果を直接出力に代入することしかできません。"
 
 #: src/decl-macros/minutiae/metavar-expr.md:7
-#, fuzzy
 msgid ""
 "Note: The example code snippets are very bare bones, trying to show off how "
 "they work. If you think you got small snippets with proper isolated usage of "
 "these expression please submit them!"
 msgstr ""
-"注意: サンプル・コード・スニペットは、どのように動作するかを示すための、非常に"
-"素朴なものです。これらの式の適切な分離された使用法を持つ小さなスニペットがある"
-"場合は、それを提出してください！"
+"注意: 例示のコードスニペットは、どのように動作するかを示すための、ごく簡素なも"
+"のです。もし、これらの式の適切で分離された使用法の小さなスニペットが思いついた"
+"ら、それを提供してください！"
 
 #: src/decl-macros/minutiae/metavar-expr.md:9
-#, fuzzy
 msgid ""
 "As mentioned in the [`methodical introduction`](../macros-methodical.md), Rust "
 "has special expressions that can be used by macro transcribers to obtain "
@@ -6826,15 +6808,14 @@ msgid ""
 "impossible to get. This chapter will introduce them more in-depth together "
 "with usage examples."
 msgstr ""
-"メソッド紹介](../macros-methodical.md) で述べたように、Rust には特別な表現があ"
-"り、マクロの書き起こし担当者が、他の方法では取得が難しい、あるいは不可能なメタ"
-"変数に関する情報を取得するために使用することができます。この章では、使用例とと"
-"もに、それらをより詳しく紹介します。"
+"[方法論的イントロダクション](../macros-methodical.md) で述べたように、マクロの"
+"トランスクライバーが、他の方法では取得が困難か不可能な、メタ変数に関する情報を"
+"取得するために使用可能な、特別な式がRustにはあります。この章では、使用例ととも"
+"に、それらをより詳しく紹介します。"
 
 #: src/decl-macros/minutiae/metavar-expr.md:12
-#, fuzzy
 msgid "[`$$`](#dollar-dollar-)"
-msgstr "[ドル・ドル・ドル"
+msgstr "[`$$`](#dollar-dollar-)"
 
 #: src/decl-macros/minutiae/metavar-expr.md:13
 #, fuzzy
@@ -7547,13 +7528,12 @@ msgstr ""
 "```"
 
 #: src/decl-macros/minutiae/identifiers.md:3
-#, fuzzy
 msgid ""
 "There are two tokens which you are likely to run into eventually that _look_ "
 "like identifiers, but aren't. Except when they are."
 msgstr ""
-"識別子のように見えるが、そうではない2つのトークンがあります。そうである場合を除"
-"きます。"
+"あなたがいつか遭遇することになる、識別子のように _見える_ ものの、そうではない2"
+"つのトークンがあります。それらが識別子である場合は別ですが。"
 
 #: src/decl-macros/minutiae/identifiers.md:6
 #, fuzzy
@@ -8038,15 +8018,14 @@ msgstr ""
 "[`tt`](./fragment-specifiers.md#tt)マッチャーを使うしかありません。"
 
 #: src/decl-macros/minutiae/debugging.md:3
-#, fuzzy
 msgid ""
 "**Note**: This is a list of debugging tools specifically tailored towards "
 "declarative macros, additional means of debugging these can be found in the "
 "[debugging chapter](../../syntax-extensions/debugging.md) of syntax extensions."
 msgstr ""
 "**注意**: これは宣言的マクロに特化したデバッグツールのリストです。これらのデ"
-"バッグの追加手段は、構文拡張の[デバッグの章](../../syntax-extensions/debugging."
-"md)にあります。"
+"バッグの追加手段は、構文拡張の[デバッキングの章](../../syntax-extensions/"
+"debugging.md)にあります。"
 
 #: src/decl-macros/minutiae/debugging.md:5
 #, fuzzy
@@ -8231,13 +8210,12 @@ msgstr ""
 "す。マクロの文法をオートマトンとして視覚化します。"
 
 #: src/decl-macros/minutiae/scoping.md:3
-#, fuzzy
 msgid ""
 "The way in which mbe macros are scoped can be somewhat unintuitive. They use "
 "two forms of scopes: textual scope, and path-based scope."
 msgstr ""
-"mbeマクロのスコープは、やや直感的でない場合があります。テキストスコープとパス"
-"ベースのスコープです。"
+"mbeマクロのスコープは、やや直感的でない場合があります。２つの形式のスコープ、す"
+"なわちテキスト上のスコープとパスベースのスコープです。"
 
 #: src/decl-macros/minutiae/scoping.md:6
 #, fuzzy
@@ -8260,6 +8238,7 @@ msgid "Textual Scope"
 msgstr "テキストの範囲"
 
 #: src/decl-macros/minutiae/scoping.md:11
+#, fuzzy
 msgid ""
 "Firstly, unlike everything else in the language, function-like macros will "
 "remain visible in sub-modules."
