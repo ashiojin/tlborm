@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-10-22 13:17+0900\n"
+"PO-Revision-Date: 2023-10-23 17:21+0900\n"
 "Last-Translator: MORI, Yuji <ashiojin@gmail.com>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -63,9 +63,8 @@ msgid "Fragment Specifiers"
 msgstr "フラグメント指定子"
 
 #: src/SUMMARY.md:16 src/decl-macros/minutiae/metavar-and-expansion.md:1
-#, fuzzy
 msgid "Metavariables and Expansion Redux"
-msgstr "メタ変数と拡張"
+msgstr "メタ変数と再展開"
 
 #: src/SUMMARY.md:17 src/decl-macros/macros-methodical.md:243
 #: src/decl-macros/minutiae/metavar-expr.md:1
@@ -2031,7 +2030,7 @@ msgid ""
 "nodes. This means that no matter what sequence of tokens is captured by `$e`, "
 "it will be interpreted as a single, complete expression."
 msgstr ""
-"マクロ展開と同様に、メタ変数は完全な AST ノードとして置換されます。つまり、`$e`"
+"マクロ展開と同様に、メタ変数は完全な AST ノードとして代入されます。つまり、`$e`"
 "がどのようなトークンの並びであっても、それは1つの完全な式として解釈されます。"
 
 #: src/decl-macros/macros-methodical.md:125
@@ -6470,45 +6469,41 @@ msgstr ""
 "述することが重要です。"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:23
-#, fuzzy
 msgid ""
 "To defend against future syntax changes altering the interpretation of macro "
 "input, `macro_rules!` restricts what can follow various metavariables. The "
 "complete list, showing what may follow what fragment specifier, as of Rust "
 "1.46 is as follows:"
 msgstr ""
-"将来的な構文の変更によってマクロ入力の解釈が変わってしまうのを防ぐために、 "
-"`macro_rules!` は様々なメタ変数の後に続くものを制限しています。Rust 1.46時点で"
-"の、どのフラグメント指定子に何が続くかを示す完全なリストは以下の通りです:"
+"将来的な構文の変更によってマクロの入力の解釈が変わってしまうのを防ぐために、 "
+"`macro_rules!` はいくつかのメタ変数について後続可能なものを制限しています。"
+"Rust 1.46時点での、どのフラグメント指定子に何が後続可能かについて、完全なリスト"
+"は以下の通りです:"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:27
-#, fuzzy
 msgid ""
 "[`stmt`](./fragment-specifiers.md#stmt) and [`expr`](./fragment-specifiers."
 "md#expr): `=>`, `,`, or `;`"
 msgstr ""
-"[`stmt`](./fragment-specifiers.md#stmt)および[`expr`](./fragment-specifiers."
-"md#expr): には、`=>`、`,`、`;`のいずれかを指定します。"
+"[`stmt`](./fragment-specifiers.md#stmt) と [`expr`](./fragment-specifiers."
+"md#expr): `=>` 、 `,`または`;`"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:28
-#, fuzzy
 msgid ""
 "[`pat`](./fragment-specifiers.md#pat): `=>`, `,`, `=`, `if`, `in`[^pat-edition]"
 msgstr ""
-"[`pat`](./fragment-specifiers.md#pat): `=>`, `,`, `=`, `if`, `in`[^pat-"
+"[`pat`](./fragment-specifiers.md#pat): `=>`、 `,`、 `=`、 `if`、 `in`[^pat-"
 "edition]."
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:29
-#, fuzzy
 msgid ""
 "[`pat_param`](./fragment-specifiers.md#pat_param): `=>`, `,`, `=`, `|`, `if`, "
 "`in`"
 msgstr ""
-"[pat_param`](./fragment-specifiers.md#pat_param): `=>`, `,`, `=`, `|`, `if`, "
-"`in`."
+"[`pat_param`](./fragment-specifiers.md#pat_param): `=>`、 `,`、 `=`、 `|`、 "
+"`if`、 `in`"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:30
-#, fuzzy
 msgid ""
 "[`path`](./fragment-specifiers.md#path) and [`ty`](./fragment-specifiers."
 "md#ty):`=>`, `,`, `=`, `|`, `;`, `:`, `>`, `>>`, `[`, `{`, `as`, `where`, or a "
@@ -6516,62 +6511,58 @@ msgid ""
 "specifier."
 msgstr ""
 "[`path`](./fragment-specifiers.md#path) と [`ty`](./fragment-specifiers.md#ty):"
-"`=>`, `,`, `=`, `|`, `;`, `:`, `>`, `>>`, `[`, `{`, `as`, `where`, または "
-"[`block`](./fragment-specifiers.md#block) フラグメント指定子のマクロ変数。"
+"`=>`、 `,`、 `=`、 `|`、 `;`、 `:`、 `>`、 `>>`、 `[`、 `{`、 `as`、 `where`、"
+"または [`block`](./fragment-specifiers.md#block) フラグメント指定子のマクロ変"
+"数。"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:32
-#, fuzzy
 msgid ""
 "[`vis`](./fragment-specifiers.md#vis): `,`, an identifier other than a non-raw "
 "`priv`, any token that can begin a type or a metavariable with an [`ident`](./"
 "fragment-specifiers.md#ident), [`ty`](./fragment-specifiers.md#ty), or [`path`]"
 "(./fragment-specifiers.md#path) fragment specifier."
 msgstr ""
-"[`vis`](./fragment-specifiers.md#vis): `,`, `priv` 以外の識別子、[`ident`](./"
-"fragment-specifiers.md#ident)、[`ty`](./fragment-specifiers.md#ty)、または "
-"[`path`](./fragment-specifiers.md#path) フラグメント指定子で型またはメタ変数を"
-"開始できるトークン。"
+"[`vis`](./fragment-specifiers.md#vis): `,`、生でない `priv` 以外の識別子、"
+"[`ident`](./fragment-specifiers.md#ident) か [`ty`](./fragment-specifiers."
+"md#ty) または [`path`](./fragment-specifiers.md#path) フラグメント指定子で型ま"
+"たはメタ変数を開始できるトークン。"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:34
-#, fuzzy
 msgid "All other fragment specifiers have no restrictions."
 msgstr "その他のフラグメント指定子には制限がありません。"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:36
-#, fuzzy
 msgid ""
 "**Edition Differences**: Before the 2021 edition, `pat` may also be followed "
 "by `|`."
 msgstr ""
-"**エディションの違い**: 2021年版以前では、`pat` の後に `|` が続くこともありま"
+"**エディションの差異**: 2021年版以前では、`pat` の後に `|` が続くこともありま"
 "す。"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:38
-#, fuzzy
 msgid ""
 "Repetitions also adhere to these restrictions, meaning if a repetition can "
 "repeat multiple times(`*` or `+`), then the contents must be able to follow "
 "themselves. If a repetition can repeat zero times (`?` or `*`) then what comes "
 "after the repetition must be able to follow what comes before."
 msgstr ""
-"つまり、もし繰り返しが複数回(`*`または `+`)繰り返せるのであれば、その内容はそれ"
-"自体に従うことができなければなりません。繰り返しが0回(`?`または`*`)繰り返せる場"
-"合、繰り返しの後に来るものは前に来るものに従うことができなければなりません。"
+"繰り返しもまた、それらの制約を遵守します。つまり、もしある繰り返しが複数回(`*`"
+"または `+`)繰り返されるのであれば、その内容はそれ自体が後続可能である必要があり"
+"ます。繰り返しが0回(`?`または`*`)繰り返されるのであれば、繰り返しの次に来るもの"
+"は繰り返しの前のものに後続可能である必要があります。"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:41
-#, fuzzy
 msgid ""
 "The parser also does not perform any kind of lookahead. That means if the "
 "compiler cannot unambiguously determine how to parse the macro invocation one "
 "token at a time, it will abort with an ambiguity error. A simple example that "
 "triggers this:"
 msgstr ""
-"また、パーサーは先読みを行いません。つまり、コンパイラがマクロ呼び出しを 1 トー"
-"クンずつ解析する方法を明確に決定できない場合、あいまい性エラーで中断します。こ"
-"れを引き起こす簡単な例を示します:"
+"また、パーサーはあらゆる種類の先読みを行いません。つまりコンパイラが、マクロ呼"
+"び出しを1 トークンずつパースする方法を明確に決定できない場合、曖昧であるという"
+"エラーにより中断します。これを引き起こす簡単な例を示します:"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:45
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! ambiguity {\n"
@@ -6584,40 +6575,38 @@ msgid ""
 "ambiguity!(an_identifier);\n"
 "```"
 msgstr ""
-"錆\n"
-"macro_rules!\n"
-"    ($($i:ident)* $i2:ident) => { }; \n"
+"```rust\n"
+"macro_rules! ambiguity {\n"
+"    ($($i:ident)* $i2:ident) => { };\n"
 "}\n"
 "\n"
-"// エラー: \n"
-"// 組み込み NT の ident ('i') または ident ('i2') です。\n"
-"ambiguity!(an_identifier); \n"
+"// error:\n"
+"//    local ambiguity: multiple parsing options: built-in NTs ident ('i') or "
+"ident ('i2').\n"
+"ambiguity!(an_identifier);\n"
 "```"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:55
-#, fuzzy
 msgid ""
 "The parser does not look ahead past the identifier to see if the following "
 "token is a `)`, which would allow it to parse properly."
 msgstr ""
-"パーサーは識別子を越えて、次のトークンが `)` であるかどうかを調べません。"
+"パーサーは、正しくパース可能にするために、識別子を越えて次のトークンが `)` であ"
+"るかどうかを調べません。"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:57
-#, fuzzy
 msgid ""
 "One aspect of substitution that often surprises people is that substitution is "
 "_not_ token-based, despite very much _looking_ like it."
 msgstr ""
-"しばしば人々を驚かせる代入の1つの側面は、代入が非常にトークン・ベースであるよう"
-"に見えるにもかかわらず、トークン・ベースではないということです。"
+"代入についての、しばしば人々を驚かせる1つの側面は、代入がいかにもトークンベース"
+"であるように _見える_ にもかかわらず、 _そうでない_ ということです。"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:59
-#, fuzzy
 msgid "Consider the following:"
-msgstr "次のことを考えてみてください:"
+msgstr "以下を考えてみましょう:"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:61
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! capture_then_match_tokens {\n"
@@ -6642,38 +6631,36 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"ラスト\n"
-"マクロルール！ capture_then_match_tokens { ($e:expr => [0;])\n"
-"    ($e:expr) => {match_tokens!($e)}; \n"
+"```rust\n"
+"macro_rules! capture_then_match_tokens {\n"
+"    ($e:expr) => {match_tokens!($e)};\n"
 "}\n"
 "\n"
-"macro_rules!\n"
-"    ($a:tt + $b:tt) => {\"追加\"}; \n"
-"    (($i:ident)) => {\"識別子を取得\"}; \n"
-"    ($($other:tt)*) => {\"他のものを取得\"}; \n"
+"macro_rules! match_tokens {\n"
+"    ($a:tt + $b:tt) => {\"got an addition\"};\n"
+"    (($i:ident)) => {\"got an identifier\"};\n"
+"    ($($other:tt)*) => {\"got something else\"};\n"
 "}\n"
 "\n"
 "fn main() {\n"
 "    println!(\"{}\\n{}\\n{}\\n\",\n"
-"        match_tokens!((caravan))、\n"
-"        match_tokens!(3 + 6)、\n"
-"        match_tokens!(5)); \n"
+"        match_tokens!((caravan)),\n"
+"        match_tokens!(3 + 6),\n"
+"        match_tokens!(5));\n"
 "    println!(\"{}\\n{}\\n{}\",\n"
-"        capture_then_match_tokens!((キャラバン))、\n"
-"        capture_then_match_tokens!(3 + 6)、\n"
-"        capture_then_match_tokens!(5)); \n"
+"        capture_then_match_tokens!((caravan)),\n"
+"        capture_then_match_tokens!(3 + 6),\n"
+"        capture_then_match_tokens!(5));\n"
 "}\n"
 "```"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:84
 #: src/decl-macros/minutiae/metavar-and-expansion.md:123
 #: src/decl-macros/minutiae/debugging.md:26
-#, fuzzy
 msgid "The output is:"
-msgstr "出力は"
+msgstr "この出力は:"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:86
-#, fuzzy
 msgid ""
 "```text\n"
 "got an identifier\n"
@@ -6685,33 +6672,30 @@ msgid ""
 "got something else\n"
 "```"
 msgstr ""
-"テキスト\n"
-"識別子を取得\n"
-"追加を取得\n"
-"他の何かを取得\n"
+"```text\n"
+"got an identifier\n"
+"got an addition\n"
+"got something else\n"
 "\n"
-"他の何かを取得\n"
+"got something else\n"
 "got something else\n"
 "got something else\n"
 "```"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:96
-#, fuzzy
 msgid ""
 "By parsing the input into an AST node, the substituted result becomes _un-"
 "destructible_; _i.e._ you cannot examine the contents or match against it ever "
 "again."
 msgstr ""
-"入力をASTノードにパースすることによって、置換された結果は_破壊不可能_になりま"
-"す。"
+"入力をASTノードにパースすることによって、代入された結果は _破壊不可能_ になりま"
+"す。 すなわち、二度とその内容を調べたり、マッチさせたりすることができません。"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:99
-#, fuzzy
 msgid "Here is _another_ example which can be particularly confusing:"
-msgstr "特に混乱しやすい例を挙げましょう:"
+msgstr "_もう一つ_ 特に混乱しやすい例を挙げましょう:"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:101
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! capture_then_what_is {\n"
@@ -6736,31 +6720,30 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"ラスト\n"
-"マクロルール！ capture_then_what_is { (#[$m:meta] => [0;])\n"
-"    (#[$m:meta]) => {what_is!(#[$m])}; \n"
+"```rust\n"
+"macro_rules! capture_then_what_is {\n"
+"    (#[$m:meta]) => {what_is!(#[$m])};\n"
 "}\n"
 "\n"
-"macro_rules!\n"
-"    (#[no_mangle]) => {\"no_mangle属性\"}; \n"
-"    (#[inline]) => {\"インライン属性\"}; \n"
+"macro_rules! what_is {\n"
+"    (#[no_mangle]) => {\"no_mangle attribute\"};\n"
+"    (#[inline]) => {\"inline attribute\"};\n"
 "    ($($tts:tt)*) => {concat!(\"something else (\", stringify!($($tts)*), "
-"\")\")}; \n"
+"\")\")};\n"
 "}\n"
 "\n"
 "fn main() {\n"
-"    println!\n"
+"    println!(\n"
 "        \"{}\\n{}\\n{}\\n{}\",\n"
-"        what_is!(#[no_mangle])、\n"
-"        what_is!(#[inline])、\n"
-"        capture_then_what_is!(#[no_mangle])、\n"
-"        capture_then_what_is!(#[inline])、\n"
+"        what_is!(#[no_mangle]),\n"
+"        what_is!(#[inline]),\n"
+"        capture_then_what_is!(#[no_mangle]),\n"
+"        capture_then_what_is!(#[inline]),\n"
 "    );\n"
 "}\n"
 "```"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:125
-#, fuzzy
 msgid ""
 "```text\n"
 "no_mangle attribute\n"
@@ -6769,15 +6752,14 @@ msgid ""
 "something else (#[inline])\n"
 "```"
 msgstr ""
-"テキスト\n"
-"no_mangle属性\n"
-"インライン属性\n"
-"他の何か (#[no_mangle])\n"
-"他の何か (#[inline])\n"
+"```text\n"
+"no_mangle attribute\n"
+"inline attribute\n"
+"something else (#[no_mangle])\n"
+"something else (#[inline])\n"
 "```"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:132
-#, fuzzy
 msgid ""
 "The only way to avoid this is to capture using the [`tt`](./fragment-"
 "specifiers.md#tt), [`ident`](./fragment-specifiers.md#ident) or [`lifetime`](./"
@@ -6787,8 +6769,8 @@ msgid ""
 msgstr ""
 "これを避ける唯一の方法は、[`tt`](./fragment-specifiers.md#tt)、[`ident`](./"
 "fragment-specifiers.md#ident)、[`lifetime`](./fragment-specifiers.md#lifetime)"
-"のいずれかの種類を使ってキャプチャすることです。それ以外でキャプチャした場合、"
-"それ以降その結果を直接出力に代入することしかできません。"
+"のいずれかの種類を使ってキャプチャすることです。これら以外としてキャプチャした"
+"ならば、以降可能なことは、その結果を直接出力に代入することのみです。"
 
 #: src/decl-macros/minutiae/metavar-expr.md:7
 msgid ""
@@ -7297,15 +7279,14 @@ msgstr ""
 "```"
 
 #: src/decl-macros/minutiae/hygiene.md:3
-#, fuzzy
 msgid ""
 "`macro_rules!` macros in Rust are _partially_ hygienic, also called mixed "
 "hygiene. Specifically, they are hygienic when it comes to _local variables_, "
 "_labels_ and `$crate`, but nothing else."
 msgstr ""
-"Rust の `macro_rules!` マクロは部分的にハイジェニックです。具体的には、_local "
-"variables_, _labels_, `$crate` に関しては衛生的ですが、それ以外は衛生的ではあり"
-"ません。"
+"Rust の `macro_rules!` マクロは _部分的に_ ハイジーン（衛生的）です。混合的なハ"
+"イジーンとも言われます。具体的には、_ローカル変数_, _ラベル_, `$crate` に関して"
+"はハイジーンですが、それ以外に関してはそうではありません。"
 
 #: src/decl-macros/minutiae/hygiene.md:6
 #, fuzzy
