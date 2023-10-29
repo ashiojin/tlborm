@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
-"POT-Creation-Date: \n"
+"POT-Creation-Date: 2023-10-29T12:05:28+09:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -423,20 +423,6 @@ msgid ""
 "equivalent of:"
 msgstr ""
 
-#: src/syntax-extensions/source-analysis.md:58
-msgid ""
-"```text\n"
-"┌─────────┐   ┌─────────┐\n"
-"│ BinOp   │ ┌╴│ LitInt  │\n"
-"│ op: Add │ │ │ val: 1  │\n"
-"│ lhs: ◌  │╶┘ └─────────┘\n"
-"│ rhs: ◌  │╶┐ ┌─────────┐\n"
-"└─────────┘ └╴│ LitInt  │\n"
-"              │ val: 2  │\n"
-"              └─────────┘\n"
-"```"
-msgstr ""
-
 #: src/syntax-extensions/source-analysis.md:69
 msgid ""
 "The AST contains the structure of the _entire_ program, though it is based "
@@ -471,26 +457,8 @@ msgid ""
 "sequence of tokens:"
 msgstr ""
 
-#: src/syntax-extensions/source-analysis.md:87
-msgid ""
-"```text\n"
-"a + b + (c + d[0]) + e\n"
-"```"
-msgstr ""
-
 #: src/syntax-extensions/source-analysis.md:91
 msgid "would be parsed into the following token trees:"
-msgstr ""
-
-#: src/syntax-extensions/source-analysis.md:93
-msgid ""
-"```text\n"
-"«a» «+» «b» «+» «(   )» «+» «e»\n"
-"          ╭────────┴──────────╮\n"
-"           «c» «+» «d» «[   ]»\n"
-"                        ╭─┴─╮\n"
-"                         «0»\n"
-"```"
 msgstr ""
 
 #: src/syntax-extensions/source-analysis.md:101
@@ -498,33 +466,6 @@ msgid ""
 "Note that this has _no relationship_ to the AST the expression would "
 "produce; instead of a single root node, there are _seven_ token trees at the "
 "root level. For reference, the AST would be:"
-msgstr ""
-
-#: src/syntax-extensions/source-analysis.md:104
-msgid ""
-"```text\n"
-"                                          ┌─────────┐\n"
-"                                          │ BinOp   │\n"
-"                                          │ op: Add │\n"
-"                                        ┌╴│ lhs: ◌  │\n"
-"                            ┌─────────┐ │ │ rhs: ◌  │╶┐ ┌─────────┐\n"
-"                            │ BinOp   │╶┘ └─────────┘ └╴│ Var     │\n"
-"                            │ op: Add │                 │ name: e │\n"
-"                          ┌╴│ lhs: ◌  │                 └─────────┘\n"
-"┌─────────┐   ┌─────────┐ │ │ rhs: ◌  │╶┐ ┌─────────┐\n"
-"│ Var     │╶┐ │ BinOp   │╶┘ └─────────┘ └╴│ BinOp   │\n"
-"│ name: a │ │ │ op: Add │                 │ op: Add │\n"
-"└─────────┘ └╴│ lhs: ◌  │               ┌╴│ lhs: ◌  │\n"
-"┌─────────┐ ┌╴│ rhs: ◌  │   ┌─────────┐ │ │ rhs: ◌  │╶┐ ┌─────────┐\n"
-"│ Var     │╶┘ └─────────┘   │ Var     │╶┘ └─────────┘ └╴│ Index   │\n"
-"│ name: b │                 │ name: c │               ┌╴│ arr: ◌  │\n"
-"└─────────┘                 └─────────┘   ┌─────────┐ │ │ ind: ◌  │╶┐\n"
-"                                          │ Var     │╶┘ └─────────┘ │\n"
-"                                          │ name: d │   ┌─────────┐ │\n"
-"                                          └─────────┘   │ LitInt  │╶┘\n"
-"                                                        │ val: 0  │\n"
-"                                                        └─────────┘\n"
-"```"
 msgstr ""
 
 #: src/syntax-extensions/source-analysis.md:128
@@ -665,20 +606,6 @@ msgid ""
 "Rust code, the parser simply sees a collection of meaningless token trees. "
 "To make this clearer, we can replace all these syntactic \"black boxes\" "
 "with ⬚, leaving us with:"
-msgstr ""
-
-#: src/syntax-extensions/ast.md:68
-msgid ""
-"```text\n"
-"bitflags! ⬚\n"
-"\n"
-"lazy_static! ⬚\n"
-"\n"
-"fn main() {\n"
-"    let colors = vec! ⬚;\n"
-"    println! ⬚;\n"
-"}\n"
-"```"
 msgstr ""
 
 #: src/syntax-extensions/ast.md:79
@@ -837,32 +764,8 @@ msgstr ""
 msgid "For example, consider the following:"
 msgstr ""
 
-#: src/syntax-extensions/expansion.md:27
-msgid ""
-"```rust,ignore\n"
-"let eight = 2 * four!();\n"
-"```"
-msgstr ""
-
 #: src/syntax-extensions/expansion.md:31
 msgid "We can visualize this partial AST as follows:"
-msgstr ""
-
-#: src/syntax-extensions/expansion.md:33
-msgid ""
-"```text\n"
-"┌─────────────┐\n"
-"│ Let         │\n"
-"│ name: eight │   ┌─────────┐\n"
-"│ init: ◌     │╶─╴│ BinOp   │\n"
-"└─────────────┘   │ op: Mul │\n"
-"                ┌╴│ lhs: ◌  │\n"
-"     ┌────────┐ │ │ rhs: ◌  │╶┐ ┌────────────┐\n"
-"     │ LitInt │╶┘ └─────────┘ └╴│ Macro      │\n"
-"     │ val: 2 │                 │ name: four │\n"
-"     └────────┘                 │ body: ()   │\n"
-"                                └────────────┘\n"
-"```"
 msgstr ""
 
 #: src/syntax-extensions/expansion.md:47
@@ -874,35 +777,8 @@ msgid ""
 "expanding this invocation will result in the AST changing to:"
 msgstr ""
 
-#: src/syntax-extensions/expansion.md:52
-msgid ""
-"```text\n"
-"┌─────────────┐\n"
-"│ Let         │\n"
-"│ name: eight │   ┌─────────┐\n"
-"│ init: ◌     │╶─╴│ BinOp   │\n"
-"└─────────────┘   │ op: Mul │\n"
-"                ┌╴│ lhs: ◌  │\n"
-"     ┌────────┐ │ │ rhs: ◌  │╶┐ ┌─────────┐\n"
-"     │ LitInt │╶┘ └─────────┘ └╴│ BinOp   │\n"
-"     │ val: 2 │                 │ op: Add │\n"
-"     └────────┘               ┌╴│ lhs: ◌  │\n"
-"                   ┌────────┐ │ │ rhs: ◌  │╶┐ ┌────────┐\n"
-"                   │ LitInt │╶┘ └─────────┘ └╴│ LitInt │\n"
-"                   │ val: 1 │                 │ val: 3 │\n"
-"                   └────────┘                 └────────┘\n"
-"```"
-msgstr ""
-
 #: src/syntax-extensions/expansion.md:69
 msgid "This can be written out like so:"
-msgstr ""
-
-#: src/syntax-extensions/expansion.md:71
-msgid ""
-"```rust,ignore\n"
-"let eight = 2 * (1 + 3);\n"
-"```"
 msgstr ""
 
 #: src/syntax-extensions/expansion.md:75
@@ -942,22 +818,8 @@ msgid ""
 "`four!`; what happens if it expands to `1 + three!()`?"
 msgstr ""
 
-#: src/syntax-extensions/expansion.md:87
-msgid ""
-"```rust,ignore\n"
-"let x = four!();\n"
-"```"
-msgstr ""
-
 #: src/syntax-extensions/expansion.md:91
 msgid "Expands to:"
-msgstr ""
-
-#: src/syntax-extensions/expansion.md:93
-msgid ""
-"```rust,ignore\n"
-"let x = 1 + three!();\n"
-"```"
 msgstr ""
 
 #: src/syntax-extensions/expansion.md:97
@@ -965,13 +827,6 @@ msgid ""
 "This is resolved by the compiler checking the result of expansions for "
 "additional syntax extension invocations, and expanding them. Thus, a second "
 "expansion step turns the above into:"
-msgstr ""
-
-#: src/syntax-extensions/expansion.md:100
-msgid ""
-"```rust,ignore\n"
-"let x = 1 + 3;\n"
-"```"
 msgstr ""
 
 #: src/syntax-extensions/expansion.md:104
@@ -1050,14 +905,6 @@ msgid ""
 "following snippet:"
 msgstr ""
 
-#: src/syntax-extensions/hygiene.md:24
-msgid ""
-"```rust,ignore\n"
-"make_local!();\n"
-"assert_eq!(local, 0);\n"
-"```"
-msgstr ""
-
 #: src/syntax-extensions/hygiene.md:29
 msgid ""
 "If the `local` in `assert_eq!(local, 0);` resolves to the local defined by "
@@ -1070,14 +917,6 @@ msgid ""
 "Now let's assume we have some syntax extension `use_local` that expands to "
 "`local = 42;`, that is it makes _use_ of the identifier `local`. Then given "
 "the following snippet:"
-msgstr ""
-
-#: src/syntax-extensions/hygiene.md:33
-msgid ""
-"```rust,ignore\n"
-"let mut local = 0;\n"
-"use_local!();\n"
-"```"
 msgstr ""
 
 #: src/syntax-extensions/hygiene.md:38
@@ -1128,13 +967,6 @@ msgstr ""
 
 #: src/syntax-extensions/debugging.md:22
 msgid "compiled with the following command:"
-msgstr ""
-
-#: src/syntax-extensions/debugging.md:24
-msgid ""
-"```shell\n"
-"rustc +nightly -Zunpretty=expanded hello.rs\n"
-"```"
 msgstr ""
 
 #: src/syntax-extensions/debugging.md:28
@@ -1282,13 +1114,6 @@ msgstr ""
 msgid "Each _\"rule\"_ looks like the following:"
 msgstr ""
 
-#: src/decl-macros/macros-methodical.md:29
-msgid ""
-"```ignore\n"
-"    ($matcher) => {$expansion}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-methodical.md:33
 msgid ""
 "Like before, the types of parentheses used can be any kind, but parentheses "
@@ -1335,15 +1160,6 @@ msgstr ""
 
 #: src/decl-macros/macros-methodical.md:52
 msgid "The simplest example is of an empty matcher:"
-msgstr ""
-
-#: src/decl-macros/macros-methodical.md:54
-msgid ""
-"```rust,ignore\n"
-"macro_rules! four {\n"
-"    () => { 1 + 3 };\n"
-"}\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/macros-methodical.md:60
@@ -1480,15 +1296,6 @@ msgid ""
 "expression under the metavariable `$e`:"
 msgstr ""
 
-#: src/decl-macros/macros-methodical.md:103
-msgid ""
-"```rust,ignore\n"
-"macro_rules! one_expression {\n"
-"    ($e:expr) => {...};\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-methodical.md:109
 msgid ""
 "These metavariables leverage the Rust compiler's parser, ensuring that they "
@@ -1508,15 +1315,6 @@ msgid ""
 "variable is already specified in the matcher. For example:"
 msgstr ""
 
-#: src/decl-macros/macros-methodical.md:116
-msgid ""
-"```rust,ignore\n"
-"macro_rules! times_five {\n"
-"    ($e:expr) => { 5 * $e };\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-methodical.md:122
 msgid ""
 "Much like macro expansion, metavariables are substituted as complete AST "
@@ -1528,29 +1326,8 @@ msgstr ""
 msgid "You can also have multiple metavariables in a single matcher:"
 msgstr ""
 
-#: src/decl-macros/macros-methodical.md:127
-msgid ""
-"```rust,ignore\n"
-"macro_rules! multiply_add {\n"
-"    ($a:expr, $b:expr, $c:expr) => { $a * ($b + $c) };\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-methodical.md:133
 msgid "And use them as often as you like in the expansion:"
-msgstr ""
-
-#: src/decl-macros/macros-methodical.md:135
-msgid ""
-"```rust,ignore\n"
-"macro_rules! discard {\n"
-"    ($e:expr) => {};\n"
-"}\n"
-"macro_rules! repeat {\n"
-"    ($e:expr) => { $e; $e; $e; };\n"
-"}\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/macros-methodical.md:144
@@ -1671,49 +1448,12 @@ msgid ""
 "macro works:"
 msgstr ""
 
-#: src/decl-macros/macros-methodical.md:211
-msgid ""
-"```rust\n"
-"macro_rules! repeat_two {\n"
-"    ($($i:ident)*, $($i2:ident)*) => {\n"
-"        $( let $i: (); let $i2: (); )*\n"
-"    }\n"
-"}\n"
-"\n"
-"repeat_two!( a b c d e f, u v w x y z );\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-methodical.md:221
 msgid "But this does not:"
 msgstr ""
 
-#: src/decl-macros/macros-methodical.md:223
-msgid ""
-"```rust\n"
-"# macro_rules! repeat_two {\n"
-"#     ($($i:ident)*, $($i2:ident)*) => {\n"
-"#         $( let $i: (); let $i2: (); )*\n"
-"#     }\n"
-"# }\n"
-"\n"
-"repeat_two!( a b c d e f, x y z );\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-methodical.md:233
 msgid "failing with the following error"
-msgstr ""
-
-#: src/decl-macros/macros-methodical.md:235
-msgid ""
-"```\n"
-"error: meta-variable `i` repeats 6 times, but `i2` repeats 3 times\n"
-" --> src/main.rs:6:10\n"
-"  |\n"
-"6 |         $( let $i: (); let $i2: (); )*\n"
-"  |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/macros-methodical.md:245
@@ -1907,16 +1647,6 @@ msgid ""
 "you need to change it."
 msgstr ""
 
-#: src/decl-macros/macros-practical.md:46
-msgid ""
-"```rust,ignore\n"
-"macro_rules! recurrence {\n"
-"    ( a[n] = $($inits:expr),+ , ... , $recur:expr ) => { /* ... */ };\n"
-"}\n"
-"# fn main() {}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-practical.md:53
 msgid ""
 "Assuming you aren't familiar with the syntax, allow me to elucidate. This is "
@@ -1992,17 +1722,6 @@ msgid ""
 "I was looking for something like:"
 msgstr ""
 
-#: src/decl-macros/macros-practical.md:271
-msgid ""
-"```rust,ignore\n"
-"let fib = {\n"
-"    struct Recurrence {\n"
-"        mem: [u64; 2],\n"
-"        pos: usize,\n"
-"    }\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-practical.md:279
 msgid ""
 "This will be the actual iterator type. `mem` will be the memo buffer to hold "
@@ -2017,41 +1736,9 @@ msgid ""
 "_other_ sequences; we'll come to it."
 msgstr ""
 
-#: src/decl-macros/macros-practical.md:286
-msgid ""
-"```rust,ignore\n"
-"    impl Iterator for Recurrence {\n"
-"        type Item = u64;\n"
-"\n"
-"        fn next(&mut self) -> Option<Self::Item> {\n"
-"            if self.pos < 2 {\n"
-"                let next_val = self.mem[self.pos];\n"
-"                self.pos += 1;\n"
-"                Some(next_val)\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-practical.md:297
 msgid ""
 "We need a branch to yield the initial values of the sequence; nothing tricky."
-msgstr ""
-
-#: src/decl-macros/macros-practical.md:299
-msgid ""
-"```rust,ignore\n"
-"            } else {\n"
-"                let a = /* something */;\n"
-"                let n = self.pos;\n"
-"                let next_val = a[n-2] + a[n-1];\n"
-"\n"
-"                self.mem.TODO_shuffle_down_and_append(next_val);\n"
-"\n"
-"                self.pos += 1;\n"
-"                Some(next_val)\n"
-"            }\n"
-"        }\n"
-"    }\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/macros-practical.md:314
@@ -2195,31 +1882,6 @@ msgstr ""
 msgid "We can do this pretty easily with a wrapper type:"
 msgstr ""
 
-#: src/decl-macros/macros-practical.md:403
-msgid ""
-"```rust,ignore\n"
-"struct IndexOffset<'a> {\n"
-"    slice: &'a [u64; 2],\n"
-"    offset: usize,\n"
-"}\n"
-"\n"
-"impl<'a> Index<usize> for IndexOffset<'a> {\n"
-"    type Output = u64;\n"
-"\n"
-"    fn index<'b>(&'b self, index: usize) -> &'b u64 {\n"
-"        use std::num::Wrapping;\n"
-"\n"
-"        let index = Wrapping(index);\n"
-"        let offset = Wrapping(self.offset);\n"
-"        let window = Wrapping(2);\n"
-"\n"
-"        let real_index = index - offset + window;\n"
-"        &self.slice[real_index.0]\n"
-"    }\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-practical.md:425
 msgid ""
 "**Aside**: since lifetimes come up _a lot_ with people new to Rust, a quick "
@@ -2244,33 +1906,12 @@ msgstr ""
 msgid "This changes the definition of `a` to:"
 msgstr ""
 
-#: src/decl-macros/macros-practical.md:434
-msgid ""
-"```rust,ignore\n"
-"let a = IndexOffset { slice: &self.mem, offset: n };\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-practical.md:438
 msgid ""
 "The only remaining question is what to do about "
 "`TODO_shuffle_down_and_append`. I wasn't able to find a method in the "
 "standard library with exactly the semantics I wanted, but it isn't hard to "
 "do by hand."
-msgstr ""
-
-#: src/decl-macros/macros-practical.md:441
-msgid ""
-"```rust,ignore\n"
-"{\n"
-"    use std::mem::swap;\n"
-"\n"
-"    let mut swap_tmp = next_val;\n"
-"    for i in (0..2).rev() {\n"
-"        swap(&mut swap_tmp, &mut self.mem[i]);\n"
-"    }\n"
-"}\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/macros-practical.md:452
@@ -2394,22 +2035,6 @@ msgstr ""
 msgid "If we take this code and run it, we get:"
 msgstr ""
 
-#: src/decl-macros/macros-practical.md:544
-msgid ""
-"```text\n"
-"0\n"
-"1\n"
-"1\n"
-"2\n"
-"3\n"
-"5\n"
-"8\n"
-"13\n"
-"21\n"
-"34\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-practical.md:557
 msgid ""
 "Success! Now, let's copy & paste this into the macro expansion, and replace "
@@ -2504,18 +2129,6 @@ msgid ""
 "Obviously, we aren't _using_ the metavariables yet, but we can change that "
 "fairly easily. However, if we try to compile this, `rustc` aborts, telling "
 "us:"
-msgstr ""
-
-#: src/decl-macros/macros-practical.md:643
-msgid ""
-"```text\n"
-"error: local ambiguity: multiple parsing options: built-in NTs expr "
-"('inits') or 1 other option.\n"
-"  --> src/main.rs:75:45\n"
-"   |\n"
-"75 |     let fib = recurrence![a[n]: u64 = 0, 1, ..., a[n-2] + a[n-1]];\n"
-"   |\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/macros-practical.md:651
@@ -2750,17 +2363,6 @@ msgid ""
 "Somehow turning `inits` into a literal `2` is a little trickier. It turns "
 "out that there's no direct way to do this, but we _can_ do it by using a "
 "second `macro_rules!` macro. Let's take this one step at a time."
-msgstr ""
-
-#: src/decl-macros/macros-practical.md:822
-msgid ""
-"```rust\n"
-"macro_rules! count_exprs {\n"
-"    /* ??? */\n"
-"#     () => {}\n"
-"}\n"
-"# fn main() {}\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/macros-practical.md:830
@@ -3148,50 +2750,10 @@ msgstr ""
 msgid "And, when we compile our finished `macro_rules!` macro..."
 msgstr ""
 
-#: src/decl-macros/macros-practical.md:1128
-msgid ""
-"```text\n"
-"error[E0425]: cannot find value `a` in this scope\n"
-"  --> src/main.rs:68:50\n"
-"   |\n"
-"68 |     let fib = recurrence![a[n]: u64 = 1, 1; ...; a[n-2] + a[n-1]];\n"
-"   |                                                  ^ not found in this "
-"scope\n"
-"\n"
-"error[E0425]: cannot find value `n` in this scope\n"
-"  --> src/main.rs:68:52\n"
-"   |\n"
-"68 |     let fib = recurrence![a[n]: u64 = 1, 1; ...; a[n-2] + a[n-1]];\n"
-"   |                                                    ^ not found in this "
-"scope\n"
-"\n"
-"error[E0425]: cannot find value `a` in this scope\n"
-"  --> src/main.rs:68:59\n"
-"   |\n"
-"68 |     let fib = recurrence![a[n]: u64 = 1, 1; ...; a[n-2] + a[n-1]];\n"
-"   |                                                           ^ not found "
-"in this scope\n"
-"\n"
-"error[E0425]: cannot find value `n` in this scope\n"
-"  --> src/main.rs:68:61\n"
-"   |\n"
-"68 |     let fib = recurrence![a[n]: u64 = 1, 1; ...; a[n-2] + a[n-1]];\n"
-"   |                                                             ^ not found "
-"in this scope\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-practical.md:1154
 msgid ""
 "... wait, what? That can't be right... let's check what the macro is "
 "expanding to."
-msgstr ""
-
-#: src/decl-macros/macros-practical.md:1157
-msgid ""
-"```shell\n"
-"$ rustc +nightly -Zunpretty=expanded recurrence.rs\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/macros-practical.md:1161
@@ -3331,23 +2893,6 @@ msgid ""
 "The issue here is that identifiers in Rust syntax extensions are _hygienic_. "
 "That is, identifiers from two different contexts _cannot_ collide. To show "
 "the difference, let's take a simpler example."
-msgstr ""
-
-#: src/decl-macros/macros-practical.md:1272
-msgid ""
-"```rust,ignore\n"
-"macro_rules! using_a {\n"
-"    ($e:expr) => {\n"
-"        {\n"
-"            let a = 42;\n"
-"            $e\n"
-"        }\n"
-"    }\n"
-"}\n"
-"\n"
-"let four = using_a!(a / 10);\n"
-"# fn main() {}\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/macros-practical.md:1286
@@ -3585,22 +3130,6 @@ msgstr ""
 msgid "Which gives us:"
 msgstr ""
 
-#: src/decl-macros/macros-practical.md:1492
-msgid ""
-"```text\n"
-"1\n"
-"1\n"
-"2\n"
-"6\n"
-"24\n"
-"120\n"
-"720\n"
-"5040\n"
-"40320\n"
-"362880\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros-practical.md:1505
 msgid "Success!"
 msgstr ""
@@ -3695,24 +3224,6 @@ msgid ""
 "and finally followed by a closing `}` brace."
 msgstr ""
 
-#: src/decl-macros/minutiae/fragment-specifiers.md:27
-msgid ""
-"```rust\n"
-"macro_rules! blocks {\n"
-"    ($($block:block)*) => ();\n"
-"}\n"
-"\n"
-"blocks! {\n"
-"    {}\n"
-"    {\n"
-"        let zig;\n"
-"    }\n"
-"    { 2 }\n"
-"}\n"
-"# fn main() {}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/minutiae/fragment-specifiers.md:42
 msgid "`expr`"
 msgstr ""
@@ -3781,26 +3292,6 @@ msgid ""
 "identifiers that refer to items. This includes visibility modifiers."
 msgstr ""
 
-#: src/decl-macros/minutiae/fragment-specifiers.md:84
-msgid ""
-"```rust\n"
-"macro_rules! items {\n"
-"    ($($item:item)*) => ();\n"
-"}\n"
-"\n"
-"items! {\n"
-"    struct Foo;\n"
-"    enum Bar {\n"
-"        Baz\n"
-"    }\n"
-"    impl Foo {}\n"
-"    pub use crate::foo;\n"
-"    /*...*/\n"
-"}\n"
-"# fn main() {}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/minutiae/fragment-specifiers.md:101
 msgid "`lifetime`"
 msgstr ""
@@ -3810,22 +3301,6 @@ msgid ""
 "The `lifetime` fragment matches a [lifetime or "
 "label](https://doc.rust-lang.org/reference/tokens.html#lifetimes-and-loop-labels). "
 "It's quite similar to [`ident`](#ident) but with a prepended `'`."
-msgstr ""
-
-#: src/decl-macros/minutiae/fragment-specifiers.md:106
-msgid ""
-"```rust\n"
-"macro_rules! lifetimes {\n"
-"    ($($lifetime:lifetime)*) => ();\n"
-"}\n"
-"\n"
-"lifetimes! {\n"
-"    'static\n"
-"    'shiv\n"
-"    '_\n"
-"}\n"
-"# fn main() {}\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:119
@@ -3971,23 +3446,6 @@ msgid ""
 "style path. This includes the function style trait forms, `Fn() -> ()`."
 msgstr ""
 
-#: src/decl-macros/minutiae/fragment-specifiers.md:206
-msgid ""
-"```rust\n"
-"macro_rules! paths {\n"
-"    ($($path:path)*) => ();\n"
-"}\n"
-"\n"
-"paths! {\n"
-"    ASimplePath\n"
-"    ::A::B::C::D\n"
-"    G::<eneri>::C\n"
-"    FnMut(u32) -> ()\n"
-"}\n"
-"# fn main() {}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/minutiae/fragment-specifiers.md:220
 msgid "`stmt`"
 msgstr ""
@@ -4006,53 +3464,10 @@ msgid ""
 "macro that merely emits what it captures:"
 msgstr ""
 
-#: src/decl-macros/minutiae/fragment-specifiers.md:227
-msgid ""
-"```rust,ignore\n"
-"macro_rules! statements {\n"
-"    ($($stmt:stmt)*) => ($($stmt)*);\n"
-"}\n"
-"\n"
-"fn main() {\n"
-"    statements! {\n"
-"        struct Foo;\n"
-"        fn foo() {}\n"
-"        let zig = 3\n"
-"        let zig = 3;\n"
-"        3\n"
-"        3;\n"
-"        if true {} else {}\n"
-"        {}\n"
-"    }\n"
-"}\n"
-"\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/minutiae/fragment-specifiers.md:247
 msgid ""
 "Expanding this, via the [playground](https://play.rust-lang.org/) for "
 "example[^debugging], gives us roughly the following:"
-msgstr ""
-
-#: src/decl-macros/minutiae/fragment-specifiers.md:249
-msgid ""
-"```rust,ignore\n"
-"/* snip */\n"
-"\n"
-"fn main() {\n"
-"    struct Foo;\n"
-"    fn foo() { }\n"
-"    let zig = 3;\n"
-"    let zig = 3;\n"
-"    ;\n"
-"    3;\n"
-"    3;\n"
-"    ;\n"
-"    if true { } else { }\n"
-"    { }\n"
-"}\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:266
@@ -4133,23 +3548,6 @@ msgstr ""
 msgid ""
 "The `ty` fragment matches any kind of [type "
 "expression](https://doc.rust-lang.org/reference/types.html#type-expressions)."
-msgstr ""
-
-#: src/decl-macros/minutiae/fragment-specifiers.md:296
-msgid ""
-"```rust\n"
-"macro_rules! types {\n"
-"    ($($type:ty)*) => ();\n"
-"}\n"
-"\n"
-"types! {\n"
-"    foo::bar\n"
-"    bool\n"
-"    [u8]\n"
-"    impl IntoIterator<Item = u32>\n"
-"}\n"
-"# fn main() {}\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:310
@@ -4267,16 +3665,6 @@ msgid ""
 "Once the parser begins consuming tokens for a metavariable, _it cannot stop "
 "or backtrack_. This means that the second rule of the following macro "
 "_cannot ever match_, no matter what input is provided:"
-msgstr ""
-
-#: src/decl-macros/minutiae/metavar-and-expansion.md:6
-msgid ""
-"```ignore\n"
-"macro_rules! dead_rule {\n"
-"    ($e:expr) => { ... };\n"
-"    ($i:ident +) => { ... };\n"
-"}\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:13
@@ -4436,19 +3824,6 @@ msgstr ""
 msgid "The output is:"
 msgstr ""
 
-#: src/decl-macros/minutiae/metavar-and-expansion.md:86
-msgid ""
-"```text\n"
-"got an identifier\n"
-"got an addition\n"
-"got something else\n"
-"\n"
-"got something else\n"
-"got something else\n"
-"got something else\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/minutiae/metavar-and-expansion.md:96
 msgid ""
 "By parsing the input into an AST node, the substituted result becomes "
@@ -4486,16 +3861,6 @@ msgid ""
 "        capture_then_what_is!(#[inline]),\n"
 "    );\n"
 "}\n"
-"```"
-msgstr ""
-
-#: src/decl-macros/minutiae/metavar-and-expansion.md:125
-msgid ""
-"```text\n"
-"no_mangle attribute\n"
-"inline attribute\n"
-"something else (#[no_mangle])\n"
-"something else (#[inline])\n"
 "```"
 msgstr ""
 
@@ -4585,25 +3950,6 @@ msgid ""
 "to repeat it when transcribing, but there is no `$any` metavariable in its "
 "scope causing it to fail. With `$$` we can get around this as the "
 "transcriber of `foo` will no longer try to do the repetition.[^tt-$]"
-msgstr ""
-
-#: src/decl-macros/minutiae/metavar-expr.md:41
-msgid ""
-"```rust\n"
-"#![feature(macro_metavar_expr)]\n"
-"\n"
-"macro_rules! foo {\n"
-"    () => {\n"
-"        macro_rules! bar {\n"
-"            ( $$( $$any:tt )* ) => { $$( $$any )* };\n"
-"        }\n"
-"    };\n"
-"}\n"
-"\n"
-"foo!();\n"
-"bar!();\n"
-"# fn main() {}\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/minutiae/metavar-expr.md:57
@@ -4854,37 +4200,14 @@ msgid ""
 "something along the following lines:"
 msgstr ""
 
-#: src/decl-macros/minutiae/hygiene.md:22
-msgid ""
-"```text\n"
-"error[E0425]: cannot find value `a` in this scope\n"
-"  --> src/main.rs:13:21\n"
-"   |\n"
-"13 | let four = using_a!(a / 10);\n"
-"   |                     ^ not found in this scope\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/minutiae/hygiene.md:30
 msgid ""
 "Note that the background colour (_i.e._ syntax context) for the expanded "
 "macro _changes_ as part of expansion. Each `macro_rules!` macro expansion is "
 "given a new, unique syntax context for its contents. As a result, there are "
 "_two different `a`s_ in the expanded code: one in the first syntax context, "
-"the second in the other. In other words, "
-msgstr ""
-
-#: src/decl-macros/minutiae/hygiene.md:33
-#: src/decl-macros/minutiae/hygiene.md:33
-msgid "a"
-msgstr ""
-
-#: src/decl-macros/minutiae/hygiene.md:33
-msgid " is not the same identifier as "
-msgstr ""
-
-#: src/decl-macros/minutiae/hygiene.md:33
-msgid ", however similar they may appear."
+"the second in the other. In other words, `a` is not the same identifier as "
+"`a`, however similar they may appear."
 msgstr ""
 
 #: src/decl-macros/minutiae/hygiene.md:35
@@ -4950,20 +4273,6 @@ msgid ""
 "with a fully qualified module path when referring to non-macro items:"
 msgstr ""
 
-#: src/decl-macros/minutiae/hygiene.md:76
-msgid ""
-"```rust\n"
-"pub mod inner {\n"
-"    #[macro_export]\n"
-"    macro_rules! call_foo {\n"
-"        () => { $crate::inner::foo() };\n"
-"    }\n"
-"\n"
-"    pub fn foo() {}\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/minutiae/identifiers.md:3
 msgid ""
 "There are two tokens which you are likely to run into eventually that _look_ "
@@ -5001,14 +4310,6 @@ msgstr ""
 msgid "The above outputs:"
 msgstr ""
 
-#: src/decl-macros/minutiae/identifiers.md:29
-msgid ""
-"```text\n"
-"the keyword `self`\n"
-"the keyword `self`\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/minutiae/identifiers.md:34
 msgid ""
 "But that makes no sense; `call_with_ident!` required an identifier, matched "
@@ -5044,22 +4345,6 @@ msgstr ""
 msgid "This fails to compile with:"
 msgstr ""
 
-#: src/decl-macros/minutiae/identifiers.md:61
-msgid ""
-"```text\n"
-"error: `mut` must be followed by a named binding\n"
-" --> src/main.rs:2:24\n"
-"  |\n"
-"2 |     ($i:ident) => {let mut $i = $i;};\n"
-"  |                        ^^^^^^ help: remove the `mut` prefix: `self`\n"
-"...\n"
-"9 |         make_mutable!(self);\n"
-"  |         -------------------- in this macro invocation\n"
-"  |\n"
-"  = note: `mut` may be followed by `variable` and `variable @ pattern`\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/minutiae/identifiers.md:74
 msgid ""
 "So the macro will happily match `self` as an identifier, allowing you to use "
@@ -5093,28 +4378,6 @@ msgstr ""
 
 #: src/decl-macros/minutiae/identifiers.md:97
 msgid "This fails with:"
-msgstr ""
-
-#: src/decl-macros/minutiae/identifiers.md:99
-msgid ""
-"```text\n"
-"error[E0424]: expected value, found module `self`\n"
-"  --> src/main.rs:2:33\n"
-"   |\n"
-"2  |       ($i:ident) => {let mut $i = self;};\n"
-"   |                                   ^^^^ `self` value is a keyword only "
-"available in methods with a `self` parameter\n"
-"...\n"
-"8  | /     fn double(self) -> Dummy {\n"
-"9  | |         make_self_mutable!(mut_self);\n"
-"   | |         ----------------------------- in this macro invocation\n"
-"10 | |         mut_self.0 *= 2;\n"
-"11 | |         mut_self\n"
-"12 | |     }\n"
-"   | |_____- this function has a `self` parameter, but a macro invocation "
-"can only access identifiers it receives from parameters\n"
-"   |\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/minutiae/identifiers.md:116
@@ -5211,20 +4474,6 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/decl-macros/minutiae/identifiers.md:192
-msgid ""
-"```text\n"
-"error: no rules expected the token `_`\n"
-"  --> src/main.rs:12:21\n"
-"   |\n"
-"1  | macro_rules! double_method {\n"
-"   | -------------------------- when calling this macro\n"
-"...\n"
-"12 |     double_method! {_, 0}\n"
-"   |                     ^ no rules expected this token in macro call\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/minutiae/identifiers.md:203
 msgid ""
 "No, of course not. `_` is a keyword that is valid in patterns and "
@@ -5280,28 +4529,6 @@ msgid ""
 "each_tt!(trom qlip winp xod);\n"
 "#\n"
 "# fn main() {}\n"
-"```"
-msgstr ""
-
-#: src/decl-macros/minutiae/debugging.md:28
-msgid ""
-"```text\n"
-"note: trace_macro\n"
-"  --> src/main.rs:11:1\n"
-"   |\n"
-"11 | each_tt!(spim wak plee whum);\n"
-"   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
-"   |\n"
-"   = note: expanding `each_tt! { spim wak plee whum }`\n"
-"   = note: to `each_tt ! (wak plee whum) ;`\n"
-"   = note: expanding `each_tt! { wak plee whum }`\n"
-"   = note: to `each_tt ! (plee whum) ;`\n"
-"   = note: expanding `each_tt! { plee whum }`\n"
-"   = note: to `each_tt ! (whum) ;`\n"
-"   = note: expanding `each_tt! { whum }`\n"
-"   = note: to `each_tt ! () ;`\n"
-"   = note: expanding `each_tt! {  }`\n"
-"   = note: to ``\n"
 "```"
 msgstr ""
 
@@ -5625,15 +4852,6 @@ msgid ""
 "as in:"
 msgstr ""
 
-#: src/decl-macros/minutiae/scoping.md:185
-msgid ""
-"```rs\n"
-"#[macro_use]\n"
-"mod some_mod_that_defines_macros;\n"
-"mod some_mod_that_uses_those_macros;\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/minutiae/scoping.md:191
 msgid ""
 "The order here is important, swap the declaration order and it won't compile."
@@ -5668,21 +4886,6 @@ msgid ""
 "In Edition 2015 you have to use the `#[macro_use]` attribute that has "
 "already been introduced in the [scoping chapter](./scoping.md). This can be "
 "applied to _either_ modules or external crates. For example:"
-msgstr ""
-
-#: src/decl-macros/minutiae/import-export.md:12
-msgid ""
-"```rust\n"
-"#[macro_use]\n"
-"mod macros {\n"
-"    macro_rules! X { () => { Y!(); } }\n"
-"    macro_rules! Y { () => {} }\n"
-"}\n"
-"\n"
-"X!();\n"
-"#\n"
-"# fn main() {}\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/minutiae/import-export.md:24
@@ -6049,34 +5252,8 @@ msgid ""
 "change a macro that is called like this:"
 msgstr ""
 
-#: src/decl-macros/patterns/tt-muncher.md:74
-msgid ""
-"```rust\n"
-"# macro_rules! f { ($($tt:tt)*) => {} }\n"
-"f! {\n"
-"    fn f_u8(x: u32) -> u8;\n"
-"    fn f_u16(x: u32) -> u16;\n"
-"    fn f_u32(x: u32) -> u32;\n"
-"    fn f_u64(x: u64) -> u64;\n"
-"    fn f_u128(x: u128) -> u128;\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/patterns/tt-muncher.md:84
 msgid "To one that is called like this:"
-msgstr ""
-
-#: src/decl-macros/patterns/tt-muncher.md:85
-msgid ""
-"```rust\n"
-"# macro_rules! f { ($($tt:tt)*) => {} }\n"
-"f! { fn f_u8(x: u32) -> u8; }\n"
-"f! { fn f_u16(x: u32) -> u16; }\n"
-"f! { fn f_u32(x: u32) -> u32; }\n"
-"f! { fn f_u64(x: u64) -> u64; }\n"
-"f! { fn f_u128(x: u128) -> u128; }\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/patterns/tt-muncher.md:93
@@ -6101,25 +5278,6 @@ msgid ""
 "complexity. See [this "
 "comment](https://github.com/dtolnay/quote/blob/31c3be473d0457e29c4f47ab9cff73498ac804a7/src/lib.rs#L664-L746) "
 "for details."
-msgstr ""
-
-#: src/decl-macros/patterns/internal-rules.md:3
-#: src/decl-macros/patterns/internal-rules.md:53
-msgid ""
-"```rust\n"
-"#[macro_export]\n"
-"macro_rules! foo {\n"
-"    (@as_expr $e:expr) => {$e};\n"
-"\n"
-"    ($($tts:tt)*) => {\n"
-"        foo!(@as_expr $($tts)*)\n"
-"    };\n"
-"}\n"
-"#\n"
-"# fn main() {\n"
-"#     assert_eq!(foo!(42), 42);\n"
-"# }\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/patterns/internal-rules.md:18
@@ -6153,25 +5311,6 @@ msgid ""
 "We have two `macro_rules!` macros, the common [`as_expr!` "
 "macro](../building-blocks/ast-coercion.html) and a `foo` macro that makes "
 "use of the first one:"
-msgstr ""
-
-#: src/decl-macros/patterns/internal-rules.md:30
-msgid ""
-"```rust\n"
-"#[macro_export]\n"
-"macro_rules! as_expr { ($e:expr) => {$e} }\n"
-"\n"
-"#[macro_export]\n"
-"macro_rules! foo {\n"
-"    ($($tts:tt)*) => {\n"
-"        as_expr!($($tts)*)\n"
-"    };\n"
-"}\n"
-"#\n"
-"# fn main() {\n"
-"#     assert_eq!(foo!(42), 42);\n"
-"# }\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/patterns/internal-rules.md:46
@@ -6294,39 +5433,10 @@ msgid ""
 "so:"
 msgstr ""
 
-#: src/decl-macros/patterns/push-down-acc.md:30
-msgid ""
-"```rust,ignore\n"
-"macro_rules! init_array {\n"
-"    [$e:expr; $n:tt] => {\n"
-"        {\n"
-"            let e = $e;\n"
-"            [accum!($n, e.clone())]\n"
-"        }\n"
-"    };\n"
-"}\n"
-"macro_rules! accum {\n"
-"    (3, $e:expr) => { $e, accum!(2, $e) };\n"
-"    (2, $e:expr) => { $e, accum!(1, $e) };\n"
-"    (1, $e:expr) => { $e };\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/patterns/push-down-acc.md:46
 msgid ""
 "The expectation is that the expansion of the array literal would proceed as "
 "follows:"
-msgstr ""
-
-#: src/decl-macros/patterns/push-down-acc.md:48
-msgid ""
-"```rust,ignore\n"
-"    [accum!(3, e.clone())]\n"
-"    [e.clone(), accum!(2, e.clone())]\n"
-"    [e.clone(), e.clone(), accum!(1, e.clone())]\n"
-"    [e.clone(), e.clone(), e.clone()]\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/patterns/push-down-acc.md:55
@@ -6424,15 +5534,6 @@ msgid ""
 "rule that fails to match. This can make a large difference to compile times."
 msgstr ""
 
-#: src/decl-macros/patterns/repetition-replacement.md:3
-msgid ""
-"```rust,ignore\n"
-"macro_rules! replace_expr {\n"
-"    ($_t:tt $sub:expr) => {$sub};\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/patterns/repetition-replacement.md:9
 msgid ""
 "This pattern is where a matched repetition sequence is simply discarded, "
@@ -6444,31 +5545,6 @@ msgstr ""
 msgid ""
 "For example, consider constructing a default instance of a tuple with more "
 "than 12 elements (the limit as of Rust 1.2)."
-msgstr ""
-
-#: src/decl-macros/patterns/repetition-replacement.md:13
-msgid ""
-"```rust\n"
-"macro_rules! tuple_default {\n"
-"    ($($tup_tys:ty),*) => {\n"
-"        (\n"
-"            $(\n"
-"                replace_expr!(\n"
-"                    ($tup_tys)\n"
-"                    Default::default()\n"
-"                ),\n"
-"            )*\n"
-"        )\n"
-"    };\n"
-"}\n"
-"#\n"
-"# macro_rules! replace_expr {\n"
-"#     ($_t:tt $sub:expr) => {$sub};\n"
-"# }\n"
-"#\n"
-"# assert_eq!(tuple_default!(i32, bool, String), (i32::default(), "
-"bool::default(), String::default()));\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/patterns/repetition-replacement.md:34
@@ -6570,24 +5646,6 @@ msgid ""
 "necessary to employ an AST coercion."
 msgstr ""
 
-#: src/decl-macros/building-blocks/ast-coercion.md:7
-msgid ""
-"```rust\n"
-"# #![allow(dead_code)]\n"
-"macro_rules! as_expr { ($e:expr) => {$e} }\n"
-"macro_rules! as_item { ($i:item) => {$i} }\n"
-"macro_rules! as_pat  { ($p:pat)  => {$p} }\n"
-"macro_rules! as_stmt { ($s:stmt) => {$s} }\n"
-"macro_rules! as_ty   { ($t:ty)   => {$t} }\n"
-"\n"
-"as_item!{struct Dummy;}\n"
-"\n"
-"fn main() {\n"
-"    as_stmt!(let as_pat!(_): as_ty!(_) = as_expr!(42));\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/building-blocks/ast-coercion.md:22
 msgid ""
 "These coercions are often used with [push-down "
@@ -6623,35 +5681,11 @@ msgid ""
 "is to use replacement with a repetition match."
 msgstr ""
 
-#: src/decl-macros/building-blocks/counting.md:12
-msgid ""
-"```rust\n"
-"macro_rules! replace_expr {\n"
-"    ($_t:tt $sub:expr) => {$sub};\n"
-"}\n"
-"\n"
-"macro_rules! count_tts {\n"
-"    ($($tts:tt)*) => {0usize $(+ replace_expr!($tts 1usize))*};\n"
-"}\n"
-"#\n"
-"# fn main() {\n"
-"#     assert_eq!(count_tts!(0 1 2), 3);\n"
-"# }\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/building-blocks/counting.md:26
 msgid ""
 "This is a fine approach for smallish numbers, but will likely _crash the "
 "compiler_ with inputs of around 500 or so tokens. Consider that the output "
 "will look something like this:"
-msgstr ""
-
-#: src/decl-macros/building-blocks/counting.md:29
-msgid ""
-"```rust,ignore\n"
-"0usize + 1usize + /* ~500 `+ 1usize`s */ + 1usize\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/building-blocks/counting.md:33
@@ -6666,20 +5700,6 @@ msgstr ""
 
 #: src/decl-macros/building-blocks/counting.md:37
 msgid "An older approach is to use recursion."
-msgstr ""
-
-#: src/decl-macros/building-blocks/counting.md:39
-msgid ""
-"```rust\n"
-"macro_rules! count_tts {\n"
-"    () => {0usize};\n"
-"    ($_head:tt $($tail:tt)*) => {1usize + count_tts!($($tail)*)};\n"
-"}\n"
-"#\n"
-"# fn main() {\n"
-"#     assert_eq!(count_tts!(0 1 2), 3);\n"
-"# }\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/building-blocks/counting.md:50
@@ -6769,23 +5789,6 @@ msgid ""
 "and calling the `len` method."
 msgstr ""
 
-#: src/decl-macros/building-blocks/counting.md:113
-msgid ""
-"```rust\n"
-"macro_rules! replace_expr {\n"
-"    ($_t:tt $sub:expr) => {$sub};\n"
-"}\n"
-"\n"
-"macro_rules! count_tts {\n"
-"    ($($tts:tt)*) => {<[()]>::len(&[$(replace_expr!($tts ())),*])};\n"
-"}\n"
-"#\n"
-"# fn main() {\n"
-"#     assert_eq!(count_tts!(0 1 2), 3);\n"
-"# }\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/building-blocks/counting.md:127
 msgid ""
 "This has been tested to work up to 10,000 tokens, and can probably go much "
@@ -6803,27 +5806,6 @@ msgid ""
 "on 20,000 tokens and works in const contexts."
 msgstr ""
 
-#: src/decl-macros/building-blocks/counting.md:134
-msgid ""
-"```rust\n"
-"const fn count_helper<const N: usize>(_: [(); N]) -> usize { N }\n"
-"\n"
-"macro_rules! replace_expr {\n"
-"    ($_t:tt $sub:expr) => { $sub }\n"
-"}\n"
-"\n"
-"macro_rules! count_tts {\n"
-"    ($($smth:tt)*) => {\n"
-"        count_helper([$(replace_expr!($smth ())),*])\n"
-"    }\n"
-"}\n"
-"#\n"
-"# fn main() {\n"
-"#     assert_eq!(count_tts!(0 1 2), 3);\n"
-"# }\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/building-blocks/counting.md:152
 msgid "Enum counting"
 msgstr ""
@@ -6832,28 +5814,6 @@ msgstr ""
 msgid ""
 "This approach can be used where you need to count a set of mutually distinct "
 "identifiers."
-msgstr ""
-
-#: src/decl-macros/building-blocks/counting.md:156
-msgid ""
-"```rust\n"
-"macro_rules! count_idents {\n"
-"    () => {0};\n"
-"    ($last_ident:ident, $($idents:ident),* $(,)?) => {\n"
-"        {\n"
-"            #[allow(dead_code, non_camel_case_types)]\n"
-"            enum Idents { $($idents,)* $last_ident }\n"
-"            const COUNT: u32 = Idents::$last_ident as u32 + 1;\n"
-"            COUNT\n"
-"        }\n"
-"    };\n"
-"}\n"
-"#\n"
-"# fn main() {\n"
-"#     const COUNT: u32 = count_idents!(A, B, C);\n"
-"#     assert_eq!(COUNT, 3);\n"
-"# }\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/building-blocks/counting.md:175
@@ -6869,21 +5829,6 @@ msgstr ""
 
 #: src/decl-macros/building-blocks/counting.md:180
 msgid "Another recursive approach using bit operations:"
-msgstr ""
-
-#: src/decl-macros/building-blocks/counting.md:182
-msgid ""
-"```rust\n"
-"macro_rules! count_tts {\n"
-"    () => { 0 };\n"
-"    ($odd:tt $($a:tt $b:tt)*) => { (count_tts!($($a)*) << 1) | 1 };\n"
-"    ($($a:tt $even:tt)*) => { count_tts!($($a)*) << 1 };\n"
-"}\n"
-"#\n"
-"# fn main() {\n"
-"#     assert_eq!(count_tts!(0 1 2), 3);\n"
-"# }\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/building-blocks/counting.md:194
@@ -6911,13 +5856,6 @@ msgstr ""
 msgid "Let's go through the procedure by hand once:"
 msgstr ""
 
-#: src/decl-macros/building-blocks/counting.md:205
-msgid ""
-"```rust,ignore\n"
-"count_tts!(0 0 0 0 0 0 0 0 0 0);\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/building-blocks/counting.md:208
 msgid ""
 "This invocation will match the third rule due to the fact that we have an "
@@ -6925,13 +5863,6 @@ msgid ""
 "sequence `$a` and the even ones `$even` but the expansion only makes use of "
 "`$a`, which means it effectively discards all the even elements cutting the "
 "input in half. So the invocation now becomes:"
-msgstr ""
-
-#: src/decl-macros/building-blocks/counting.md:211
-msgid ""
-"```rust,ignore\n"
-"count_tts!(0 0 0 0 0) << 1;\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/building-blocks/counting.md:214
@@ -6942,35 +5873,6 @@ msgid ""
 "invocation again since we know the input would be even now anyways. "
 "Therefore we can count 1 for the uneven discard and multiply by 2 again "
 "since we also halved."
-msgstr ""
-
-#: src/decl-macros/building-blocks/counting.md:217
-msgid ""
-"```rust,ignore\n"
-"((count_tts!(0 0) << 1) | 1) << 1;\n"
-"```"
-msgstr ""
-
-#: src/decl-macros/building-blocks/counting.md:220
-msgid ""
-"```rust,ignore\n"
-"((count_tts!(0) << 1 << 1) | 1) << 1;\n"
-"```"
-msgstr ""
-
-#: src/decl-macros/building-blocks/counting.md:223
-msgid ""
-"```rust,ignore\n"
-"((((count_tts!() << 1) | 1) << 1 << 1) | 1) << 1;\n"
-"```"
-msgstr ""
-
-#: src/decl-macros/building-blocks/counting.md:226
-#: src/decl-macros/building-blocks/counting.md:232
-msgid ""
-"```rust,ignore\n"
-"((((0 << 1) | 1) << 1 << 1) | 1) << 1;\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/building-blocks/counting.md:230
@@ -7209,19 +6111,6 @@ msgid ""
 "**: strictly speaking, the above formulation of `abacus!` is needlessly "
 "complex. It can be implemented much more efficiently using repetition, "
 "provided you _do not_ need to match against the counter's value in a macro:"
-msgstr ""
-
-#: src/decl-macros/building-blocks/abacus-counting.md:108
-msgid ""
-"```ignore\n"
-"macro_rules! abacus {\n"
-"    (-) => {-1};\n"
-"    (+) => {1};\n"
-"    ($( $moves:tt )*) => {\n"
-"        0 $(+ abacus!($moves))*\n"
-"    }\n"
-"}\n"
-"```"
 msgstr ""
 
 #: src/decl-macros/building-blocks/parsing.md:3
@@ -7529,31 +6418,6 @@ msgid ""
 "macros we have implemented in previous chapters:"
 msgstr ""
 
-#: src/decl-macros/macros2.md:16
-msgid ""
-"```rust\n"
-"#![feature(decl_macro)]\n"
-"\n"
-"macro_rules! replace_expr_ {\n"
-"    ($_t:tt $sub:expr) => { $sub }\n"
-"}\n"
-"macro replace_expr($_t:tt $sub:expr) {\n"
-"    $sub\n"
-"}\n"
-"\n"
-"macro_rules! count_tts_ {\n"
-"    () => { 0 };\n"
-"    ($odd:tt $($a:tt $b:tt)*) => { (count_tts!($($a)*) << 1) | 1 };\n"
-"    ($($a:tt $even:tt)*) => { count_tts!($($a)*) << 1 };\n"
-"}\n"
-"macro count_tts {\n"
-"    () => { 0 },\n"
-"    ($odd:tt $($a:tt $b:tt)*) => { (count_tts!($($a)*) << 1) | 1 },\n"
-"    ($($a:tt $even:tt)*) => { count_tts!($($a)*) << 1 },\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/decl-macros/macros2.md:38
 msgid ""
 "As can be seen, they look very similar, with just a few differences as well "
@@ -7701,14 +6565,6 @@ msgid ""
 "set the `lib.proc-macro` key in the `Cargo.toml` to true."
 msgstr ""
 
-#: src/proc-macros/methodical.md:10
-msgid ""
-"```toml\n"
-"[lib]\n"
-"proc-macro = true\n"
-"```"
-msgstr ""
-
 #: src/proc-macros/methodical.md:15
 msgid ""
 "A `proc-macro` type crate implicitly links to the compiler-provided "
@@ -7777,43 +6633,12 @@ msgstr ""
 msgid "_function-like_"
 msgstr ""
 
-#: src/proc-macros/methodical.md:35
-msgid ""
-"```rs\n"
-"#[proc_macro]\n"
-"pub fn my_proc_macro(input: TokenStream) -> TokenStream {\n"
-"    TokenStream::new()\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/proc-macros/methodical.md:42
 msgid "_attribute_"
 msgstr ""
 
-#: src/proc-macros/methodical.md:43
-msgid ""
-"```rs\n"
-"#[proc_macro_attribute]\n"
-"pub fn my_attribute(input: TokenStream, annotated_item: TokenStream) -> "
-"TokenStream {\n"
-"    TokenStream::new()\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/proc-macros/methodical.md:50
 msgid "_derive_"
-msgstr ""
-
-#: src/proc-macros/methodical.md:51
-msgid ""
-"```rs\n"
-"#[proc_macro_derive(MyDerive)]\n"
-"pub fn my_derive(annotated_item: TokenStream) -> TokenStream {\n"
-"    TokenStream::new()\n"
-"}\n"
-"```"
 msgstr ""
 
 #: src/proc-macros/methodical.md:58
@@ -7855,18 +6680,6 @@ msgid ""
 "following:"
 msgstr ""
 
-#: src/proc-macros/methodical/function-like.md:9
-msgid ""
-"```rs\n"
-"use proc_macro::TokenStream;\n"
-"\n"
-"#[proc_macro]\n"
-"pub fn tlborm_fn_macro(input: TokenStream) -> TokenStream {\n"
-"    input\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/proc-macros/methodical/function-like.md:18
 msgid ""
 "As one can see this is in fact just a mapping from one "
@@ -7905,17 +6718,6 @@ msgstr ""
 msgid "Usage example:"
 msgstr ""
 
-#: src/proc-macros/methodical/function-like.md:30
-msgid ""
-"```rs\n"
-"use tlborm_proc::tlborm_attribute;\n"
-"\n"
-"fn foo() {\n"
-"    tlborm_attribute!(be quick; time is mana);\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/proc-macros/methodical/attr.md:3
 msgid ""
 "Attribute procedural macros define new _outer_ attributes which can be "
@@ -7926,19 +6728,6 @@ msgstr ""
 #: src/proc-macros/methodical/attr.md:6
 msgid ""
 "A simple skeleton of an attribute procedural macro looks like the following:"
-msgstr ""
-
-#: src/proc-macros/methodical/attr.md:7
-msgid ""
-"```rs\n"
-"use proc_macro::TokenStream;\n"
-"\n"
-"#[proc_macro_attribute]\n"
-"pub fn tlborm_attribute(input: TokenStream, annotated_item: TokenStream) -> "
-"TokenStream {\n"
-"    annotated_item\n"
-"}\n"
-"```"
 msgstr ""
 
 #: src/proc-macros/methodical/attr.md:16
@@ -7970,19 +6759,6 @@ msgid ""
 "that the replacement does not have to be a single item, it can be 0 or more."
 msgstr ""
 
-#: src/proc-macros/methodical/attr.md:27
-msgid ""
-"```rs\n"
-"use tlborm_proc::tlborm_attribute;\n"
-"\n"
-"#[tlborm_attribute]\n"
-"fn foo() {}\n"
-"\n"
-"#[tlborm_attribute(attributes are pretty handsome)]\n"
-"fn bar() {}\n"
-"```"
-msgstr ""
-
 #: src/proc-macros/methodical/derive.md:3
 msgid ""
 "Derive procedural macros define new inputs for the "
@@ -7995,18 +6771,6 @@ msgstr ""
 msgid "A simple skeleton of a derive procedural macro looks like the following:"
 msgstr ""
 
-#: src/proc-macros/methodical/derive.md:7
-msgid ""
-"```rs\n"
-"use proc_macro::TokenStream;\n"
-"\n"
-"#[proc_macro_derive(TlbormDerive)]\n"
-"pub fn tlborm_derive(item: TokenStream) -> TokenStream {\n"
-"    TokenStream::new()\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/proc-macros/methodical/derive.md:16
 msgid ""
 "The `proc_macro_derive` is a bit more special in that it requires an extra "
@@ -8016,16 +6780,6 @@ msgid ""
 "the only items a derive attribute can annotate. The returned token stream "
 "will be **appended** to the containing block or module of the annotated item "
 "with the requirement that the token stream consists of a set of valid items."
-msgstr ""
-
-#: src/proc-macros/methodical/derive.md:21
-msgid ""
-"```rs\n"
-"use tlborm_proc::TlbormDerive;\n"
-"\n"
-"#[derive(TlbormDerive)]\n"
-"struct Foo;\n"
-"```"
 msgstr ""
 
 #: src/proc-macros/methodical/derive.md:28
@@ -8057,18 +6811,6 @@ msgid ""
 "looks like the following:"
 msgstr ""
 
-#: src/proc-macros/methodical/derive.md:38
-msgid ""
-"```rs\n"
-"use proc_macro::TokenStream;\n"
-"\n"
-"#[proc_macro_derive(TlbormDerive, attributes(tlborm_helper))]\n"
-"pub fn tlborm_derive(item: TokenStream) -> TokenStream {\n"
-"    TokenStream::new()\n"
-"}\n"
-"```"
-msgstr ""
-
 #: src/proc-macros/methodical/derive.md:47
 msgid ""
 "That is all there is to helper attributes, to consume them in the proc macro "
@@ -8077,25 +6819,6 @@ msgid ""
 "It is an error to use a helper attribute if none of the used derive macros "
 "of the given item declare it as such, as the compiler will then instead try "
 "to resolve it as a normal attribute."
-msgstr ""
-
-#: src/proc-macros/methodical/derive.md:51
-msgid ""
-"```rs\n"
-"use tlborm_proc::TlbormDerive;\n"
-"\n"
-"#[derive(TlbormDerive)]\n"
-"struct Foo {\n"
-"    #[tlborm_helper]\n"
-"    field: u32\n"
-"}\n"
-"\n"
-"#[derive(TlbormDerive)]\n"
-"enum Bar {\n"
-"    #[tlborm_helper]\n"
-"    Variant { #[tlborm_helper] field: u32 }\n"
-"}\n"
-"```"
 msgstr ""
 
 #: src/proc-macros/third-party-crates.md:3

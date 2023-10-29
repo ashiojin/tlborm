@@ -30,7 +30,7 @@ error[E0425]: cannot find value `a` in this scope
 Note that the background colour (*i.e.* syntax context) for the expanded macro *changes* as part of expansion.
 Each `macro_rules!` macro expansion is given a new, unique syntax context for its contents.
 As a result, there are *two different `a`s* in the expanded code: one in the first syntax context, the second in the other.
-In other words, <code><span class="synctx-0">a</span></code> is not the same identifier as <code><span class="synctx-1">a</span></code>, however similar they may appear.
+In other words, `a` is not the same identifier as `a`, however similar they may appear.
 
 That said, tokens that were substituted *into* the expanded output *retain* their original syntax context (by virtue of having been provided to the macro as opposed to being part of the macro itself).
 Thus, the solution is to modify the macro as follows:
