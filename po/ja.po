@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-10-25 12:34+0900\n"
+"PO-Revision-Date: 2023-10-29 15:05+0900\n"
 "Last-Translator: MORI, Yuji <ashiojin@gmail.com>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -7267,40 +7267,37 @@ msgstr ""
 "はハイジーンですが、それ以外に関してはそうではありません。"
 
 #: src/decl-macros/minutiae/hygiene.md:6
-#, fuzzy
 msgid ""
 "Hygiene works by attaching an invisible \"syntax context\" value to all "
 "identifiers. When two identifiers are compared, _both_ the identifiers' "
 "textual names _and_ syntax contexts must be identical for the two to be "
 "considered equal."
 msgstr ""
-"Hygieneはすべての識別子に目に見えない \"シンタックスコンテキスト \"の値を付ける"
-"ことで機能します。2つの識別子が比較されるとき、2つが等しいとみなされるために"
-"は、識別子のテキスト名と構文コンテキストの両方が同じでなければなりません。"
+"ハイジーンは、すべての識別子に目に見えない「構文コンテキスト」値を付けることで"
+"機能します。2つの識別子が比較されるとき、それらが等しいとみなされるためには、識"
+"別子のテキスト名称と構文コンテキストの _両方が_ 同じでなければなりません。"
 
 #: src/decl-macros/minutiae/hygiene.md:9
-#, fuzzy
 msgid "To illustrate this, consider the following code:"
 msgstr "これを説明するために、次のコードを考えてみましょう:"
 
 #: src/decl-macros/minutiae/hygiene.md:13
-#, fuzzy
 msgid ""
 "We will use the background colour to denote the syntax context. Now, let's "
 "expand the macro invocation:"
 msgstr ""
-"背景色は構文コンテキストを表すために使用します。では、マクロを展開してみましょ"
+"構文コンテキストを表すために背景色を使用します。では、マクロを展開してみましょ"
 "う:"
 
 #: src/decl-macros/minutiae/hygiene.md:18
-#, fuzzy
 msgid ""
 "First, recall that `macro_rules!` invocations effectively _disappear_ during "
 "expansion."
-msgstr "まず、`macro_rules!"
+msgstr ""
+"まず、 `macro_rules!` 呼び出しは展開中に事実上 _消える_ ことを思い出してくださ"
+"い。"
 
 #: src/decl-macros/minutiae/hygiene.md:20
-#, fuzzy
 msgid ""
 "Second, if you attempt to compile this code, the compiler will respond with "
 "something along the following lines:"
@@ -7309,7 +7306,6 @@ msgstr ""
 "す:"
 
 #: src/decl-macros/minutiae/hygiene.md:22
-#, fuzzy
 msgid ""
 "```text\n"
 "error[E0425]: cannot find value `a` in this scope\n"
@@ -7319,12 +7315,12 @@ msgid ""
 "   |                     ^ not found in this scope\n"
 "```"
 msgstr ""
-"テキスト\n"
-"error[E0425]: このスコープで値 `a` が見つかりません。\n"
+"```text\n"
+"error[E0425]: cannot find value `a` in this scope\n"
 "  --> src/main.rs:13:21\n"
 "   |\n"
-"13 | let four = using_a!(a / 10); \n"
-"   | このスコープでは見つかりません。\n"
+"13 | let four = using_a!(a / 10);\n"
+"   |                     ^ not found in this scope\n"
 "```"
 
 #: src/decl-macros/minutiae/hygiene.md:30
