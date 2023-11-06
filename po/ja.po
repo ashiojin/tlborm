@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
 "POT-Creation-Date: 2023-10-29T12:05:28+09:00\n"
-"PO-Revision-Date: 2023-11-08 09:40+0900\n"
+"PO-Revision-Date: 2023-11-08 11:54+0900\n"
 "Last-Translator: MORI, Yuji <ashiojin@gmail.com>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -97,9 +97,8 @@ msgid "Incremental TT Munchers"
 msgstr "漸進的TT消化器"
 
 #: src/SUMMARY.md:26 src/decl-macros/patterns/internal-rules.md:1
-#, fuzzy
 msgid "Internal Rules"
-msgstr "社内規定"
+msgstr "内部ルール"
 
 #: src/SUMMARY.md:27 src/decl-macros/patterns/push-down-acc.md:1
 #, fuzzy
@@ -7884,18 +7883,16 @@ msgstr ""
 "rs#L664-L746)を参照してください。"
 
 #: src/decl-macros/patterns/internal-rules.md:18
-#, fuzzy
 msgid ""
 "Internal rules can be used to unify multiple `macro_rules!` macros into one, "
 "or to make it easier to read and write [TT Munchers](./tt-muncher.html) by "
 "explicitly naming what rule you wish to call in a macro."
 msgstr ""
-"内部ルールは、複数の `macro_rules!` マクロを一つにまとめたり、マクロの中で呼び"
-"出したいルールを明示的に指定することで、[TT Munchers](./tt-muncher.html) の読み"
-"書きを簡単にするために使うことができます。"
+"内部ルールは、複数の `macro_rules!` マクロを一つにまとめることや、マクロの中で"
+"呼び出したいルールに明示的に名前を付けることにより[TT消化器](./tt-muncher."
+"html) の読み書きを簡単にすることに利用できます。"
 
 #: src/decl-macros/patterns/internal-rules.md:20
-#, fuzzy
 msgid ""
 "So why is it useful to unify multiple macros-by-example into one? The main "
 "reasoning for this is how they are handled in the 2015 Edition of Rust due to "
@@ -7907,32 +7904,30 @@ msgid ""
 "information consult the [Import and Export chapter](../minutiae/import-export."
 "html)."
 msgstr ""
-"では、なぜ複数のマクロを1つに統一するのが便利なのでしょうか？その主な理由は、"
-"Rustの2015年版では `macro_rules!` マクロが名前空間化されていないため、これらの"
-"マクロがどのように扱われるかにあります。このため、内部の `macro_rules!` マクロ"
-"をすべて再エクスポートしなければならないだけでなく、グローバルなマクロ名前空間"
-"を汚染したり、さらに悪いことに他のクレートとマクロ名が衝突したりするというトラ"
-"ブルが発生します。要するに、かなり面倒なのです。幸いなことに、rustcのバージョン"
-"が1.30以上であれば、この問題はなくなりました。詳しくは[インポートとエクスポート"
-"の章](../minutiae/import-export.html)を参照してください。"
+"では、なぜ複数の macros-by-example を1つにまとめることが有用なのでしょうか？\n"
+"その主な理由は、Rustの Edition 2015 でのこれらマクロの扱われ方にあります。この "
+"Edition では `macro_rules!` マクロは名前空間化されていません。このため、内部的"
+"な `macro_rules!` マクロをすべて再エクスポートしなければならず、グローバルなマ"
+"クロ名前空間を汚染し、さらに悪いことに他のクレートとマクロ名が衝突したりすると"
+"いうトラブルが発生します。要するに、かなり面倒なのです。幸いなことに、rustcの"
+"バージョンが1.30以上であれば、これは問題ではなくなりました。詳しくは[インポート"
+"とエクスポートの章](../minutiae/import-export.html)を参照してください。"
 
 #: src/decl-macros/patterns/internal-rules.md:26
-#, fuzzy
 msgid ""
 "Nevertheless, let's talk about how we can unify multiple `macro_rules!` macros "
 "into one with this technique and what exactly this technique even is."
 msgstr ""
-"とはいえ、このテクニックを使えば、複数の `macro_rules!` マクロをひとつに統合す"
-"ることができます。"
+"ともあれ、この手法によりどのように複数の `macro_rules!` マクロを1つにまとめる"
+"か、およびこの手法が何であるかについてお話しましょう。"
 
 #: src/decl-macros/patterns/internal-rules.md:28
-#, fuzzy
 msgid ""
 "We have two `macro_rules!` macros, the common [`as_expr!` macro](../building-"
 "blocks/ast-coercion.html) and a `foo` macro that makes use of the first one:"
 msgstr ""
-"2つの `macro_rules!` マクロ、一般的な [`as_expr!` マクロ](../building-blocks/"
-"ast-coercion.html) と、最初のマクロを利用する `foo` マクロがあります:"
+"ここに2つの `macro_rules!` マクロがあります。一般的な [`as_expr!` マクロ](../"
+"building-blocks/ast-coercion.html) と、このマクロを利用する `foo` マクロです:"
 
 #: src/decl-macros/patterns/internal-rules.md:46
 msgid ""
@@ -7946,15 +7941,15 @@ msgid ""
 "example use `@as_expr`, so our matcher becomes `(@as_expr $e:expr) => {$e};`. "
 "With this we get the macro that was defined at the very top of this page:"
 msgstr ""
-"このマクロはグローバルマクロの名前空間を汚染してしまうので、このマクロのための"
-"最も良い解決策ではありません。この特定のケースでは `as_expr` も一度しか使用しな"
-"い非常に単純なマクロなので、このマクロを内部ルールで `foo` マクロに \"埋め込み"
-"\" ましょう！このマクロは `as_expr` マクロで使用されているマッチャーを少し追加"
-"したものです。これは `as_expr` マクロで使用されているマッチャーから構成されてい"
-"ますが、少し追加されています。特に要求された場合にのみマッチするようにトークン"
-"ツリーを追加しています。この場合、例えば `@as_expr` を使うことができるので、"
-"マッチャーは `(@as_expr $e:expr) => {$e};` となります。これで、このページの一番"
-"上で定義したマクロが得られます:"
+"前述の通り、このマクロはグローバルのマクロの名前空間を汚染してしまうため、ここ"
+"での最も良い解決策ではありません。この特定のケースでは `as_expr` も一度しか使用"
+"されない非常に単純なマクロなので、このマクロを内部ルールで `foo` マクロに「組み"
+"込み」ましょう！これを行うには、マクロに単にマッチャーを先頭に挿入します。この"
+"マッチャーは `as_expr` マクロにて使っていたものから構成されるものですが、追加が"
+"あります。それが明示的に要求された場合のみマッチするように、トークンツリーを前"
+"につけます。例えばこのケースでは `@as_expr` を利用でき、するとマッチャーは "
+"`(@as_expr $e:expr) => {$e};` となります。これで、このページの一番上で定義した"
+"マクロが得られます:"
 
 #: src/decl-macros/patterns/internal-rules.md:68
 #, fuzzy
