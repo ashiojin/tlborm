@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
 "POT-Creation-Date: 2023-10-29T12:05:28+09:00\n"
-"PO-Revision-Date: 2023-11-06 11:45+0900\n"
+"PO-Revision-Date: 2023-11-08 09:40+0900\n"
 "Last-Translator: MORI, Yuji <ashiojin@gmail.com>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -7650,10 +7650,9 @@ msgstr ""
 
 #: src/decl-macros/patterns/callbacks.md:59
 msgid "You can, of course, insert additional tokens in the arguments as needed."
-msgstr "もちろん、必要に応じて引数にトークンを追加可能です。"
+msgstr "もちろん、必要に応じて引数に他にトークンを追加できます。"
 
 #: src/decl-macros/patterns/tt-muncher.md:3
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! mixed_rules {\n"
@@ -7687,98 +7686,91 @@ msgid ""
 "# }\n"
 "```"
 msgstr ""
-"ラスト\n"
-"マクロルール！ mixed_rules {\n"
+"```rust\n"
+"macro_rules! mixed_rules {\n"
 "    () => {};\n"
-"    (trace $name:ident; $($tail:tt)*) => { { (trace $name:ident; $($tail:tt)*) "
-"=> *)\n"
+"    (trace $name:ident; $($tail:tt)*) => {\n"
 "        {\n"
-"            println!(concat!(stringify!($name), \" = {:?}\"), $name); \n"
-"            mixed_rules!($($tail)*); \n"
+"            println!(concat!(stringify!($name), \" = {:?}\"), $name);\n"
+"            mixed_rules!($($tail)*);\n"
 "        }\n"
 "    };\n"
-"    (trace $name:ident = $init:expr; $($tail:tt)*) => {.\n"
+"    (trace $name:ident = $init:expr; $($tail:tt)*) => {\n"
 "        {\n"
-"            let $name = $init; \n"
-"            println!(concat!(stringify!($name), \" = {:?}\"), $name); \n"
-"            mixed_rules!($($tail)*); \n"
+"            let $name = $init;\n"
+"            println!(concat!(stringify!($name), \" = {:?}\"), $name);\n"
+"            mixed_rules!($($tail)*);\n"
 "        }\n"
 "    };\n"
 "}\n"
 "#\n"
 "# fn main() {\n"
-"# let a = 42; \n"
-"# let b = \"ほーでぃーおーでぃーおー！\"; \n"
-"# let c = (false, 2, 'c'); \n"
-"# mixed_rules!\n"
-"# trace a; \n"
-"# trace b; \n"
-"# trace c; \n"
-"# trace b = \"They took her where they put the crazies.\"; \n"
-"# trace b; \n"
-"# );\n"
+"#     let a = 42;\n"
+"#     let b = \"Ho-dee-oh-di-oh-di-oh!\";\n"
+"#     let c = (false, 2, 'c');\n"
+"#     mixed_rules!(\n"
+"#         trace a;\n"
+"#         trace b;\n"
+"#         trace c;\n"
+"#         trace b = \"They took her where they put the crazies.\";\n"
+"#         trace b;\n"
+"#     );\n"
 "# }\n"
 "```"
 
 #: src/decl-macros/patterns/tt-muncher.md:35
-#, fuzzy
 msgid ""
 "This pattern is perhaps the _most powerful_ macro parsing technique available, "
 "allowing one to parse grammars of significant complexity. However, it can "
 "increase compile times if used excessively, so should be used with care."
 msgstr ""
-"このパターンは、おそらく最も強力なマクロ解析手法であり、非常に複雑な文法を解析"
-"することができます。しかし、過度に使用するとコンパイル時間が長くなる可能性があ"
-"るので、使用には注意が必要です。"
+"このパターンは、あるいは _最も強力な_ マクロのパース手法です。これは非常に複雑"
+"な文法を解析可能です。しかし、過度に使用するとコンパイル時間が長くなる可能性が"
+"あるため、注意して利用すべきです。"
 
 #: src/decl-macros/patterns/tt-muncher.md:39
-#, fuzzy
 msgid ""
 "A _TT muncher_ is a recursive `macro_rules!` macro that works by incrementally "
 "processing its input one step at a time. At each step, it matches and removes "
 "(munches) some sequence of tokens from the start of its input, generates some "
 "intermediate output, then recurses on the input tail."
 msgstr ""
-"TT muncher_ は再帰的な `macro_rules!` マクロです。各ステップで、入力の先頭から"
-"トークンのシーケンスをマッチして削除し (munches)、中間出力を生成し、入力の末尾"
-"を再帰的に処理します。"
+"_TT 消化器(TT muncher)_ は、入力を1度に1ステップずつ漸進的に処理する、再帰的な "
+"`macro_rules!` マクロです。 各ステップで、入力の先頭から、あるトークンのシーケ"
+"ンスをマッチして取り除き (munches)、中間出力を生成し、そして入力の残りを再帰的"
+"に処理します。"
 
 #: src/decl-macros/patterns/tt-muncher.md:42
-#, fuzzy
 msgid ""
 "The reason for \"TT\" in the name specifically is that the unprocessed part of "
 "the input is _always_ captured as `$($tail:tt)*`. This is done as a [`tt`](../"
 "minutiae/fragment-specifiers.html#tt) repetition is the only way to "
 "_losslessly_ capture part of a macro's input."
 msgstr ""
-"TT \"が名前に含まれている理由は、入力の未処理の部分が常に `$($tail:tt)*` として"
-"キャプチャされるからです。これは、[`tt`](../minutiae/fragment-specifiers."
-"html#tt)の繰り返しが、マクロの入力の一部をロスなくキャプチャする唯一の方法だか"
-"らです。"
+"「TT」が名前に含まれている理由は、入力の未処理の部分が _常に_ `$($tail:tt)*` と"
+"してキャプチャされるからです。これは、[`tt`](../minutiae/fragment-specifiers."
+"html#tt)の繰り返しが、マクロの入力の部分を _損失なく_ キャプチャする唯一の方法"
+"だからです。"
 
 #: src/decl-macros/patterns/tt-muncher.md:45
-#, fuzzy
 msgid ""
 "The only hard restrictions on TT munchers are those imposed on the "
 "`macro_rules!` macro system as a whole:"
 msgstr ""
-"TTマンチャーに対する唯一の厳しい制限は、`macro_rules!`マクロシステム全体に課さ"
-"れるものです:"
+"TT消化器の唯一の厳しい制限は、`macro_rules!`マクロシステムそのものに課されるも"
+"のです:"
 
 #: src/decl-macros/patterns/tt-muncher.md:47
-#, fuzzy
 msgid ""
 "You can only match against literals and grammar constructs which can be "
 "captured by `macro_rules!`."
-msgstr "マッチできるのは `macro_rules!` で捕捉できるリテラルと文法構文だけです。"
+msgstr "`macro_rules!` でキャプチャできるリテラルと文法構文のみマッチできます。"
 
 #: src/decl-macros/patterns/tt-muncher.md:48
-#, fuzzy
 msgid "You cannot match unbalanced groups."
-msgstr "不均衡なグループにはマッチできません。"
+msgstr "アンバランスなグループのマッチはできません。"
 
 #: src/decl-macros/patterns/tt-muncher.md:50
-#, fuzzy
 msgid ""
 "It is important, however, to keep the macro recursion limit in mind. "
 "`macro_rules!` does not have _any_ form of tail recursion elimination or "
@@ -7788,11 +7780,11 @@ msgid ""
 "to recursion into an intermediate layer), or by making compromises on the "
 "input syntax to make using standard repetitions more tractable."
 msgstr ""
-"しかし、マクロの再帰制限を念頭に置くことが重要です。macro_rules!`には、末尾再帰"
-"の除去や最適化はありません。TTマンチャーを書くときには、再帰をできるだけ制限す"
-"るように合理的な努力をすることをお勧めします。これは、(中間層への再帰ではなく)"
-"入力のばらつきを考慮したルールを追加したり、標準的な繰り返しをより扱いやすくす"
-"るために入力構文を妥協したりすることで行うことができます。"
+"しかし、マクロの再帰制限を念頭に置くことが重要です。`macro_rules!` は、あらゆる"
+"末尾再帰の除去や最適化を持ちません。TT消化器を書くときには、再帰を可能な限り制"
+"限するように合理的な努力をすることをお勧めします。これは、(中間層への再帰ではな"
+"く)入力のバリエーションを反映したルールを追加したり、標準的な繰り返しをより扱い"
+"やすくなるように入力構文を妥協したりすることで可能となります。"
 
 #: src/decl-macros/patterns/tt-muncher.md:57
 #: src/decl-macros/patterns/internal-rules.md:84
@@ -7801,88 +7793,78 @@ msgid "Performance"
 msgstr "パフォーマンス"
 
 #: src/decl-macros/patterns/tt-muncher.md:59
-#, fuzzy
 msgid ""
 "TT munchers are inherently quadratic. Consider a TT muncher rule that consumes "
 "one token tree and then recursively calls itself on the remaining input. If it "
 "is passed 100 token trees:"
 msgstr ""
-"TTマンチャーは本質的に2次関数です。1つのトークンツリーを消費し、残りの入力に対"
-"して再帰的に自分自身を呼び出すTTマンチャーのルールを考えてみましょう。100個の"
-"トークンツリーが渡された場合"
+"TT消化器は本質的に2次（の多項式時間）です。1つのトークンツリーを消費し、残りの"
+"入力を対象に再帰的に自分自身を呼び出すTT消化器のルールを考えてみましょう。100個"
+"のトークンツリーが渡された場合:"
 
 #: src/decl-macros/patterns/tt-muncher.md:62
-#, fuzzy
 msgid "The initial invocation will match against all 100 token trees."
 msgstr "最初の呼び出しは、100個のトークンツリーすべてに対してマッチします。"
 
 #: src/decl-macros/patterns/tt-muncher.md:63
-#, fuzzy
 msgid "The first recursive invocation will match against 99 token trees."
-msgstr "最初の再帰呼び出しは99個のトークンツリーに対してマッチします。"
+msgstr "最初の再帰呼び出しは、99個のトークンツリーに対してマッチします。"
 
 #: src/decl-macros/patterns/tt-muncher.md:64
-#, fuzzy
 msgid "The next recursive invocation will match against 98 token trees."
 msgstr "次の再帰呼び出しは、98個のトークンツリーに対してマッチします。"
 
 #: src/decl-macros/patterns/tt-muncher.md:66
-#, fuzzy
 msgid ""
 "And so on, down to 1. This is a classic quadratic pattern, and long inputs can "
 "cause macro expansion to blow out compile times."
 msgstr ""
-"これは典型的な2次関数パターンであり、長い入力はマクロの展開によるコンパイル時間"
-"の浪費を引き起こします。"
+"これが1個まで続きます。これは典型的な2次のパターンであり、長い入力はマクロの展"
+"開によるコンパイル時間の浪費を引き起こします。"
 
 #: src/decl-macros/patterns/tt-muncher.md:69
-#, fuzzy
 msgid ""
 "Try to avoid using TT munchers too much, especially with long inputs. The "
 "default value of the `recursion_limit` attribute is a good sanity check; if "
 "you have to exceed it, you might be heading for trouble."
 msgstr ""
-"特に長い入力では、TTマンチャーを使いすぎないようにしましょう。recursion_limit`"
-"属性のデフォルト値は良いサニティチェックになります。"
+"TT消化器を使いすぎないようにしましょう。長い入力に対しては特にそうです。 "
+"`recursion_limit` 属性のデフォルト値は良いサニティチェックになります。これを超"
+"えなければいけないなら、厄介なことになるかもしれません。"
 
 #: src/decl-macros/patterns/tt-muncher.md:72
-#, fuzzy
 msgid ""
 "If you have the choice between writing a TT muncher that can be called once to "
 "handle multiple things, or a simpler macro that can be called multiple times "
 "to handle a single thing, prefer the latter. For example, you could change a "
 "macro that is called like this:"
 msgstr ""
-"複数のことを処理するために一度だけ呼び出せるTTマンチャーを書くか、一つのことを"
-"処理するために複数回呼び出せるより単純なマクロを書くか、どちらかを選べるのであ"
-"れば、後者を選びましょう。例えば、このように呼び出されるマクロを変更することが"
-"できます:"
+"複数のことを処理するために1度だけ呼び出せるTT消化器を書くか、1つのことを処理す"
+"るために複数回呼び出せるより単純なマクロを書くか、どちらかを選べるのであれば後"
+"者を選びましょう。例えば、以下のように呼び出されるマクロを変更できます:"
 
 #: src/decl-macros/patterns/tt-muncher.md:84
-#, fuzzy
 msgid "To one that is called like this:"
-msgstr "こう呼ばれるものに:"
+msgstr "これを以下のように呼び出せるように:"
 
 #: src/decl-macros/patterns/tt-muncher.md:93
-#, fuzzy
 msgid "The longer the input, the more likely this will improve compile times."
-msgstr "入力が長ければ長いほど、コンパイル時間が短縮される可能性が高くなります。"
+msgstr ""
+"これは、入力が長ければ長いほど、コンパイル時間が短縮される可能性を高くします。"
 
 #: src/decl-macros/patterns/tt-muncher.md:95
-#, fuzzy
 msgid ""
 "Also, if a TT muncher macro has many rules, put the most frequently matched "
 "rules as early as possible. This avoids unnecessary matching failures. (In "
 "fact, this is good advice for any kind of declarative macro, not just TT "
 "munchers.)"
 msgstr ""
-"また、TT マンチャー マクロに多くのルールがある場合、最も頻繁にマッチするルール"
-"をできるだけ早い段階で配置します。これにより、不必要なマッチングの失敗を避ける"
-"ことができます。(実際、これは TT マンチャーだけでなく、どのような種類の宣言型マ"
-"クロにも良いアドバイスです)。"
+"また、TT消化器のマクロに多くのルールがある場合、最も頻繁にマッチするルールをで"
+"きるだけ早い方に配置します。不必要なマッチングの失敗を避けることができます(実"
+"際、これは TT消化器だけではなく、どのような種類の宣言型マクロにもとっても良いア"
+"ドバイスです)。"
 
 #: src/decl-macros/patterns/tt-muncher.md:100
-#, fuzzy
 msgid ""
 "Finally, if you can write a macro using normal repetition via `*` or `+`, that "
 "should be preferred to a TT muncher. This is most likely if each invocation of "
@@ -7894,12 +7876,12 @@ msgid ""
 "details."
 msgstr ""
 "最後に、もし `*` や `+` を使った通常の繰り返しでマクロを書けるのであれば、TTマ"
-"ンチャーよりもそちらを使うことをお勧めします。これは、TTマンチャーの各呼び出し"
-"が一度に1つのトークンしか処理しない場合に最も適しています。より複雑なケースで"
-"は、`quote`クレート内で使用される高度なテクニックがあります。詳細は[このコメン"
-"ト](https://github.com/dtolnay/quote/"
-"blob/31c3be473d0457e29c4f47ab9cff73498ac804a7/src/lib.rs#L664-L746)を参照してく"
-"ださい。"
+"ンチャーよりもそちらを使うことをお勧めします。これは、TT消化器の各呼び出しが一"
+"度に1つのトークンしか処理しない場合によく見られます。より複雑なケースでは、"
+"`quote`クレート内で使用される高度なテクニックがあります。これは多少の概念的複雑"
+"さを犠牲に、2次の性質を避けることを可能にします。詳細は[このコメント](https://"
+"github.com/dtolnay/quote/blob/31c3be473d0457e29c4f47ab9cff73498ac804a7/src/lib."
+"rs#L664-L746)を参照してください。"
 
 #: src/decl-macros/patterns/internal-rules.md:18
 #, fuzzy
