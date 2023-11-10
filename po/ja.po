@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
 "POT-Creation-Date: 2023-10-29T12:05:28+09:00\n"
-"PO-Revision-Date: 2023-11-08 11:54+0900\n"
+"PO-Revision-Date: 2023-11-10 16:42+0900\n"
 "Last-Translator: MORI, Yuji <ashiojin@gmail.com>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -7952,7 +7952,6 @@ msgstr ""
 "マクロが得られます:"
 
 #: src/decl-macros/patterns/internal-rules.md:68
-#, fuzzy
 msgid ""
 "You see how we embedded the `as_expr` macro in the `foo` one? All that changed "
 "is that instead of invoking the `as_expr` macro, we now invoke `foo` "
@@ -7960,13 +7959,12 @@ msgid ""
 "(@as_expr $($tts)*)`. If you look closely you might even see that this pattern "
 "can be combined quite nicely with [TT Munchers](./tt-muncher.html)!"
 msgstr ""
-"foo`マクロの中に `as_expr` マクロを埋め込んだのがわかりますか？変更されたのは "
-"`as_expr` マクロを呼び出す代わりに `foo` を再帰的に呼び出すようになっただけで"
-"す。よく見ると、このパターンは[TT Munchers](./tt-muncher.html)とうまく組み合わ"
-"せることができます！"
+"`foo` マクロの中に `as_expr` マクロを組み込んだことがわかりますか？変更されたの"
+"は `as_expr` マクロを呼び出す代わりに `foo` を再帰的に呼び出すようになっただけ"
+"です。よく見ると、このパターンは[TT Munchers](./tt-muncher.html)とうまく組み合"
+"わせることができます！"
 
 #: src/decl-macros/patterns/internal-rules.md:72
-#, fuzzy
 msgid ""
 "The reason for using `@` was that, as of Rust 1.2, the `@` token is _not_ used "
 "in prefix position; as such, it cannot conflict with anything. This reasoning "
@@ -7977,21 +7975,19 @@ msgid ""
 "has started to become widespread, so using it may aid readers in understanding "
 "your macro."
 msgstr ""
-"を使用する理由は、Rust 1.2 では `@` トークンはプレフィックスの位置では使用され"
-"ないからです。この理由は、Rust 1.7 のマクロマッチで、特定のトークンが特定のフラ"
-"グメント[^ambiguity-restrictions]に続くことを許可しないように警告を出すようにな"
-"り、それが Rust 1.12 でハードエラーになったため、後に時代遅れになりました。他の"
-"シンボルやユニークな接頭辞を使用することもできますが、 `@` の使用が普及し始めて"
-"いるので、これを使用することで読者があなたのマクロを理解する助けになるかもしれ"
-"ません。"
+"`@` を使用する理由は、Rust 1.2 では `@` トークンはプレフィックスの位置では使用"
+"されないからです。よってほかの何かと衝突することがありません。この理由は後に意"
+"味がなくなりました。まず Rust 1.7 にてマクロのマッチャーが将来の対策として、特"
+"定のフラグメントに特定のトークンが続くことの無いよう警告を発するようになり、そ"
+"して Rust 1.12 にてハードエラーになりました。他のシンボルやユニークな接頭辞を使"
+"用することもできますが、 `@` が広く使われているため、これを使用することは、マク"
+"ロを読む人にとって理解の助けになるかもしれません。"
 
 #: src/decl-macros/patterns/internal-rules.md:76
-#, fuzzy
 msgid "[ambiguity-restrictions](../minutiae/metavar-and-expansion.html)"
-msgstr "[曖昧さ制限](../minutiae/metavar-and-expansion.html)"
+msgstr "[曖昧さの制限](../minutiae/metavar-and-expansion.html)"
 
 #: src/decl-macros/patterns/internal-rules.md:78
-#, fuzzy
 msgid ""
 "**Note**: in the early days of Rust the `@` token was previously used in "
 "prefix position to denote a garbage-collected pointer, back when the language "
@@ -7999,21 +7995,23 @@ msgid ""
 "names to patterns. For this, however, it is used as an _infix_ operator, and "
 "thus does not conflict with its use here."
 msgstr ""
-"*注***: Rustの初期の頃、`@` トークンはガベージコレクションポインタを示すために"
-"プレフィックスの位置で使われていました。現在の唯一の用途は、名前をパターンにバ"
-"インドすることです。しかし、これは_infix_演算子として使用されるため、ここでの使"
-"用と衝突することはありません。"
+"**注**: Rustの初期の頃、`@` トークンはガベージコレクションポインタを示すために"
+"プレフィックスの位置で使われていました（言語がポインタタイプを示すシジルを使用"
+"していた頃）。 _現在の_ 唯一の用途は、名前をパターンにバインドすることです。し"
+"かし、これは _中置_ 演算子として使用されるため、ここでの使用と衝突することはあ"
+"りません。"
 
 #: src/decl-macros/patterns/internal-rules.md:82
-#, fuzzy
 msgid ""
 "Additionally, internal rules will often come _before_ any \"bare\" rules, to "
 "avoid issues with `macro_rules!` incorrectly attempting to parse an internal "
 "invocation as something it cannot possibly be, such as an expression."
-msgstr "さらに、`macro_rules!"
+msgstr ""
+"さらに、`macro_rules!` が内部的呼び出しを、式のようなあり得ないものとして、誤っ"
+"てパースしようとするという問題を避けるために、内部ルールは「素の」ルールより前"
+"に置かれることがあります。"
 
 #: src/decl-macros/patterns/internal-rules.md:86
-#, fuzzy
 msgid ""
 "One downside of internal rules is that they can hurt compile times. Only one "
 "macro rule can match any (valid) macro invocation, but the compiler must try "
@@ -8021,28 +8019,26 @@ msgid ""
 "failures, and the use of internal rules will increase the number of such "
 "failures."
 msgstr ""
-"内部ルールの欠点は、コンパイル時間が長くなることです。有効な）マクロ呼び出しに"
-"一致するマクロ ルールは 1 つだけですが、コンパイラはすべてのルールを順番に一致"
-"させようとします。マクロに多くのルールがある場合、このような失敗が多数発生する"
-"可能性があり、内部ルールを使用するとこのような失敗の数が増えます。"
+"内部ルールの欠点は、コンパイル時間を損なうことです。ただ1つのマクロルールのみが"
+"マクロ呼び出しにマッチしますが、コンパイラはほかのすべてのルールを順に試す必要"
+"があります。マクロが多くのルールを持っているほど、このような不一致が多く起こり"
+"得ます。そして内部ルールの使用はこのような不一致を増加します。"
 
 #: src/decl-macros/patterns/internal-rules.md:90
-#, fuzzy
 msgid ""
 "Also, the `@as_expr`\\-style identifier makes rules longer, slightly "
 "increasing the amount of work the compiler must do when matching."
 msgstr ""
-"また、`@as_expr`スタイルの識別子はルールを長くし、マッチング時にコンパイラが行"
-"わなければならない作業量を少し増やします。"
+"また、`@as_expr`スタイルの識別子はルールを長くし、コンパイラがマッチ処理時に行"
+"わなければならない作業量を少し増加します。"
 
 #: src/decl-macros/patterns/internal-rules.md:93
-#, fuzzy
 msgid ""
 "Therefore, for best performance, avoiding internal rules is best. Avoiding "
 "them often makes complex macros easier to read, too."
 msgstr ""
 "したがって、最高のパフォーマンスを得るためには、内部ルールを避けるのが最善で"
-"す。内部ルールを避けると、複雑なマクロも読みやすくなります。"
+"す。また、内部ルールを避けると、複雑なマクロも読みやすくなることもあります。"
 
 #: src/decl-macros/patterns/push-down-acc.md:3
 #, fuzzy
