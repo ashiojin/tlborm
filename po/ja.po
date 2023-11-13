@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
 "POT-Creation-Date: 2023-10-29T12:05:28+09:00\n"
-"PO-Revision-Date: 2023-11-10 16:42+0900\n"
+"PO-Revision-Date: 2023-11-14 14:11+0900\n"
 "Last-Translator: MORI, Yuji <ashiojin@gmail.com>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -101,32 +101,26 @@ msgid "Internal Rules"
 msgstr "内部ルール"
 
 #: src/SUMMARY.md:27 src/decl-macros/patterns/push-down-acc.md:1
-#, fuzzy
 msgid "Push-down Accumulation"
-msgstr "プッシュダウン・アキュムレーション"
+msgstr "プッシュダウンアキュムレーション"
 
 #: src/SUMMARY.md:28 src/decl-macros/patterns/repetition-replacement.md:1
-#, fuzzy
 msgid "Repetition Replacement"
-msgstr "リピート交換"
+msgstr "繰り返し置換"
 
 #: src/SUMMARY.md:29 src/decl-macros/patterns/tt-bundling.md:1
-#, fuzzy
 msgid "TT Bundling"
 msgstr "TTバンドル"
 
 #: src/SUMMARY.md:30 src/decl-macros/building-blocks.md:1
-#, fuzzy
 msgid "Building Blocks"
 msgstr "ビルディングブロック"
 
 #: src/SUMMARY.md:31 src/decl-macros/building-blocks/ast-coercion.md:1
-#, fuzzy
 msgid "AST Coercion"
-msgstr "ASTの強制"
+msgstr "AST強制"
 
 #: src/SUMMARY.md:32 src/decl-macros/building-blocks/counting.md:1
-#, fuzzy
 msgid "Counting"
 msgstr "カウント"
 
@@ -136,9 +130,8 @@ msgid "Abacus Counting"
 msgstr "そろばん数え"
 
 #: src/SUMMARY.md:34 src/decl-macros/building-blocks/parsing.md:1
-#, fuzzy
 msgid "Parsing Rust"
-msgstr "ラストの解析"
+msgstr "Rustのパース"
 
 #: src/SUMMARY.md:35 src/decl-macros/macros2.md:1
 #, fuzzy
@@ -551,9 +544,8 @@ msgstr ""
 "つことも不可能です。"
 
 #: src/syntax-extensions/ast.md:1
-#, fuzzy
 msgid "Macros in the AST"
-msgstr "AST内のマクロ"
+msgstr "AST内でのマクロ"
 
 #: src/syntax-extensions/ast.md:3
 msgid ""
@@ -2446,13 +2438,12 @@ msgstr ""
 "とができません。"
 
 #: src/decl-macros/macros-practical.md:393
-#, fuzzy
 msgid ""
 "A complete list can be found in [Macros, A Methodical Introduction; Minutiae; "
 "Metavariables and Expansion Redux](./minutiae/metavar-and-expansion.md)."
 msgstr ""
-"完全なリストは[Macros, A Methodical Introduction; Minutiae; Metavariables and "
-"Expansion Redux](./minutiae/metavar-and-expansion.md)にあります。"
+"完全なリストは[詳細; メタ変数と再展開](./minutiae/metavar-and-expansion.md)にあ"
+"ります。"
 
 #: src/decl-macros/macros-practical.md:395
 msgid "Indexing and Shuffling"
@@ -5199,8 +5190,8 @@ msgid ""
 "acc.md)."
 msgstr ""
 "これにより、[tt消化器](../patterns/tt-muncher.md)や[プッシュダウンアキュムレー"
-"ター](../patterns/push-down-acc.md)のような非常に強力なパターンを利用することが"
-"できます。"
+"ション](../patterns/push-down-acc.md)のような非常に強力なパターンを利用すること"
+"ができます。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:292
 msgid "`ty`"
@@ -5513,9 +5504,9 @@ msgid ""
 "token at a time, it will abort with an ambiguity error. A simple example that "
 "triggers this:"
 msgstr ""
-"また、パーサーはあらゆる種類の先読みを行いません。つまりコンパイラが、マクロ呼"
-"び出しを1 トークンずつパースする方法を明確に決定できない場合、曖昧であるという"
-"エラーにより中断します。これを引き起こす簡単な例を示します:"
+"また、パーサはあらゆる種類の先読みを行いません。つまりコンパイラが、マクロ呼び"
+"出しを1 トークンずつパースする方法を明確に決定できない場合、曖昧であるというエ"
+"ラーにより中断します。これを引き起こす簡単な例を示します:"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:45
 msgid ""
@@ -5546,8 +5537,8 @@ msgid ""
 "The parser does not look ahead past the identifier to see if the following "
 "token is a `)`, which would allow it to parse properly."
 msgstr ""
-"パーサーは、正しくパース可能にするために、識別子を越えて次のトークンが `)` であ"
-"るかどうかを調べません。"
+"パーサは、正しくパース可能にするために、識別子を越えて次のトークンが `)` である"
+"かどうかを調べません。"
 
 #: src/decl-macros/minutiae/metavar-and-expansion.md:57
 msgid ""
@@ -8041,12 +8032,10 @@ msgstr ""
 "す。また、内部ルールを避けると、複雑なマクロも読みやすくなることもあります。"
 
 #: src/decl-macros/patterns/push-down-acc.md:3
-#, fuzzy
 msgid "The following macro uses _push-down accumulation_."
-msgstr "以下のマクロは_push-down accumulation_を使用しています。"
+msgstr "以下のマクロは _プッシュダウンアキュムレーション_ を使用しています。"
 
 #: src/decl-macros/patterns/push-down-acc.md:5
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! init_array {\n"
@@ -8072,77 +8061,75 @@ msgid ""
 "\"]\");\n"
 "```"
 msgstr ""
-"ラスト\n"
-"マクロルール！ init_array { [$e:expr; $n:tt\n"
-"    [$e:expr; $n:tt] => {\n"
-"        {\n"
+"```rust\n"
+"macro_rules! init_array {\n"
+"    [$e:expr; $n:tt] => { \n"
+"        {   \n"
 "            let e = $e; \n"
 "            accum!([$n, e.clone()] -> [])\n"
 "        }\n"
 "    };\n"
 "}\n"
-"macro_rules!\n"
+"macro_rules! accum {\n"
 "    ([3, $e:expr] -> [$($body:tt)*]) => { accum!([2, $e] -> [$($body)* "
-"$e,])};\n"
+"$e,]) };\n"
 "    ([2, $e:expr] -> [$($body:tt)*]) => { accum!([1, $e] -> [$($body)* "
-"$e,]) }; { accum!};\n"
+"$e,]) };\n"
 "    ([1, $e:expr] -> [$($body:tt)*]) => { accum!([0, $e] -> [$($body)* "
-"$e,]) }; { accum!};\n"
-"    ([0, $_:expr] -> [$($body:tt)*]) => { [$($body)*] }; \n"
+"$e,]) };\n"
+"    ([0, $_:expr] -> [$($body:tt)*]) => { [$($body)*] };\n"
 "}\n"
 "\n"
-"文字列: [文字列; 3] = init_array![String::from(\"hi!\"); 3]; \n"
-"# assert_eq!(format!(\"{:?}\", strings), \"[ \\\"hi!）\n"
+"let strings: [String; 3] = init_array![String::from(\"hi!\"); 3];\n"
+"# assert_eq!(format!(\"{:?}\", strings), \"[\\\"hi!\\\", \\\"hi!\\\", \\\"hi!\\"
+"\"]\");\n"
 "```"
 
 #: src/decl-macros/patterns/push-down-acc.md:25
-#, fuzzy
 msgid ""
 "All syntax extensions in Rust **must** result in a complete, supported syntax "
 "element (such as an expression, item, _etc._). This means that it is "
 "impossible to have a syntax extension expand to a partial construct."
 msgstr ""
-"Rustのすべての構文拡張は、サポートされる完全な構文要素（式、アイテム、_etc.）つ"
-"まり、構文拡張を部分的な構成要素に展開することはできません。"
+"Rustのすべての構文拡張は、サポートされる完全な構文要素（式、アイテム、 _etc."
+"_ ）とならなければいけません。これは構文拡張を部分的な構成要素に展開することが"
+"できないことを意味します。"
 
 #: src/decl-macros/patterns/push-down-acc.md:28
-#, fuzzy
 msgid ""
 "One might hope that the above example could be more directly expressed like so:"
-msgstr "上記の例をもっと直接的に表現することができればと思うかもしれません:"
+msgstr ""
+"人によっては、上記の例をもっと直接的に表現できればいいのに、と思うかもしれませ"
+"ん:"
 
 #: src/decl-macros/patterns/push-down-acc.md:46
-#, fuzzy
 msgid ""
 "The expectation is that the expansion of the array literal would proceed as "
 "follows:"
-msgstr "期待されるのは、配列リテラルの展開が次のように進むことです:"
+msgstr "ここで期待するのは、配列リテラルの展開が次のように進むことです:"
 
 #: src/decl-macros/patterns/push-down-acc.md:55
-#, fuzzy
 msgid ""
 "However, this would require each intermediate step to expand to an incomplete "
 "expression. Even though the intermediate results will never be used _outside_ "
 "of a macro context, it is still forbidden."
 msgstr ""
-"しかし、この場合、各中間ステップを不完全な式に展開する必要があります。中間結果"
-"はマクロコンテキスト以外で使用されることはありませんが、それでも禁止されていま"
-"す。"
+"しかしながら、これは各中間ステップを不完全な式として展開する必要があります。中"
+"間結果がマクロのコンテキスト外で使用されることはありませんが、それでも禁止され"
+"ています。"
 
 #: src/decl-macros/patterns/push-down-acc.md:58
-#, fuzzy
 msgid ""
 "Push-down, however, allows us to incrementally build up a sequence of tokens "
 "without needing to actually have a complete construct at any point prior to "
 "completion. In the example given at the top, the sequence of invocations "
 "proceeds as follows:"
 msgstr ""
-"しかし、プッシュダウンでは、完了する前のどの時点でも、実際に完全なコンストラク"
-"トを持っている必要はなく、トークンのシーケンスをインクリメンタルに構築すること"
-"ができます。冒頭の例では、呼び出しのシーケンスは次のように進みます:"
+"しかしプッシュダウンでは、完了以前のあらゆる時点にて実際に完全な構成要素である"
+"必要なしに、トークンのシーケンスをインクリメンタルに構築することができます。冒"
+"頭の例では、呼び出しのシーケンスは次のように進みます:"
 
 #: src/decl-macros/patterns/push-down-acc.md:61
-#, fuzzy
 msgid ""
 "```rust,ignore\n"
 "init_array!(String::from(\"hi!\"); 3)\n"
@@ -8153,152 +8140,139 @@ msgid ""
 "[e.clone(), e.clone(), e.clone(),]\n"
 "```"
 msgstr ""
-"錆、無視\n"
+"```rust,ignore\n"
 "init_array!(String::from(\"hi!\"); 3)\n"
 "accum!([3, e.clone()] -> [])\n"
 "accum!([2, e.clone()] -> [e.clone(),])\n"
 "accum!([1, e.clone()] -> [e.clone(), e.clone(),])\n"
-"accum!([0, e.clone()] -> [e.clone(), e.clone(),])\n"
-"[e.clone(), e.clone(), e.clone(),])\n"
+"accum!([0, e.clone()] -> [e.clone(), e.clone(), e.clone(),])\n"
+"[e.clone(), e.clone(), e.clone(),]\n"
 "```"
 
 #: src/decl-macros/patterns/push-down-acc.md:70
-#, fuzzy
 msgid ""
 "As you can see, each layer adds to the accumulated output until the "
 "terminating rule finally emits it as a complete construct."
 msgstr ""
-"おわかりのように、各レイヤーは、最終的に終了ルールが完全な構成体として出力する"
-"まで、蓄積された出力を追加します。"
+"ご覧の通り、各レイヤーは出力を蓄積しておき、最終的に終了ルールが完全な構成要素"
+"として出力します。"
 
 #: src/decl-macros/patterns/push-down-acc.md:72
-#, fuzzy
 msgid ""
 "The only critical part of the above formulation is the use of `$($body:tt)*` "
 "to preserve the output without triggering parsing. The use of `($input) -> "
 "($output)` is simply a convention adopted to help clarify the behavior of such "
 "macros."
 msgstr ""
-"上記の定式化で唯一重要なのは、パースすることなく出力を保持するために `$($body:"
-"tt)*` を使っていることです。($input) -> ($output)`の使用は、単にこのようなマク"
-"ロの動作を明確にするために採用された慣習です。"
+"上記の定式化で唯一重要なのは、パースをトリガすることなく出力を保持するために "
+"`$($body:tt)*` を使っていることです。`($input) -> ($output)` の使用は、このよう"
+"なマクロの動作を明確にするために採用された単なる慣習です。"
 
 #: src/decl-macros/patterns/push-down-acc.md:75
-#, fuzzy
 msgid ""
 "Push-down accumulation is frequently used as part of [incremental TT munchers]"
 "(./tt-muncher.md), as it allows arbitrarily complex intermediate results to be "
 "constructed. [Internal Rules](./internal-rules.md) were of use here as well, "
 "as they simplify creating such macros."
 msgstr ""
-"プッシュダウン累積は、[incremental TT muncher](./tt-muncher.md)の一部として頻繁"
-"に使用されます。[内部ルール](./internal-rules.md)は、このようなマクロの作成を単"
-"純化するので、ここでも役に立ちました。"
+"プッシュダウンアキュムレーションは、[漸進的TT消化器](./tt-muncher.md)の一部とし"
+"て頻繁に使用されます。任意の複雑な中間結果を構築することが可能にするためです。"
+"[内部ルール](./internal-rules.md)は、このようなマクロの作成を単純化するので、こ"
+"こでも役に立ちました。"
 
 #: src/decl-macros/patterns/push-down-acc.md:80
-#, fuzzy
 msgid ""
 "Push-down accumulation is inherently quadratic. Consider a push-down "
 "accumulation rule that builds up an accumulator of 100 token trees, one token "
 "tree per invocation."
 msgstr ""
-"プッシュダウン累積は本質的に2次式です。100個のトークンツリーのアキュムレータを"
-"構築するプッシュダウン累積規則を考えてみましょう。"
+"プッシュダウンアキュムレーションは本質的に2次（の多項式時間）です。100個のトー"
+"クンツリーのアキュムレータを構築するプッシュダウン累積規則を考えてみましょう。"
 
 #: src/decl-macros/patterns/push-down-acc.md:82
-#, fuzzy
 msgid "The initial invocation will match against the empty accumulator."
-msgstr "最初の呼び出しは空のアキュムレータとマッチします。"
+msgstr "最初の呼び出しは、空のアキュムレータとマッチします。"
 
 #: src/decl-macros/patterns/push-down-acc.md:83
-#, fuzzy
 msgid ""
 "The first recursive invocation will match against the accumulator of 1 token "
 "tree."
 msgstr ""
-"最初の再帰呼び出しは、1トークンツリーのアキュムレータに対してマッチします。"
+"最初の再帰呼び出しは、1個のトークンツリーのアキュムレータに対してマッチします。"
 
 #: src/decl-macros/patterns/push-down-acc.md:84
-#, fuzzy
 msgid ""
 "The next recursive invocation will match against the accumulator of 2 token "
 "trees."
 msgstr ""
-"次の再帰呼び出しは、2つのトークンツリーのアキュムレータに対してマッチします。"
+"次の再帰呼び出しは、2個のトークンツリーのアキュムレータに対してマッチします。"
 
 #: src/decl-macros/patterns/push-down-acc.md:86
-#, fuzzy
 msgid ""
 "And so on, up to 100. This is a classic quadratic pattern, and long inputs can "
 "cause macro expansion to blow out compile times. Furthermore, TT munchers are "
 "also inherently quadratic over their input, so a macro that uses both TT "
 "munching _and_ push-down accumulation will be doubly quadratic!"
 msgstr ""
-"というように、最大100まで。これは典型的な 2 次パターンであり、長い入力はマクロ"
-"の展開がコンパイル時間を吹っ飛ばす原因になります。さらに、TT マンチャーも本質的"
-"に入力に対して 2 次パターンなので、TT マンチャーとプッシュダウン蓄積の両方を使"
-"用するマクロは 2 次パターンになります！"
+"というように、100個まで。これは典型的な 2次のパターンであり、長い入力はマクロの"
+"展開によるコンパイル時間の浪費を引き起こします。さらに、TT消化器も本質的に入力"
+"に対して 2次のパターンなので、TT消化器とプッシュダウンアキュムレーションの両方"
+"を使用するマクロは2重に 2次パターンになります！"
 
 #: src/decl-macros/patterns/push-down-acc.md:90
-#, fuzzy
 msgid ""
 "All the [performance advice](./tt-muncher.md#performance) about TT munchers "
 "holds for push-down accumulation.  In general, avoid using them too much, and "
 "keep them as simple as possible."
 msgstr ""
-"TTマンチャーに関する[パフォーマンスに関するアドバイス](./tt-muncher."
-"md#performance)はすべて、プッシュダウン・アキュムレーションにも当てはまりま"
-"す。  一般的には、使い過ぎは避け、できるだけシンプルにしてください。"
+"TT消化器に関する[パフォーマンスに関するアドバイス](./tt-muncher.md#performance)"
+"はすべて、プッシュダウンアキュムレーションにも当てはまります。一般的には、使い"
+"過ぎは避け、できるだけシンプルにしてください。"
 
 #: src/decl-macros/patterns/push-down-acc.md:93
-#, fuzzy
 msgid ""
 "Finally, make sure you put the accumulator at the _end_ of rules, rather than "
 "the beginning. That way, if a rule fails, the compiler won't have had to match "
 "the (potentially long) accumulator before hitting the part of the rule that "
 "fails to match. This can make a large difference to compile times."
 msgstr ""
-"最後に、アキュムレータをルールの最初ではなく最後に置くようにしてください。そう"
-"することで、ルールが失敗した場合、コンパイラはマッチに失敗したルールの部分を"
-"ヒットする前に、（潜在的に長い）アキュムレータをマッチさせる必要がなくなりま"
-"す。これはコンパイル時間に大きな違いをもたらします。"
+"最後に、アキュムレータをルールの最初ではなく _最後に_ 置くようにしてください。"
+"そうすることで、ルールが失敗した場合、コンパイラはマッチに失敗したルールの部分"
+"をヒットする前に、（長い可能性のある）アキュムレータをマッチさせる必要がなくな"
+"ります。これはコンパイル時間に大きな違いをもたらします。"
 
 #: src/decl-macros/patterns/repetition-replacement.md:9
-#, fuzzy
 msgid ""
 "This pattern is where a matched repetition sequence is simply discarded, with "
 "the variable being used to instead drive some repeated pattern that is related "
 "to the input only in terms of length."
 msgstr ""
-"このパターンでは、マッチした繰り返しシーケンスが単に破棄され、代わりに、長さの"
-"点でのみ入力に関連する繰り返しパターンを駆動するために変数が使用されます。"
+"このパターンでは、マッチした繰り返しのシーケンスが単に破棄され、代わりに、長さ"
+"の点でのみ入力に関連するパターンの繰り返しを扱うために変数が使用されます。"
 
 #: src/decl-macros/patterns/repetition-replacement.md:11
-#, fuzzy
 msgid ""
 "For example, consider constructing a default instance of a tuple with more "
 "than 12 elements (the limit as of Rust 1.2)."
 msgstr ""
-"例えば、12個以上の要素（Rust 1.2での制限）を持つタプルのデフォルトインスタンス"
-"を作成することを考えてみましょう。"
+"例えば、12個（Rust 1.2での制限）以上の要素を持つタプルの既定値のインスタンスを"
+"作成することを考えてみましょう。"
 
 #: src/decl-macros/patterns/repetition-replacement.md:34
-#, fuzzy
 msgid "**: we _could_ have simply used `$tup_tys::default()`."
-msgstr "**: 単純に `$tup_tys::default()` を使うこともできました。"
+msgstr "**: なお単に `$tup_tys::default()` を使うことでも _可能です_ 。"
 
 #: src/decl-macros/patterns/repetition-replacement.md:36
-#, fuzzy
 msgid ""
 "Here, we are not actually _using_ the matched types. Instead, we throw them "
 "away and replace them with a single, repeated expression. To put it another "
 "way, we don't care _what_ the types are, only _how many_ there are."
 msgstr ""
-"ここでは、マッチした型を実際には_使用しません。その代わりに、それらを捨て、単一"
-"の繰り返し式に置き換えます。別の言い方をすれば、型が何であるかは気にしません。"
+"ここでは、マッチした型を実際には _使用_ しません。その代わりに、それらを捨て、"
+"単一の式（の繰り返し）に置き換えます。別の言い方をすれば、型が _何であるか_ は"
+"気にせず、 _いくつあるか_ を気にしています。"
 
 #: src/decl-macros/patterns/tt-bundling.md:3
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! call_a_or_b_on_tail {\n"
@@ -8347,68 +8321,65 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"ラスト\n"
-"マクロのルール！ call_a_or_b_on_tail {\n"
-"    ((a: $a:ident, b: $b:ident), call a: $($tail:tt)*) =&gt; {\n"
-"        a(stringify!($($tail)*))\n"
+"```rust\n"
+"macro_rules! call_a_or_b_on_tail {\n"
+"    ((a: $a:ident, b: $b:ident), call a: $($tail:tt)*) => {\n"
+"        $a(stringify!($($tail)*))\n"
 "    };\n"
 "\n"
-"    ((a: $a:ident, b: $b:ident), call b: $($tail:tt)*) =&gt; { $b(stringify!"
-"($($tail)*)) }; { $a(stringify!\n"
-"        b(文字列化!($($tail)*))\n"
+"    ((a: $a:ident, b: $b:ident), call b: $($tail:tt)*) => {\n"
+"        $b(stringify!($($tail)*))\n"
 "    };\n"
 "\n"
-"    ($ab:tt, $_skip:tt $($tail:tt)*)=&gt;{。\n"
+"    ($ab:tt, $_skip:tt $($tail:tt)*) => {\n"
 "        call_a_or_b_on_tail!($ab, $($tail)*)\n"
 "    };\n"
 "}\n"
 "\n"
-"fn compute_len(s: &amp;str) -&gt; オプション<usize> {。\n"
-"    some(s.len())\n"
+"fn compute_len(s: &str) -> Option<usize> {\n"
+"    Some(s.len())\n"
 "}\n"
 "\n"
-"fn show_tail(s: &amp;str) -&gt; オプション<usize> {。\n"
-"    println!(\"tail:{:?}\", s); \n"
-"    なし\n"
+"fn show_tail(s: &str) -> Option<usize> {\n"
+"    println!(\"tail: {:?}\", s);\n"
+"    None\n"
 "}\n"
 "\n"
 "fn main() {\n"
-"    assert_eq!\n"
+"    assert_eq!(\n"
 "        call_a_or_b_on_tail!(\n"
-"            (a: compute_len, b: show_tail)、\n"
-"            これらのすべての\n"
-"            を呼び出すかbを呼び出すかはあまり気にしません。\n"
-"            を呼び出すかbを呼び出すかはあまり気にしません。\n"
+"            (a: compute_len, b: show_tail),\n"
+"            the recursive part that skips over all these\n"
+"            tokens does not much care whether we will call a\n"
+"            or call b: only the terminal rules care.\n"
 "        ),\n"
-"        なし\n"
+"        None\n"
 "    );\n"
-"    assert_eq!\n"
+"    assert_eq!(\n"
 "        call_a_or_b_on_tail!(\n"
-"            (a: compute_len, b: show_tail)、\n"
-"            そして今、2つのパスの存在を正当化するために\n"
-"            を呼び出すことにします。\n"
-"            を返すようにしましょう。\n"
-"            を返すようにしましょう！\n"
+"            (a: compute_len, b: show_tail),\n"
+"            and now, to justify the existence of two paths\n"
+"            we will also call a: its input should somehow\n"
+"            be self-referential, so let us make it return\n"
+"            some ninety-one!\n"
 "        ),\n"
-"        いくつかの(91)\n"
+"        Some(91)\n"
 "    );\n"
 "}\n"
 "```"
 
 #: src/decl-macros/patterns/tt-bundling.md:50
-#, fuzzy
 msgid ""
 "In particularly complex recursive macros, a large number of arguments may be "
 "needed in order to carry identifiers and expressions to successive layers. "
 "However, depending on the implementation there may be many intermediate layers "
 "which need to forward these arguments, but do not need to _use_ them."
 msgstr ""
-"特に複雑な再帰的マクロでは、識別子と式を連続するレイヤに運ぶために、多数の引数"
-"が必要になるかもしれません。しかし、実装によっては、これらの引数を転送する必要"
-"があっても、それらを_使用する必要がない中間層が多数あるかもしれません。"
+"特に複雑な再帰的マクロでは、識別子と式を続くレイヤに運ぶために、多数の引数が必"
+"要になるかもしれません。しかし、実装によっては、これらの引数を転送する必要は"
+"あっても、それらを _使用_ する必要はない中間層が多数あるかもしれません。"
 
 #: src/decl-macros/patterns/tt-bundling.md:53
-#, fuzzy
 msgid ""
 "As such, it can be very useful to bundle all such arguments together into a "
 "single TT by placing them in a group. This allows layers which do not need to "
@@ -8416,30 +8387,27 @@ msgid ""
 "fragment-specifiers.html#tt), rather than having to exactly capture and "
 "substitute the entire argument group."
 msgstr ""
-"そのため、このような引数をグループにまとめて、1つのTTにまとめると非常に便利で"
+"そのため、このような引数をグループに括って、単一のTTにまとめると非常に便利で"
 "す。これにより、引数を使用する必要のないレイヤーは、引数グループ全体を正確に"
 "キャプチャして代入する必要がなく、単純に単一の[`tt`](../minutiae/fragment-"
-"specifiers.html#tt)をキャプチャして代入することができます。"
+"specifiers.html#tt)としてキャプチャして代入することができます。"
 
 #: src/decl-macros/patterns/tt-bundling.md:56
-#, fuzzy
 msgid ""
 "The example above bundles the `$a` and `$b` expressions into a group which can "
 "then be forwarded as a single [`tt`](../minutiae/fragment-specifiers.html#tt) "
 "by the recursive rule. This group is then destructured by the terminal rules "
 "to access the expressions."
 msgstr ""
-"上の例では、`$a` 式と `$b` 式を1つのグループにまとめ、再帰ルールによって1つの "
-"[`tt`](../minutiae/fragment-specifiers.html#tt) として転送しています。そして、"
-"このグループは、式にアクセスするための終端ルールによって再構築されます。"
+"上の例では、再帰のルールにより、`$a` 式と `$b` 式を1つのグループにまとめ、1つ"
+"の [`tt`](../minutiae/fragment-specifiers.html#tt) として転送しています。そして"
+"終端のルールにより、式にアクセスするために、このグループは分解されます。"
 
 #: src/decl-macros/building-blocks.md:3
-#, fuzzy
 msgid "Reusable snippets of `macro_rules!` macro code."
-msgstr "マクロコード `macro_rules!` の再利用可能なスニペット。"
+msgstr "`macro_rules!` マクロのコードの再利用可能なスニペット。"
 
 #: src/decl-macros/building-blocks/ast-coercion.md:3
-#, fuzzy
 msgid ""
 "The Rust parser is not very robust in the face of `tt` substitutions. Problems "
 "can arise when the parser is expecting a particular grammar construct and "
@@ -8447,39 +8415,37 @@ msgid ""
 "parse them, it will often just _give up_. In these cases, it is necessary to "
 "employ an AST coercion."
 msgstr ""
-"Rust パーサーは `tt` の置換にあまり強くありません。パーサが特定の文法構文を期待"
-"していて、その代わりに置換された `tt` トークンの塊を見つけたときに問題が発生す"
-"ることがあります。このような場合、パーサは構文を解析しようとするのではなく、単"
-"にあきらめることになります。このような場合、AST強制を使う必要があります。"
+"Rust パーサは `tt` の代入について、あまり強くありません。パーサが特定の文法構成"
+"要素を期待していて、 _その代わりに_ 代入された `tt` トークンの塊を見つけたと"
+"き、問題が発生することがあります。このとき、パーサは構文を解析しようとするので"
+"はなく、単にあきらめることになります。このような場合、AST強制を使う必要がありま"
+"す。"
 
 #: src/decl-macros/building-blocks/ast-coercion.md:22
-#, fuzzy
 msgid ""
 "These coercions are often used with [push-down accumulation](../patterns/push-"
 "down-acc.md) macros in order to get the parser to treat the final `tt` "
 "sequence as a particular kind of grammar construct."
 msgstr ""
-"これらの強制子はしばしば[push-down accumulation](../patterns/push-down-acc.md)"
-"マクロと一緒に使われます。"
+"これらの強制はしばしば、最終的な `tt` シーケンスを特定の構文構成要素として扱う"
+"ために、[プッシュダウンアキュムレーション](../patterns/push-down-acc.md)マクロ"
+"と一緒に使われます。"
 
 #: src/decl-macros/building-blocks/ast-coercion.md:24
-#, fuzzy
 msgid ""
 "Note that this specific set of macros is determined by what macros are allowed "
 "to expand to, _not_ what they are able to capture."
 msgstr ""
-"このマクロの特定のセットは、マクロが何をキャプチャできるかではなく、マクロが何"
-"を展開できるかによって決定されることに注意してください。"
+"この特定の種類のマクロは、マクロが何をキャプチャできるかではなく、マクロが何に"
+"展開できるかによって決定されることに注意してください。"
 
 #: src/decl-macros/building-blocks/counting.md:3
-#, fuzzy
 msgid ""
 "What follows are several techniques for counting in `macro_rules!` macros:"
 msgstr ""
 "以下は、`macro_rules!` マクロでカウントするためのいくつかのテクニックです:"
 
 #: src/decl-macros/building-blocks/counting.md:5
-#, fuzzy
 msgid ""
 "**Note**: If you are just interested in the most efficient way [look here](./"
 "counting.md#bit-twiddling)"
@@ -8488,80 +8454,72 @@ msgstr ""
 "てください。"
 
 #: src/decl-macros/building-blocks/counting.md:7
-#, fuzzy
 msgid "Repetition with replacement"
-msgstr "交換を伴う繰り返し"
+msgstr "置換を伴う繰り返し"
 
 #: src/decl-macros/building-blocks/counting.md:9
-#, fuzzy
 msgid ""
 "Counting things in a macro is a surprisingly tricky task. The simplest way is "
 "to use replacement with a repetition match."
 msgstr ""
-"マクロで数を数えるのは意外と厄介な作業です。最も単純な方法は、繰り返しマッチで"
-"置換を使うことです。"
+"マクロで数を数えるのは意外と厄介な作業です。最も単純な方法は、繰り返しのマッチ"
+"で置換を使うことです。"
 
 #: src/decl-macros/building-blocks/counting.md:26
-#, fuzzy
 msgid ""
 "This is a fine approach for smallish numbers, but will likely _crash the "
 "compiler_ with inputs of around 500 or so tokens. Consider that the output "
 "will look something like this:"
 msgstr ""
-"この方法は小さな数であれば問題ありませんが、500トークン程度の入力ではコンパイラ"
-"がクラッシュする可能性が高くなります。出力は次のようになると考えてください:"
+"この方法は小さな数であれば問題ありませんが、500トークン程度以上の入力では _コン"
+"パイラがクラッシュ_ する可能性が高くなります。出力が次のようになると考えてくだ"
+"さい:"
 
 #: src/decl-macros/building-blocks/counting.md:33
-#, fuzzy
 msgid ""
 "The compiler must parse this into an AST, which will produce what is "
 "effectively a perfectly unbalanced binary tree 500+ levels deep."
 msgstr ""
-"コンパイラーはこれをASTにパースしなければなりません。ASTは、500レベル以上の深さ"
-"の完全にアンバランスなバイナリツリーを生成します。"
+"コンパイラはこれを1つのASTにパースしなければなりません。500レベル以上の深さを持"
+"つ、完全にアンバランスな二分木を生成します。"
 
 #: src/decl-macros/building-blocks/counting.md:35
 msgid "Recursion"
 msgstr "再帰"
 
 #: src/decl-macros/building-blocks/counting.md:37
-#, fuzzy
 msgid "An older approach is to use recursion."
 msgstr "古いアプローチとしては、再帰を使う方法があります。"
 
 #: src/decl-macros/building-blocks/counting.md:50
-#, fuzzy
 msgid ""
 "**Note**: As of `rustc` 1.2, the compiler has _grievous_ performance problems "
 "when large numbers of integer literals of unknown type must undergo inference. "
 "We are using explicitly `usize`\\-typed literals here to avoid that."
 msgstr ""
-"**注意**: rustc` 1.2 では、未知の型の大量の整数リテラルが推論を受けなければなら"
-"ない場合、コンパイラは_悲しむべき_パフォーマンス問題を抱えています。それを避け"
-"るために、ここでは明示的に `usize` 型のリテラルを使用しています。"
+"**注意**: rustc` 1.2 では、未知の型である大量の整数リテラルが推論を受けなければ"
+"ならない場合、コンパイラは _悲惨な_ パフォーマンスの問題を抱えています。それを"
+"避けるために、ここでは明示的に `usize` 型のリテラルを使用しています。"
 
 #: src/decl-macros/building-blocks/counting.md:53
-#, fuzzy
 msgid ""
 "If this is not suitable (such as when the type must be substitutable), you can "
 "help matters by using `as` (_e.g._ `0 as $ty`, `1 as $ty`, _etc._)."
 msgstr ""
-"これが適切でない場合(置換可能な型でなければならない場合など)は、`as`を使用する"
-"ことで、問題を解決することができます(_e._ `0 as $ty`、`1 as $ty`など)。"
+"これが適切でない場合(置換可能な型でなければならない場合など)は、`as` を使用する"
+"ことで、問題を解決することができます (たとえば `0 as $ty`、`1 as $ty`など)。"
 
 #: src/decl-macros/building-blocks/counting.md:55
-#, fuzzy
 msgid ""
 "This _works_, but will trivially exceed the recursion limit. Unlike the "
 "repetition approach, you can extend the input size by matching multiple tokens "
 "at once."
 msgstr ""
-"これはうまくいきますが、些細なことで再帰の制限を超えてしまいます。繰り返しのア"
-"プローチとは異なり、複数のトークンを一度にマッチさせることで入力サイズを拡張す"
-"ることができます。"
+"これは _うまくいきます_ が、些細なことで再帰の制限を超えてしまいます。繰り返し"
+"のアプローチとは異なり、複数のトークンを一度にマッチさせることで入力サイズを拡"
+"張することができます。"
 
 #: src/decl-macros/building-blocks/counting.md:58
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! count_tts {\n"
@@ -8611,66 +8569,63 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"ラスト\n"
-"マクロルール！ count_tts {\n"
-"    ($_a:tt $_b:tt $_c:tt $_d:tt $_e:tt\n"
-"     f:tt $_g:tt $_h:tt $_i:tt $_j:tt\n"
-"     k:tt $_l:tt $_m:tt $_n:tt $_o:tt\n"
-"     p:tt $_q:tt $_r:tt $_s:tt $_t:tt\n"
-"     ($tail:tt)*)\n"
-"        => {20usize + count_tts!($($tail)*)}; \n"
+"```rust\n"
+"macro_rules! count_tts {\n"
 "    ($_a:tt $_b:tt $_c:tt $_d:tt $_e:tt\n"
 "     $_f:tt $_g:tt $_h:tt $_i:tt $_j:tt\n"
-"     ($tail:tt)*)\n"
-"        => {10usize + count_tts!($($tail)*)}; \n"
+"     $_k:tt $_l:tt $_m:tt $_n:tt $_o:tt\n"
+"     $_p:tt $_q:tt $_r:tt $_s:tt $_t:tt\n"
+"     $($tail:tt)*)\n"
+"        => {20usize + count_tts!($($tail)*)};\n"
 "    ($_a:tt $_b:tt $_c:tt $_d:tt $_e:tt\n"
-"     ($($tail:tt)*))\n"
-"        => {5usize + count_tts!($($tail)*)}; \n"
+"     $_f:tt $_g:tt $_h:tt $_i:tt $_j:tt\n"
+"     $($tail:tt)*)\n"
+"        => {10usize + count_tts!($($tail)*)};\n"
+"    ($_a:tt $_b:tt $_c:tt $_d:tt $_e:tt\n"
+"     $($tail:tt)*)\n"
+"        => {5usize + count_tts!($($tail)*)};\n"
 "    ($_a:tt\n"
-"     ($($tail:tt)*)\n"
-"        => {1usize + count_tts!($($tail)*)}; \n"
+"     $($tail:tt)*)\n"
+"        => {1usize + count_tts!($($tail)*)};\n"
 "    () => {0usize};\n"
 "}\n"
 "\n"
 "fn main() {\n"
-"    assert_eq!(700, count_tts!(),,,,,,,,,,,.\n"
+"    assert_eq!(700, count_tts!(\n"
 "        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
 "        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
 "\n"
-"        \n"
-"        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
-"\n"
-"        \n"
-"        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
-"\n"
-"        \n"
-"        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
-"\n"
-"        \n"
-"        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
-"\n"
-"        // この後、どこかで繰り返しが中断\n"
 "        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
 "        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
 "\n"
-"        \n"
+"        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
+"        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
+"\n"
+"        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
+"        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
+"\n"
+"        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
+"        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
+"\n"
+"        // Repetition breaks somewhere after this\n"
+"        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
+"        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
+"\n"
+"        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
 "        ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,,,\n"
 "    ));\n"
 "}\n"
 "```"
 
 #: src/decl-macros/building-blocks/counting.md:106
-#, fuzzy
 msgid "This particular formulation will work up to ~1,200 tokens."
-msgstr "この製剤は、～1,200トークンまで使用できます。"
+msgstr "このやり方は、1,200トークンまで使用できます。"
 
 #: src/decl-macros/building-blocks/counting.md:108
-#, fuzzy
 msgid "Slice length"
 msgstr "スライス長"
 
 #: src/decl-macros/building-blocks/counting.md:110
-#, fuzzy
 msgid ""
 "A third approach is to help the compiler construct a shallow AST that won't "
 "lead to a stack overflow. This can be done by constructing an array literal "
@@ -8681,37 +8636,32 @@ msgstr ""
 "すことで実現できます。"
 
 #: src/decl-macros/building-blocks/counting.md:127
-#, fuzzy
 msgid ""
 "This has been tested to work up to 10,000 tokens, and can probably go much "
 "higher."
 msgstr ""
-"これは10,000トークンまで動作することがテストされており、おそらくもっと高くする"
-"ことができます。"
+"これは10,000トークンまで動作することがテストされており、おそらくもっと多くても"
+"大丈夫でしょう。"
 
 #: src/decl-macros/building-blocks/counting.md:129
-#, fuzzy
 msgid "Array length"
 msgstr "配列の長さ"
 
 #: src/decl-macros/building-blocks/counting.md:131
-#, fuzzy
 msgid ""
 "Another modification of the previous approach is to use const generics "
 "stabilized in Rust 1.51. It's only slightly slower than slice length method on "
 "20,000 tokens and works in const contexts."
 msgstr ""
-"以前のアプローチのもう1つの修正は、Rust 1.51で安定したconstジェネリックを使うこ"
-"とです。20,000トークンではslice lengthメソッドよりわずかに遅く、constコンテキス"
-"トで動作します。"
+"前のアプローチのもう1つの変形は、Rust 1.51で安定したconstジェネリックを使うこと"
+"です。20,000トークンではスライス長の手法よりわずかに遅く、constコンテキストで動"
+"作します。"
 
 #: src/decl-macros/building-blocks/counting.md:152
-#, fuzzy
 msgid "Enum counting"
-msgstr "列挙カウント"
+msgstr "Enum カウント"
 
 #: src/decl-macros/building-blocks/counting.md:154
-#, fuzzy
 msgid ""
 "This approach can be used where you need to count a set of mutually distinct "
 "identifiers."
@@ -8719,27 +8669,24 @@ msgstr ""
 "この方法は、互いに異なる識別子の集合を数える必要がある場合に使用できます。"
 
 #: src/decl-macros/building-blocks/counting.md:175
-#, fuzzy
 msgid ""
 "This method does have two drawbacks. As implied above, it can _only_ count "
 "valid identifiers (which are also not keywords), and it does not allow those "
 "identifiers to repeat."
 msgstr ""
-"この方法には2つの欠点があります。上記で暗示したように、有効な識別子(キーワード"
-"でもない)のみを数えることができ、それらの識別子を繰り返すことはできません。"
+"この方法には2つの欠点があります。上記で暗示したように、有効な識別子(かつキー"
+"ワードでもないもの)のみを数えることができ、それらの識別子が繰り返されることは許"
+"されません。"
 
 #: src/decl-macros/building-blocks/counting.md:178
-#, fuzzy
 msgid "Bit twiddling"
 msgstr "ビットいじり"
 
 #: src/decl-macros/building-blocks/counting.md:180
-#, fuzzy
 msgid "Another recursive approach using bit operations:"
 msgstr "ビット演算を使ったもう一つの再帰的アプローチ:"
 
 #: src/decl-macros/building-blocks/counting.md:194
-#, fuzzy
 msgid ""
 "This approach is pretty smart as it effectively halves its input whenever its "
 "even and then multiplying the counter by 2 (or in this case shifting 1 bit to "
@@ -8748,13 +8695,13 @@ msgid ""
 "is equivalent to adding 1 as the lowest bit has to be a 0 at this point due to "
 "the previous shifting. Rinse and repeat until we hit the base rule `() => 0`."
 msgstr ""
-"このアプローチはかなりスマートで、入力が偶数であるときは常に入力を半分にし、カ"
-"ウンターを2倍します（この場合は1ビットを左にシフトします）。入力が不均等な場合"
-"は、単純に入力からトークンツリーを1つ取るか、トークンツリーを前のカウンターに移"
-"します。基本ルール `() => 0` にぶつかるまで繰り返します。"
+"このアプローチはかなりスマートで、入力が偶数であるときは常に効果的に入力を半分"
+"にし、カウンターを2倍します（この場合は1ビットを左にシフトします）。入力が偶数"
+"でない場合は、単純に入力からトークンツリーを1つ取り、そのトークンツリーを前のカ"
+"ウンタに `or` します。これは、前のシフトにより最下位ビットが0であることから、1"
+"を足すことと同義です。底のルール `() => 0` にぶつかるまで繰り返します。"
 
 #: src/decl-macros/building-blocks/counting.md:198
-#, fuzzy
 msgid ""
 "The benefit of this is that the constructed AST expression that makes up the "
 "counter value will grow with a complexity of `O(log(n))` instead of `O(n)` "
@@ -8763,19 +8710,17 @@ msgid ""
 "[`YatoRust`](https://www.reddit.com/r/rust/comments/d3yag8/"
 "the_little_book_of_rust_macros/)."
 msgstr ""
-"この利点は、カウンターの値を構成するAST式が他のアプローチのように `O(n)` ではな"
-"く `O(log(n))` の複雑さで成長することです。この方法でも頑張れば再帰限界にぶつか"
-"る可能性があることに注意してください。この方法のクレジットはRedditユーザー"
+"この利点は、カウンターの値を構成するAST式が、他のアプローチのように `O(n)` では"
+"なく、 `O(log(n))` の複雑さで成長することです。この方法でも頑張れば再帰限界にぶ"
+"つかる可能性があることに注意してください。この方法のクレジットはRedditユーザー"
 "[`YatoRust`](https://www.reddit.com/r/rust/comments/d3yag8/"
 "the_little_book_of_rust_macros/)にあります。"
 
 #: src/decl-macros/building-blocks/counting.md:203
-#, fuzzy
 msgid "Let's go through the procedure by hand once:"
 msgstr "一度、手で手順を確認してみましょう:"
 
 #: src/decl-macros/building-blocks/counting.md:208
-#, fuzzy
 msgid ""
 "This invocation will match the third rule due to the fact that we have an even "
 "number of token trees(10). The matcher names the odd token trees in the "
@@ -8784,11 +8729,12 @@ msgid ""
 "input in half. So the invocation now becomes:"
 msgstr ""
 "偶数のトークンツリー(10)があるため、この呼び出しは3番目のルールにマッチします。"
-"マッチャーはトークン木列の奇数に `$a`、偶数に `$even` という名前を付けますが、"
-"展開では `$a` のみを使用します。そのため、呼び出しは次のようになります:"
+"マッチャーはシーケンス内のトークンツリーの奇数のものに `$a`、偶数のものに "
+"`$even` という名前を付けますが、展開では `$a` のみを使用します。これは入力の偶"
+"数要素を効果的に捨て、入力を半分にするということです。そのため、呼び出しは次の"
+"ようになります:"
 
 #: src/decl-macros/building-blocks/counting.md:214
-#, fuzzy
 msgid ""
 "This invocation will now match the second rule as its input is an uneven "
 "amount of token trees. In this case the first token tree is discarded to make "
@@ -8796,52 +8742,50 @@ msgid ""
 "again since we know the input would be even now anyways. Therefore we can "
 "count 1 for the uneven discard and multiply by 2 again since we also halved."
 msgstr ""
-"この呼び出しは2番目のルールにマッチします。この場合、最初のトークンツリーを破棄"
-"して入力を偶数にします。したがって、不均等な廃棄を1と数え、また半分にしたので2"
-"を掛けます。"
+"この呼び出しは入力のトークンツリーが偶数でないため、2番目のルールにマッチしま"
+"す。再度入力を偶数にするために最初のトークンツリーを捨て、その後（入力が偶数に"
+"なっていることが分かっているので）再度この呼び出しの中で半減化の処理をします。"
+"それゆえに、奇数部分を捨てたことに対し1を数え上げ、かつ半減したために2倍しま"
+"す。"
 
 #: src/decl-macros/building-blocks/counting.md:230
-#, fuzzy
 msgid ""
 "Now to check if we expanded correctly manually we can use a one of the tools "
 "we introduced for [`debugging`](../minutiae/debugging.md). When expanding the "
 "macro there we should get:"
 msgstr ""
 "手動で正しく展開できたかどうかを確認するには、[`debugging`]（../minutiae/"
-"debugging.md）で紹介したツールを使います。そこでマクロを展開すると"
+"debugging.md）で紹介したツールを使います。そこでマクロを展開すると以下になりま"
+"す:"
 
 #: src/decl-macros/building-blocks/counting.md:236
-#, fuzzy
 msgid "That's the same so we didn't make any mistakes, great!"
-msgstr "それは同じなので、ミスはありませんでした！"
+msgstr "素晴らしい。私たちはミスしなかったので、同じになりました！"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:1
-#, fuzzy
 msgid "Abacus Counters"
 msgstr "そろばんカウンター"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:3
-#, fuzzy
 msgid ""
 "**Provisional**: needs a more compelling example. Matching nested groups that "
 "are _not_ denoted by Rust groups is sufficiently unusual that it may not merit "
 "inclusion."
 msgstr ""
-"*仮***: もっと説得力のある例が必要です。Rustグループによって示されないネストさ"
-"れたグループとのマッチングは十分に珍しいので、含める価値はないかもしれません。"
+"**仮**: もっと説得力のある例が必要です。Rustグループによって _示されない_ ネス"
+"トされたグループとのマッチングは、十分に珍しいものなので、含める価値はないかも"
+"しれません。"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:6
-#, fuzzy
 msgid ""
 "**Note**: this section assumes understanding of [push-down accumulation](#push-"
 "down-accumulation) and [incremental TT munchers](#incremental-tt-munchers)."
 msgstr ""
-"*注***: このセクションは、[push-down accumulation](#push-down-accumulation) と "
-"[incremental TT munchers](#incremental-tt-munchers) を理解していることを前提と"
-"しています。"
+"*注***: このセクションは、[プッシュダウンアキュムレーション](#push-down-"
+"accumulation) と [漸進的TT消化器](#incremental-tt-munchers) を理解していること"
+"を前提としています。"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:8
-#, fuzzy
 msgid ""
 "```rust\n"
 "macro_rules! abacus {\n"
@@ -8869,55 +8813,51 @@ msgid ""
 "}\n"
 "```"
 msgstr ""
-"ラスト\n"
-"マクロルール\n"
+"```rust\n"
+"macro_rules! abacus {\n"
 "    ((- $($moves:tt)*) -> (+ $($count:tt)*)) => {\n"
-"        そろばん！(($($moves)*) -> ($($count)*))\n"
+"        abacus!(($($moves)*) -> ($($count)*))\n"
 "    };\n"
-"    ((- $($moves:tt)*) -> ($($count:tt)*)) => {そろばん!\n"
-"        そろばん！(($($moves)*) -> (- $($count)*))\n"
+"    ((- $($moves:tt)*) -> ($($count:tt)*)) => {\n"
+"        abacus!(($($moves)*) -> (- $($count)*))\n"
 "    };\n"
-"    ((+ $($moves:tt)*) -> (- $($count:tt)*)) => { {そろばん!\n"
-"        そろばん!(($($moves)*) -> ($($count)*))\n"
+"    ((+ $($moves:tt)*) -> (- $($count:tt)*)) => {\n"
+"        abacus!(($($moves)*) -> ($($count)*))\n"
 "    };\n"
-"    ((+ $($moves:tt)*) -> ($($count:tt)*)) => {そろばん!\n"
-"        そろばん!(($($moves)*) -> (+ $($count)*))。\n"
+"    ((+ $($moves:tt)*) -> ($($count:tt)*)) => {\n"
+"        abacus!(($($moves)*) -> (+ $($count)*))\n"
 "    };\n"
 "\n"
-"    // 最終結果が0かどうかを調べます。\n"
-"    (() -> ()) => { true }; \n"
-"    (() -> ($($count:tt)+)) => { false }; \n"
+"    // 最終結果がゼロか確認する。\n"
+"    (() -> ()) => { true };\n"
+"    (() -> ($($count:tt)+)) => { false };\n"
 "}\n"
 "\n"
 "fn main() {\n"
-"    let equals_zero = そろばん!((++-+-+++--++---++++----+) -> ()); \n"
-"    assert_eq!(equals_zero, true); \n"
+"    let equals_zero = abacus!((++-+-+++--++---++----+) -> ());\n"
+"    assert_eq!(equals_zero, true);\n"
 "}\n"
 "```"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:34
-#, fuzzy
 msgid ""
 "This technique can be used in cases where you need to keep track of a varying "
 "counter that starts at or near zero, and must support the following operations:"
 msgstr ""
-"このテクニックは、ゼロまたはゼロに近い値から始まる変化するカウンターを追跡する"
+"このテクニックは、ゼロまたはゼロに近い値から始まり変化するカウンターを追跡する"
 "必要があり、以下の操作をサポートする必要がある場合に使用できます:"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:36
-#, fuzzy
 msgid "Increment by one."
-msgstr "1ずつ増やします。"
+msgstr "1ずつ増やす。"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:37
-#, fuzzy
 msgid "Decrement by one."
-msgstr "1つ減ります。"
+msgstr "1ずつ減らす。"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:38
-#, fuzzy
 msgid "Compare to zero (or any other fixed, finite value)."
-msgstr "ゼロ（または他の固定された有限の値）と比較してください。"
+msgstr "ゼロ（または他の固定の有限値）と比較する。"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:40
 #, fuzzy
@@ -9155,7 +9095,6 @@ msgstr ""
 "ければ、繰り返しを使うことで、より効率的に実装することができます:"
 
 #: src/decl-macros/building-blocks/parsing.md:3
-#, fuzzy
 msgid ""
 "Parsing some of Rust's items can be useful in certain situations. This section "
 "will show a few macros that can parse some of Rust's more complex items like "
@@ -9164,11 +9103,11 @@ msgid ""
 "in general quite useful without being too complex to parse. This means we "
 "ignore things like generics and such."
 msgstr ""
-"Rustのいくつかの項目を解析することは、特定の状況において有用です。このセクショ"
-"ンでは、構造体や関数のようなRustのより複雑な項目をある程度解析できるマクロをい"
-"くつか紹介します。これらのマクロの目的は、項目の文法全体を解析できるようにする"
-"ことではなく、解析が複雑すぎず、一般的に非常に有用な部分を解析することです。つ"
-"まり、ジェネリクスなどは無視します。"
+"Rustのいくつかのアイテムをパースすることは、特定の状況において有用です。このセ"
+"クションでは、構造体や関数のようなRustのより複雑なアイテムをある程度までパース"
+"できるマクロをいくつか紹介します。これらのマクロの目的は、アイテムの文法全体を"
+"解析できるようにすることではなく、パースが複雑すぎず、一般的に非常に有用な部分"
+"をパースすることです。つまり、ジェネリクスなどは無視します。"
 
 #: src/decl-macros/building-blocks/parsing.md:7
 #, fuzzy
