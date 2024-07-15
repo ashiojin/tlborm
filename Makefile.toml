@@ -1,0 +1,47 @@
+[tasks.build-ja]
+env = { "MDBOOK_BOOK__LANGUAGE" = "ja" }
+command = "mdbook"
+args = ["build", "-d", "book/ja"]
+dependencies = ["install-mdbook", "install-mdbook-i18n-helpers"]
+
+# [tasks.build]
+# command = "mdbook"
+# args = ["build", "-d", "book"]
+# dependencies = ["install-mdbook", "install-mdbook-i18n-helpers"]
+
+# [tasks.make-release]
+# run_task = [
+#     { name = [ "clear-release-dir", "collect-en", "collect-ja", ] },
+# ]
+
+[tasks.generate-po-template]
+env = { "MDBOOK_OUTPUT" = '{"xgettext": {"pot-file": "messages.pot"}}' }
+command = "mdbook"
+args = ["build", "-d", "po"]
+dependencies = ["install-mdbook", "install-mdbook-i18n-helpers"]
+
+[tasks.merge-pot-to-ja]
+command = "msgmerge"
+args = ["--update", "po/ja.po", "po/messages.pot"]
+dependencies = ["generate-po-template"]
+
+# [tasks.clear-release-dir]
+# command = "rm"
+# args = ["-rf", "book/release"]
+#
+# [tasks.collect-en]
+# command = "cp"
+# args = ["-r", "book/html", "book/release"]
+# dependencies = ["build"]
+#
+# [tasks.collect-ja]
+# command = "cp"
+# args = ["-r", "book/ja/html", "book/release/ja"]
+# dependencies = ["build-ja"]
+
+[tasks.install-mdbook] # TODO: `binary`, `test_arg` ...
+install_crate = { crate_name = "mdbook", binary = "mdbook", test_arg = ["--version"], version = "0.4.40", force = true }
+
+[tasks.install-mdbook-i18n-helpers]
+install_crate = { crate_name = "mdbook-i18n-helpers", binary = "mdbook-i18n-helpers", test_arg = [], version = "0.3.4", force = true }
+
