@@ -16,7 +16,7 @@ macro_rules! function_item_matcher {
         $( #[$meta:meta] )*
     //  ^~~~attributes~~~~^
         $vis:vis fn $name:ident ( $( $arg_name:ident : $arg_ty:ty ),* $(,)? )
-    //                          ^~~~~~~~~~~~~~~~argument list!~~~~~~~~~~~~~~^
+    //                          ^~~~~~~~~~~~~~~~argument list~~~~~~~~~~~~~~~^
             $( -> $ret_ty:ty )?
     //      ^~~~return type~~~^
             { $($tt:tt)* }
@@ -27,13 +27,13 @@ macro_rules! function_item_matcher {
     }
 }
 
-#function_item_matcher!(
-#    #[inline]
-#    #[cold]
-#    pub fn foo(bar: i32, baz: i32, ) -> String {
-#        format!("{} {}", bar, baz)
-#    }
-#);
+# function_item_matcher!(
+#     #[inline]
+#     #[cold]
+#     pub fn foo(bar: i32, baz: i32, ) -> String {
+#         format!("{} {}", bar, baz)
+#     }
+# );
 #
 # fn main() {
 #     assert_eq!(foo(13, 37), "13 37");
@@ -53,7 +53,86 @@ Kind of like a `Derive` proc-macro but weaker and for functions.
 
 The macro for parsing basic functions is nice and all, but sometimes we would like to also parse methods, functions that refer to their object via some form of `self` usage. This makes things a bit trickier:
 
-> WIP
+```rust
+macro_rules! method_item_matcher {
+    // self
+    (
+        $( #[$meta:meta] )*
+    //  ^~~~attributes~~~~^
+        $vis:vis fn $name:ident ( $self:ident $(, $arg_name:ident : $arg_ty:ty )* $(,)? )
+    //                          ^~~~~~~~~~~~~~~~~~~~~argument list~~~~~~~~~~~~~~~~~~~~~~^
+            $( -> $ret_ty:ty )?
+    //      ^~~~return type~~~^
+            { $($tt:tt)* }
+    //      ^~~~~body~~~~^
+    ) => {
+        $( #[$meta] )*
+        $vis fn $name ( $self $(, $arg_name : $arg_ty )* ) $( -> $ret_ty )? { $($tt)* }
+    };
+
+    // mut self
+    (
+        $( #[$meta:meta] )*
+        $vis:vis fn $name:ident ( mut $self:ident $(, $arg_name:ident : $arg_ty:ty )* $(,)? )
+            $( -> $ret_ty:ty )?
+            { $($tt:tt)* }
+    ) => {
+        $( #[$meta] )*
+        $vis fn $name ( mut $self $(, $arg_name : $arg_ty )* ) $( -> $ret_ty )? { $($tt)* }
+    };
+
+    // &self
+    (
+        $( #[$meta:meta] )*
+        $vis:vis fn $name:ident ( & $self:ident $(, $arg_name:ident : $arg_ty:ty )* $(,)? )
+            $( -> $ret_ty:ty )?
+            { $($tt:tt)* }
+    ) => {
+        $( #[$meta] )*
+        $vis fn $name ( & $self $(, $arg_name : $arg_ty )* ) $( -> $ret_ty )? { $($tt)* }
+    };
+
+    // &mut self
+    (
+        $( #[$meta:meta] )*
+        $vis:vis fn $name:ident ( &mut $self:ident $(, $arg_name:ident : $arg_ty:ty )* $(,)? )
+            $( -> $ret_ty:ty )?
+            { $($tt:tt)* }
+    ) => {
+        $( #[$meta] )*
+        $vis fn $name ( &mut $self $(, $arg_name : $arg_ty )* ) $( -> $ret_ty )? { $($tt)* }
+    }
+}
+
+# struct T(i32);
+# impl T {
+#     method_item_matcher!(
+#         #[inline]
+#         pub fn s(self, x: i32) -> String { format!("{}", x) }
+#     );
+#     method_item_matcher!(
+#         pub fn ms(mut self, x: i32,) -> String { format!("{}", x) }
+#     );
+#     method_item_matcher!(
+#         pub fn rs(&self, x: i32, y: i32) -> String { format!("{}", self.0 + x + y) }
+#     );
+#     method_item_matcher!(
+#         pub fn rms(&mut self) -> String { self.0.to_string() }
+#     );
+# }
+#
+# fn main() {
+#     assert_eq!({ let t = T(11); t.s(11) }, "11");
+#     assert_eq!({ let t = T(22); t.ms(22) }, "22");
+#     assert_eq!({ let t = T(30); t.rs(1, 2) }, "33");
+#     assert_eq!({ let mut t = T(44); t.rms() }, "44");
+# }
+```
+The four rules are identical except for the `self` receiver on both sides of the rule, which is `self`, `mut self`, `&self`, and `&mut self`.
+You might not need all four rules.
+
+`$self:ident` must be used in the matcher instead of a bare `self`.
+Without that, uses of `self` in the body will cause compile errors, because a macro invocation can only access identifiers it receives from parameters.
 
 ## Struct
 
@@ -114,27 +193,27 @@ macro_rules! struct_item_matcher {
     }
 }
 
-#struct_item_matcher!(
-#    #[derive(Copy, Clone)]
-#    pub(crate) struct Foo {
-#       pub bar: i32,
-#       baz: &'static str,
-#       qux: f32
-#    }
-#);
-#struct_item_matcher!(
-#    #[derive(Copy, Clone)]
-#    pub(crate) struct Bar;
-#);
-#struct_item_matcher!(
-#    #[derive(Clone)]
-#    pub(crate) struct Baz (i32, pub f32, String);
-#);
-#fn main() {
-#    let _: Foo = Foo { bar: 42, baz: "macros can be nice", qux: 3.14, };
-#    let _: Bar = Bar;
-#    let _: Baz = Baz(2, 0.1234, String::new());
-#}
+# struct_item_matcher!(
+#     #[derive(Copy, Clone)]
+#     pub(crate) struct Foo {
+#        pub bar: i32,
+#        baz: &'static str,
+#        qux: f32
+#     }
+# );
+# struct_item_matcher!(
+#     #[derive(Copy, Clone)]
+#     pub(crate) struct Bar;
+# );
+# struct_item_matcher!(
+#     #[derive(Clone)]
+#     pub(crate) struct Baz (i32, pub f32, String);
+# );
+# fn main() {
+#     let _: Foo = Foo { bar: 42, baz: "macros can be nice", qux: 3.14, };
+#     let _: Bar = Bar;
+#     let _: Baz = Baz(2, 0.1234, String::new());
+# }
 ```
 
 # Enum
@@ -191,25 +270,25 @@ macro_rules! enum_item_matcher {
     };
 }
 
-#enum_item_matcher!(
-#    #[derive(Copy, Clone)]
-#    pub(crate) enum Foo {
-#        Bar,
-#        Baz,
-#    }
-#);
-#enum_item_matcher!(
-#    #[derive(Copy, Clone)]
-#    pub(crate) enum Bar {
-#        Foo(i32, f32),
-#        Bar,
-#        Baz(),
-#    }
-#);
-#enum_item_matcher!(
-#    #[derive(Clone)]
-#    pub(crate) enum Baz {}
-#);
+# enum_item_matcher!(
+#     #[derive(Copy, Clone)]
+#     pub(crate) enum Foo {
+#         Bar,
+#         Baz,
+#     }
+# );
+# enum_item_matcher!(
+#     #[derive(Copy, Clone)]
+#     pub(crate) enum Bar {
+#         Foo(i32, f32),
+#         Bar,
+#         Baz(),
+#     }
+# );
+# enum_item_matcher!(
+#     #[derive(Clone)]
+#     pub(crate) enum Baz {}
+# );
 ```
 
 [patterns]: ../patterns.md
