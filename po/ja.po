@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: The Little Book of Rust Macros\n"
-"POT-Creation-Date: 2024-07-15T13:49:54+09:00\n"
-"PO-Revision-Date: 2024-07-15 14:14+0900\n"
+"POT-Creation-Date: 2024-07-16T10:39:57+09:00\n"
+"PO-Revision-Date: 2024-07-16 11:37+0900\n"
 "Last-Translator: MORI, Yuji <ashiojin@gmail.com>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -37,7 +37,7 @@ msgid "Expansion"
 msgstr "展開"
 
 #: src/SUMMARY.md:9 src/SUMMARY.md:18 src/syntax-extensions/hygiene.md:1
-#: src/decl-macros/minutiae/hygiene.md:1 src/decl-macros/macros2.md:56
+#: src/decl-macros/minutiae/hygiene.md:1 src/decl-macros/macros2.md:57
 msgid "Hygiene"
 msgstr "ハイジーン"
 
@@ -143,7 +143,6 @@ msgid "Macros 2.0"
 msgstr "マクロ2.0"
 
 #: src/SUMMARY.md:36 src/proc-macros.md:1
-#, fuzzy
 msgid "Procedural Macros"
 msgstr "手続き型マクロ"
 
@@ -153,12 +152,11 @@ msgstr "関数型"
 
 #: src/SUMMARY.md:39 src/proc-macros/methodical/attr.md:1
 msgid "Attribute"
-msgstr "アトリビュート"
+msgstr "Attribute"
 
 #: src/SUMMARY.md:40 src/proc-macros/methodical/derive.md:1
-#, fuzzy
 msgid "Derive"
-msgstr "`# [ $arg ]`; _e.g._ `#[derive(Clone)]`, `#[no_mangle]`, …"
+msgstr "Derive"
 
 #: src/SUMMARY.md:41
 #, fuzzy
@@ -439,9 +437,8 @@ msgstr ""
 "す: [^cpp-it-seemed-like-a-good-idea-the-the-time]。"
 
 #: src/syntax-extensions/source-analysis.md:42
-#, fuzzy
 msgid "\"Oh, the horror!\\n\""
-msgstr "「ああ、恐ろしい！」。"
+msgstr "\"Oh, the horror!\\n\""
 
 #: src/syntax-extensions/source-analysis.md:46
 msgid ""
@@ -1123,9 +1120,8 @@ msgstr ""
 "ます。次のようなコードがあるとします:"
 
 #: src/syntax-extensions/debugging.md:11 src/syntax-extensions/debugging.md:35
-#, fuzzy
 msgid "// Shorthand for initializing a `String`.\n"
-msgstr "// Shorthand for initializing a `String`.\n"
+msgstr "// `String`初期化の省略記法。\n"
 
 #: src/syntax-extensions/debugging.md:17 src/syntax-extensions/debugging.md:40
 msgid "\"World\""
@@ -1271,9 +1267,8 @@ msgstr ""
 "ません。これは以下の形式を使用します:"
 
 #: src/decl-macros/macros-methodical.md:19
-#, fuzzy
 msgid "// …\n"
-msgstr "// ...\n"
+msgstr "// …\n"
 
 #: src/decl-macros/macros-methodical.md:24
 msgid ""
@@ -1903,10 +1898,12 @@ msgstr ""
 #: src/decl-macros/macros-practical.md:1122
 #: src/decl-macros/macros-practical.md:1400
 #: src/decl-macros/macros-practical.md:1485
-#: src/decl-macros/minutiae/fragment-specifiers.md:368
+#: src/decl-macros/minutiae/fragment-specifiers.md:371
 #: src/decl-macros/minutiae/identifiers.md:22
 #: src/decl-macros/minutiae/identifiers.md:23
-#, fuzzy
+#: src/decl-macros/building-blocks/parsing.md:111
+#: src/decl-macros/building-blocks/parsing.md:114
+#: src/decl-macros/building-blocks/parsing.md:117
 msgid "\"{}\""
 msgstr "\"{}\""
 
@@ -1926,7 +1923,6 @@ msgstr ""
 #: src/decl-macros/macros-practical.md:1041
 #: src/decl-macros/macros-practical.md:1088
 #: src/decl-macros/macros-practical.md:1113
-#, fuzzy
 msgid "/* ... */"
 msgstr "/* ... */"
 
@@ -2057,18 +2053,8 @@ msgstr "シーケンスの初期値を返す分岐が必要です; 難しいこ�
 
 #: src/decl-macros/macros-practical.md:301
 #: src/decl-macros/macros-practical.md:345
-#, fuzzy
 msgid "/* something */"
-msgstr ""
-"```text\n"
-"got an identifier\n"
-"got an addition\n"
-"got something else\n"
-"\n"
-"got something else\n"
-"got something else\n"
-"got something else\n"
-"```"
+msgstr "/* 何かしら */"
 
 #: src/decl-macros/macros-practical.md:314
 msgid ""
@@ -2818,9 +2804,17 @@ msgid "//    ^~~~~~~~~~   ^~~~~~~~~~ changed\n"
 msgstr "//    ^~~~~~~~~~   ^~~~~~~~~~ changed\n"
 
 #: src/decl-macros/macros-practical.md:1370
-#: src/decl-macros/macros-practical.md:1372
 msgid "//                              ^~~~ changed\n"
 msgstr "//                              ^~~~ changed\n"
+
+#: src/decl-macros/macros-practical.md:1372
+msgid ""
+"//                              ^~~~ changed                                   "
+"^~~~ changed\n"
+msgstr ""
+"**<abbr title=\"Just for this example\">JFTE</"
+"abbr>**//                                                          ^~~~ "
+"changed\n"
 
 #: src/decl-macros/macros-practical.md:1404
 msgid "And it compiles! Now, let's try with a different sequence."
@@ -2944,7 +2938,7 @@ msgstr "`expr`"
 msgid ""
 "The `expr` fragment matches any kind of [expression](https://doc.rust-lang.org/"
 "reference/expressions.html) (Rust has a lot of them, given it _is_ an "
-"expression orientated language)."
+"expression-oriented language)."
 msgstr ""
 "`expr` フラグメントはあらゆる種類の[式](https://doc.rust-lang.org/reference/"
 "expressions.html)（Rustは式指向言語であるため、多様な式を持ちます）にマッチしま"
@@ -3291,18 +3285,21 @@ msgid "// ^^^^^^^^^^^^^^^^ error: missing tokens in macro arguments\n"
 msgstr "// ^^^^^^^^^^^^^^^^ error: missing tokens in macro arguments\n"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:340
-msgid ""
-"`$vis:vis $ident:ident` matches fine, unlike `$(pub)? $ident:ident` which is "
-"ambiguous, as `pub` denotes a valid identifier."
-msgstr ""
-"`$vis:vis $ident:ident` はマッチします。対して `$(pub)? $ident:ident` は曖昧で"
-"す。`pub` は有効な識別子を表すためです。"
+msgid "`$vis:vis $ident:ident` matches fine."
+msgstr "`$vis:vis $ident:ident` は問題なくマッチします。"
 
 #: src/decl-macros/minutiae/fragment-specifiers.md:345
 msgid "// this works fine\n"
 msgstr "// これはうまくいく\n"
 
-#: src/decl-macros/minutiae/fragment-specifiers.md:354
+#: src/decl-macros/minutiae/fragment-specifiers.md:348
+msgid ""
+"In contrast, `$(pub)? $ident:ident` is ambiguous, as `pub` denotes a valid "
+"identifier."
+msgstr ""
+"対して `$(pub)? $ident:ident` は曖昧です。`pub` は有効な識別子を表すためです。"
+
+#: src/decl-macros/minutiae/fragment-specifiers.md:357
 msgid ""
 "Being a fragment that matches the empty token sequence also gives it a very "
 "interesting quirk in combination with `tt` fragments and recursive expansions."
@@ -3310,7 +3307,7 @@ msgstr ""
 "空のトークン列にマッチするフラグメントであることは、 `tt` フラグメントや再帰的"
 "展開と組み合わせたとき、非常に興味深い奇妙な動作を引き起こします。"
 
-#: src/decl-macros/minutiae/fragment-specifiers.md:356
+#: src/decl-macros/minutiae/fragment-specifiers.md:359
 msgid ""
 "When matching the empty token sequence, the metavariable will still count as a "
 "capture and since it is not a `tt`, `ident` or `lifetime` fragment it will "
@@ -3323,15 +3320,15 @@ msgstr ""
 "なります。つまり、このキャプチャを `tt` としてキャプチャする別のマクロに渡す"
 "と、何も含まないトークンツリーになってしまいます！"
 
-#: src/decl-macros/minutiae/fragment-specifiers.md:361
+#: src/decl-macros/minutiae/fragment-specifiers.md:364
 msgid "\"()\""
 msgstr "\"()\""
 
-#: src/decl-macros/minutiae/fragment-specifiers.md:362
+#: src/decl-macros/minutiae/fragment-specifiers.md:365
 msgid "\"$tt is \""
 msgstr "\"$tt is \""
 
-#: src/decl-macros/minutiae/fragment-specifiers.md:366
+#: src/decl-macros/minutiae/fragment-specifiers.md:369
 msgid ""
 "// this prints \"$tt is \", as the recursive calls hits the second branch "
 "with\n"
@@ -3605,8 +3602,8 @@ msgid "[`$$`](#dollar-dollar-)"
 msgstr "[`$$`](#dollar-dollar-)"
 
 #: src/decl-macros/minutiae/metavar-expr.md:13
-msgid "[`${count(ident, depth)}`](#countident-depth)"
-msgstr "[`${count(ident, depth)}`](#countident-depth)"
+msgid "[`${count($ident, depth)}`](#countident-depth)"
+msgstr "[`${count($ident, depth)}`](#countident-depth)"
 
 #: src/decl-macros/minutiae/metavar-expr.md:14
 msgid "[`${index(depth)}`](#indexdepth)"
@@ -3617,8 +3614,8 @@ msgid "[`${length(depth)}`](#lengthdepth)"
 msgstr "[`${length(depth)}`](#lengthdepth)"
 
 #: src/decl-macros/minutiae/metavar-expr.md:16
-msgid "[`${ignore(ident)}`](#ignoreident)"
-msgstr "[`${ignore(ident)}`](#ignoreident)"
+msgid "[`${ignore($ident)}`](#ignoreident)"
+msgstr "[`${ignore($ident)}`](#ignoreident)"
 
 #: src/decl-macros/minutiae/metavar-expr.md:18
 msgid "Dollar Dollar (`$$`)"
@@ -3658,7 +3655,20 @@ msgstr ""
 "します。しかし、そのスコープに `$any` メタ変数がないため失敗します。`$$` によ"
 "り、 `foo` が繰り返しを展開しないようにすることで、これを回避できます。"
 
-#: src/decl-macros/minutiae/metavar-expr.md:57
+#: src/decl-macros/minutiae/metavar-expr.md:42
+#: src/decl-macros/minutiae/metavar-expr.md:72
+#: src/decl-macros/minutiae/metavar-expr.md:103
+#: src/decl-macros/minutiae/metavar-expr.md:141
+#: src/decl-macros/minutiae/metavar-expr.md:174
+#: src/decl-macros/minutiae/debugging.md:54 src/decl-macros/macros2.md:17
+#: src/decl-macros/macros2.md:65
+msgid ""
+"// This code block marked `ignore` because mdbook can't handle `#!"
+"[feature(...)]`.\n"
+msgstr ""
+"// mdbookが `#![feature(...)]` を処理できないため、 `ignore` とマーク。\n"
+
+#: src/decl-macros/minutiae/metavar-expr.md:58
 msgid ""
 "Before `$$` occurs, users must resort to a tricky and not so well-known hack "
 "to declare nested macros with repetitions [via using `$tt` like this](https://"
@@ -3670,11 +3680,11 @@ msgstr ""
 "version=nightly&mode=debug&edition=2021&gist=9ce18fc79ce17c77d20e74f3c46ee13c) "
 "トリッキーであまり知られていないハックに頼らざるを得ません。"
 
-#: src/decl-macros/minutiae/metavar-expr.md:60
-msgid "`count(ident, depth)`"
-msgstr "`count(ident, depth)`"
+#: src/decl-macros/minutiae/metavar-expr.md:61
+msgid "`count($ident, depth)`"
+msgstr "`count($ident, depth)`"
 
-#: src/decl-macros/minutiae/metavar-expr.md:62
+#: src/decl-macros/minutiae/metavar-expr.md:63
 msgid ""
 "The `count` metavariable expression expands to the repetition count of the "
 "metavariable `$ident` up to the given repetition depth."
@@ -3682,14 +3692,14 @@ msgstr ""
 "メタ変数式 `count` は、与えられた繰り返しの深さまでの、メタ変数 `$ident` の繰り"
 "返し回数に展開されます。"
 
-#: src/decl-macros/minutiae/metavar-expr.md:64
-#: src/decl-macros/minutiae/metavar-expr.md:167
-msgid ""
-"The `ident` argument must be a declared metavariable in the scope of the rule."
-msgstr ""
-"引数 `ident` はルールのスコープ内で宣言されたメタ変数でなければなりません。"
-
 #: src/decl-macros/minutiae/metavar-expr.md:65
+#: src/decl-macros/minutiae/metavar-expr.md:171
+msgid ""
+"The `$ident` argument must be a declared metavariable in the scope of the rule."
+msgstr ""
+"引数 `$ident` はルールのスコープ内で宣言されたメタ変数でなければなりません。"
+
+#: src/decl-macros/minutiae/metavar-expr.md:66
 msgid ""
 "The `depth` argument must be an integer literal of value less or equal to the "
 "maximum repetition depth that the `$ident` metavariable appears in."
@@ -3697,25 +3707,25 @@ msgstr ""
 "引数 `depth` は、メタ変数 `$ident` が現れる繰り返しの、深さの最大以下の整数リテ"
 "ラルでなければなりません。"
 
-#: src/decl-macros/minutiae/metavar-expr.md:66
-#: src/decl-macros/minutiae/metavar-expr.md:96
-#: src/decl-macros/minutiae/metavar-expr.md:132
+#: src/decl-macros/minutiae/metavar-expr.md:67
+#: src/decl-macros/minutiae/metavar-expr.md:98
+#: src/decl-macros/minutiae/metavar-expr.md:135
 msgid "The expression expands to an unsuffixed integer literal token."
 msgstr "式は接尾子のない整数リテラルトークンに展開されます。"
 
-#: src/decl-macros/minutiae/metavar-expr.md:68
+#: src/decl-macros/minutiae/metavar-expr.md:69
 msgid ""
-"The `count(ident)` expression defaults `depth` to the maximum valid depth, "
+"The `count($ident)` expression defaults `depth` to the maximum valid depth, "
 "making it count the total repetitions for the given metavariable."
 msgstr ""
-"式 `count(ident)` は、 `depth` に有効な最大の深さが指定されたものとして、指定さ"
-"れたメタ変数の繰り返し回数をカウントします。"
+"式 `count($ident)` は、 `depth` に有効な最大の深さが指定されたものとして、指定"
+"されたメタ変数の繰り返し回数をカウントします。"
 
-#: src/decl-macros/minutiae/metavar-expr.md:75
+#: src/decl-macros/minutiae/metavar-expr.md:77
 msgid "\"count(outer, 0): $outer repeats {} times\""
 msgstr "\"count(outer, 0): $outer repeats {} times\""
 
-#: src/decl-macros/minutiae/metavar-expr.md:76
+#: src/decl-macros/minutiae/metavar-expr.md:78
 msgid ""
 "\"count(inner, 0): The $inner repetition repeats {} times in the outer "
 "repetition\""
@@ -3723,15 +3733,15 @@ msgstr ""
 "\"count(inner, 0): The $inner repetition repeats {} times in the outer "
 "repetition\""
 
-#: src/decl-macros/minutiae/metavar-expr.md:77
+#: src/decl-macros/minutiae/metavar-expr.md:79
 msgid "\"count(inner, 1): $inner repeats {} times in the inner repetitions\""
 msgstr "\"count(inner, 1): $inner repeats {} times in the inner repetitions\""
 
-#: src/decl-macros/minutiae/metavar-expr.md:91
+#: src/decl-macros/minutiae/metavar-expr.md:93
 msgid "`index(depth)`"
 msgstr "`index(depth)`"
 
-#: src/decl-macros/minutiae/metavar-expr.md:93
+#: src/decl-macros/minutiae/metavar-expr.md:95
 msgid ""
 "The `index(depth)` metavariable expression expands to the current iteration "
 "index of the repetition at the given depth."
@@ -3739,8 +3749,8 @@ msgstr ""
 "メタ変数式 `index(depth)` は、与えられた深さの繰り返しでの、現在の繰り返しのイ"
 "ンデックスに展開されます。"
 
-#: src/decl-macros/minutiae/metavar-expr.md:95
-#: src/decl-macros/minutiae/metavar-expr.md:131
+#: src/decl-macros/minutiae/metavar-expr.md:97
+#: src/decl-macros/minutiae/metavar-expr.md:134
 msgid ""
 "The `depth` argument targets the repetition at `depth` counting outwards from "
 "the inner-most repetition where the expression is invoked."
@@ -3748,30 +3758,30 @@ msgstr ""
 "引数 `depth` は、その式が呼び出される一番内側の繰り返しから外側へ数えて、 "
 "`depth` 番目の繰り返しを対象とします。"
 
-#: src/decl-macros/minutiae/metavar-expr.md:98
+#: src/decl-macros/minutiae/metavar-expr.md:100
 msgid ""
 "The `index()` expression defaults `depth` to `0`, making it a shorthand for "
 "`index(0)`."
 msgstr "式 `index()` は `depth` を `0` とします。 `index(0)` の省略形です。"
 
-#: src/decl-macros/minutiae/metavar-expr.md:108
+#: src/decl-macros/minutiae/metavar-expr.md:111
 msgid "// this targets the outer repetition\n"
 msgstr "// これは外側の繰り返しを対象とします\n"
 
-#: src/decl-macros/minutiae/metavar-expr.md:109
+#: src/decl-macros/minutiae/metavar-expr.md:112
 msgid "// and this, being an alias for `index(0)` targets the inner repetition\n"
 msgstr ""
 "// そしてこれは、 `index(0)` のエイリアスであり、内側の繰り返しを対象とします\n"
 
-#: src/decl-macros/minutiae/metavar-expr.md:122
+#: src/decl-macros/minutiae/metavar-expr.md:125
 msgid "\"{v:?}\""
 msgstr "\"{v:?}\""
 
-#: src/decl-macros/minutiae/metavar-expr.md:127
+#: src/decl-macros/minutiae/metavar-expr.md:130
 msgid "`length(depth)`"
 msgstr "`length(depth)`"
 
-#: src/decl-macros/minutiae/metavar-expr.md:129
+#: src/decl-macros/minutiae/metavar-expr.md:132
 msgid ""
 "The `length(depth)` metavariable expression expands to the iteration count of "
 "the repetition at the given depth."
@@ -3779,34 +3789,34 @@ msgstr ""
 "メタ変数式 `length(depth)` は、与えられた深さでの繰り返しの反復回数に展開されま"
 "す。"
 
-#: src/decl-macros/minutiae/metavar-expr.md:134
+#: src/decl-macros/minutiae/metavar-expr.md:137
 msgid ""
 "The `length()` expression defaults `depth` to `0`, making it a shorthand for "
 "`length(0)`."
 msgstr "式 `length()` は `depth` を `0` とします。`length(0)` の省略形です。"
 
-#: src/decl-macros/minutiae/metavar-expr.md:145
+#: src/decl-macros/minutiae/metavar-expr.md:149
 msgid "\"'{}' in inner iteration {}/{} with '{}' in outer iteration {}/{} \""
 msgstr "\"'{}' in inner iteration {}/{} with '{}' in outer iteration {}/{} \""
 
-#: src/decl-macros/minutiae/metavar-expr.md:163
-msgid "`ignore(ident)`"
-msgstr "`ignore(ident)`"
+#: src/decl-macros/minutiae/metavar-expr.md:167
+msgid "`ignore($ident)`"
+msgstr "`ignore($ident)`"
 
-#: src/decl-macros/minutiae/metavar-expr.md:165
+#: src/decl-macros/minutiae/metavar-expr.md:169
 msgid ""
-"The `ignore(ident)` metavariable expression expands to nothing, making it "
+"The `ignore($ident)` metavariable expression expands to nothing, making it "
 "possible to expand something as often as a metavariable repeats without "
 "expanding the metavariable."
 msgstr ""
-"メタ変数式 `ignore(ident)` は空に展開されます。メタ変数を展開せずに、メタ変数が"
-"繰り返されるたびに何かを展開することができます。"
+"メタ変数式 `ignore($ident)` は空に展開されます。メタ変数を展開せずに、メタ変数"
+"が繰り返されるたびに何かを展開することができます。"
 
-#: src/decl-macros/minutiae/metavar-expr.md:179
+#: src/decl-macros/minutiae/metavar-expr.md:184
 msgid "// without this metavariable expression, compilation would fail\n"
 msgstr "// このメタ変数が無いと、コンパイルに失敗します\n"
 
-#: src/decl-macros/minutiae/metavar-expr.md:193
+#: src/decl-macros/minutiae/metavar-expr.md:198
 msgid "\"{tuple:?}\""
 msgstr "\"{tuple:?}\""
 
@@ -4101,27 +4111,8 @@ msgstr ""
 "クロ呼び出しを、展開の前にダンプするように指示します。例えば、次のようにすると:"
 
 #: src/decl-macros/minutiae/debugging.md:9
-#: src/decl-macros/minutiae/debugging.md:54
-#, fuzzy
 msgid "// Note: make sure to use a nightly channel compiler.\n"
-msgstr ""
-"```rust,ignore\n"
-"# // Note: make sure to use a nightly channel compiler.\n"
-"#![feature(trace_macros)]\n"
-"\n"
-"macro_rules! each_tt {\n"
-"    () => {};\n"
-"    ($_tt:tt $($rest:tt)*) => {each_tt!($($rest)*);};\n"
-"}\n"
-"\n"
-"each_tt!(foo bar baz quux);\n"
-"trace_macros!(true);\n"
-"each_tt!(spim wak plee whum);\n"
-"trace_macros!(false);\n"
-"each_tt!(trom qlip winp xod);\n"
-"#\n"
-"# fn main() {}\n"
-"```"
+msgstr "// 注意：nightly チャネルのコンパイラを使用してください。\n"
 
 #: src/decl-macros/minutiae/debugging.md:47
 msgid ""
@@ -4599,26 +4590,32 @@ msgstr ""
 "報を渡せません:"
 
 #: src/decl-macros/patterns/callbacks.md:7
+#: src/decl-macros/patterns/callbacks.md:33
 msgid "\"#1, the Larch.\""
 msgstr "\"#1, the Larch.\""
 
 #: src/decl-macros/patterns/callbacks.md:8
+#: src/decl-macros/patterns/callbacks.md:34
 msgid "\"#2, the Mighty Redwood.\""
 msgstr "\"#2, the Mighty Redwood.\""
 
 #: src/decl-macros/patterns/callbacks.md:9
+#: src/decl-macros/patterns/callbacks.md:35
 msgid "\"#3, the Fir.\""
 msgstr "\"#3, the Fir.\""
 
 #: src/decl-macros/patterns/callbacks.md:10
+#: src/decl-macros/patterns/callbacks.md:36
 msgid "\"#4, the Horse Chestnut.\""
 msgstr "\"#4, the Horse Chestnut.\""
 
 #: src/decl-macros/patterns/callbacks.md:11
+#: src/decl-macros/patterns/callbacks.md:37
 msgid "\"#5, the Scots Pine.\""
 msgstr "\"#5, the Scots Pine.\""
 
 #: src/decl-macros/patterns/callbacks.md:12
+#: src/decl-macros/patterns/callbacks.md:38
 msgid "\"I don't know; some kind of birch maybe?\""
 msgstr "\"I don't know; some kind of birch maybe?\""
 
@@ -4646,7 +4643,7 @@ msgstr "取りうる方法として、再帰を使用してコールバックを
 msgid "// ...\n"
 msgstr "// ...\n"
 
-#: src/decl-macros/patterns/callbacks.md:39
+#: src/decl-macros/patterns/callbacks.md:47
 msgid ""
 "// first expands to:  call_with_larch! { recognize_tree }\n"
 "    // then:              recognize_tree! { larch }\n"
@@ -4656,18 +4653,18 @@ msgstr ""
 "    // その後　　　 :  recognize_tree! { larch }\n"
 "    // 最後に　　　 :  println! { \"#1, the Larch.\" }\n"
 
-#: src/decl-macros/patterns/callbacks.md:45
+#: src/decl-macros/patterns/callbacks.md:53
 msgid ""
 "Using a `tt` repetition, one can also forward arbitrary arguments to a "
 "callback."
 msgstr ""
 "`tt` の繰り返しを使うと、任意の引数をコールバックに転送することもできます。"
 
-#: src/decl-macros/patterns/callbacks.md:55
+#: src/decl-macros/patterns/callbacks.md:63
 msgid "\"Yes, this *was* unnecessary.\""
 msgstr "\"Yes, this *was* unnecessary.\""
 
-#: src/decl-macros/patterns/callbacks.md:59
+#: src/decl-macros/patterns/callbacks.md:67
 msgid "You can, of course, insert additional tokens in the arguments as needed."
 msgstr "もちろん、必要に応じて引数に他にトークンを追加できます。"
 
@@ -5547,48 +5544,42 @@ msgid "Compare to zero (or any other fixed, finite value)."
 msgstr "ゼロ（または他の固定の有限値）と比較する。"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:40
-#, fuzzy
 msgid ""
 "A value of _n_ is represented by _n_ instances of a specific token stored in a "
 "group. Modifications are done using recursion and [push-down accumulation]"
 "(#push-down-accumulation). Assuming the token used is `x`, the operations "
 "above are implemented as follows:"
 msgstr ""
-"n_の値は、グループに格納された特定のトークンの_n_個のインスタンスで表されます。"
-"変更は再帰と[push-down accumulation](#push-down-accumulation)を使って行われま"
-"す。使用するトークンを `x` とすると、上記の操作は以下のように実装されます:"
+"_n_ の値は、グループに格納された特定のトークンの_n_個のインスタンスで表されま"
+"す。変更は再帰と[プッシュダウンアキュムレーション](#push-down-accumulation)を"
+"使って行われます。使用するトークンを `x` とすると、上記の操作は以下のように実装"
+"されます:"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:44
-#, fuzzy
 msgid "Increment by one: match `($($count:tt)*)`, substitute `(x $($count)*)`."
 msgstr ""
 "1つ増やす: `($($count:tt)*)` にマッチし、 `(x $($count)*)` を代入します。"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:45
-#, fuzzy
 msgid "Decrement by one: match `(x $($count:tt)*)`, substitute `($($count)*)`."
 msgstr "1つ減らす: `(x $($count:tt)*)` にマッチ、 `($($count)*)` を代入。"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:46
-#, fuzzy
 msgid "Compare to zero: match `()`."
 msgstr "ゼロとの比較: `()` にマッチします。"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:47
-#, fuzzy
 msgid "Compare to one: match `(x)`."
-msgstr "(x)`にマッチします。"
+msgstr "1つと比較: `(x)`にマッチします。"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:48
-#, fuzzy
 msgid "Compare to two: match `(x x)`."
-msgstr "(x)`にマッチします。"
+msgstr "2つと比較: `(x)`にマッチします。"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:49
 #: src/decl-macros/building-blocks/abacus-counting.md:78
-#, fuzzy
 msgid "_(and so on...)_"
-msgstr "これは次のように記述できます："
+msgstr "_(等々...)_"
 
 #: src/decl-macros/building-blocks/abacus-counting.md:51
 #, fuzzy
@@ -5777,12 +5768,10 @@ msgid "Function"
 msgstr "関数"
 
 #: src/decl-macros/building-blocks/parsing.md:34
-#, fuzzy
 msgid "\"{} {}\""
 msgstr "\"{} {}\""
 
 #: src/decl-macros/building-blocks/parsing.md:39
-#, fuzzy
 msgid "\"13 37\""
 msgstr "\"13 37\""
 
@@ -5834,23 +5823,64 @@ msgstr ""
 "`self` を使ってオブジェクトを参照する関数も解析したいことがあります。これは少し"
 "厄介です:"
 
-#: src/decl-macros/building-blocks/parsing.md:56
-#, fuzzy
-msgid "WIP"
-msgstr "仕掛品"
-
 #: src/decl-macros/building-blocks/parsing.md:58
+msgid "// self\n"
+msgstr ""
+
+#: src/decl-macros/building-blocks/parsing.md:73
+msgid "// mut self\n"
+msgstr ""
+
+#: src/decl-macros/building-blocks/parsing.md:84
+msgid "// &self\n"
+msgstr ""
+
+#: src/decl-macros/building-blocks/parsing.md:95
+msgid "// &mut self\n"
+msgstr ""
+
+#: src/decl-macros/building-blocks/parsing.md:125
+msgid "\"11\""
+msgstr ""
+
+#: src/decl-macros/building-blocks/parsing.md:126
+msgid "\"22\""
+msgstr ""
+
+#: src/decl-macros/building-blocks/parsing.md:127
+msgid "\"33\""
+msgstr ""
+
+#: src/decl-macros/building-blocks/parsing.md:128
+msgid "\"44\""
+msgstr ""
+
+#: src/decl-macros/building-blocks/parsing.md:131
+msgid ""
+"The four rules are identical except for the `self` receiver on both sides of "
+"the rule, which is `self`, `mut self`, `&self`, and `&mut self`. You might not "
+"need all four rules."
+msgstr ""
+
+#: src/decl-macros/building-blocks/parsing.md:134
+msgid ""
+"`$self:ident` must be used in the matcher instead of a bare `self`. Without "
+"that, uses of `self` in the body will cause compile errors, because a macro "
+"invocation can only access identifiers it receives from parameters."
+msgstr ""
+
+#: src/decl-macros/building-blocks/parsing.md:137
 #, fuzzy
 msgid "Struct"
 msgstr "個別借用のための構造体の分解"
 
-#: src/decl-macros/building-blocks/parsing.md:62
+#: src/decl-macros/building-blocks/parsing.md:141
 #, fuzzy
 msgid "// Unit-Struct\n"
 msgstr "// 単位構造\n"
 
-#: src/decl-macros/building-blocks/parsing.md:75
-#: src/decl-macros/building-blocks/parsing.md:97
+#: src/decl-macros/building-blocks/parsing.md:154
+#: src/decl-macros/building-blocks/parsing.md:176
 #, fuzzy
 msgid "//  ^~~~attributes~~~~^\n"
 msgstr ""
@@ -5858,32 +5888,32 @@ msgstr ""
 "ビュートのためのシンタックスシュガーです！これらはそれぞれ `#[doc=\"...\"]` と "
 "`#![doc=\"...\"]` に脱糖されるため、アトリビュートのようにマッチさせられます！"
 
-#: src/decl-macros/building-blocks/parsing.md:79
+#: src/decl-macros/building-blocks/parsing.md:158
 #, fuzzy
 msgid "//          ^~~~field attributes~~~~^\n"
 msgstr "// ^~~~フィールドの属性~~~~~^。\n"
 
-#: src/decl-macros/building-blocks/parsing.md:81
+#: src/decl-macros/building-blocks/parsing.md:160
 #, fuzzy
 msgid "//          ^~~~~~a single field~~~~~~^\n"
 msgstr "// ^~~~~単一のフィールド~~~~~~^。\n"
 
-#: src/decl-macros/building-blocks/parsing.md:101
+#: src/decl-macros/building-blocks/parsing.md:180
 #, fuzzy
 msgid "//          ^~~~field attributes~~~!^\n"
 msgstr "// ^～～～フィールド属性～～～～～～～！^\n"
 
-#: src/decl-macros/building-blocks/parsing.md:103
+#: src/decl-macros/building-blocks/parsing.md:182
 #, fuzzy
 msgid "//          ^~~~~~~~~~~~~~~~~a single field~~~~~~~~~~~~~~~^\n"
 msgstr "// ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"
 
-#: src/decl-macros/building-blocks/parsing.md:134
+#: src/decl-macros/building-blocks/parsing.md:213
 #, fuzzy
 msgid "\"macros can be nice\""
 msgstr "\"マクロはいいものです\""
 
-#: src/decl-macros/building-blocks/parsing.md:140
+#: src/decl-macros/building-blocks/parsing.md:219
 #, fuzzy
 msgid "Enum"
 msgstr ""
@@ -5899,7 +5929,7 @@ msgstr ""
 "}\n"
 "```"
 
-#: src/decl-macros/building-blocks/parsing.md:142
+#: src/decl-macros/building-blocks/parsing.md:221
 #, fuzzy
 msgid ""
 "Parsing enums is a bit more complex than structs so we will finally make use "
@@ -5916,45 +5946,45 @@ msgstr ""
 "再構築するには、[Push Down Accumulator](../patterns/push-down-acc.md)を使って、"
 "パースされたトークンを一時的に収集する必要があるからです。"
 
-#: src/decl-macros/building-blocks/parsing.md:147
+#: src/decl-macros/building-blocks/parsing.md:226
 #, fuzzy
 msgid "// tuple variant\n"
 msgstr "// タプルのバリアント\n"
 
-#: src/decl-macros/building-blocks/parsing.md:155
-#: src/decl-macros/building-blocks/parsing.md:169
+#: src/decl-macros/building-blocks/parsing.md:234
+#: src/decl-macros/building-blocks/parsing.md:248
 #, fuzzy
 msgid "//∨~~rest of input~~∨\n"
 msgstr "//∨~~入力の残り\n"
 
-#: src/decl-macros/building-blocks/parsing.md:158
-#: src/decl-macros/building-blocks/parsing.md:171
-#: src/decl-macros/building-blocks/parsing.md:176
+#: src/decl-macros/building-blocks/parsing.md:237
+#: src/decl-macros/building-blocks/parsing.md:250
+#: src/decl-macros/building-blocks/parsing.md:255
 #, fuzzy
 msgid "// process rest of the enum\n"
 msgstr "// 残りの列挙を処理\n"
 
-#: src/decl-macros/building-blocks/parsing.md:161
+#: src/decl-macros/building-blocks/parsing.md:240
 #, fuzzy
 msgid "// named variant\n"
 msgstr "// 名前付きバリアント\n"
 
-#: src/decl-macros/building-blocks/parsing.md:174
+#: src/decl-macros/building-blocks/parsing.md:253
 #, fuzzy
 msgid "// unit variant\n"
 msgstr "// 単位変形\n"
 
-#: src/decl-macros/building-blocks/parsing.md:179
+#: src/decl-macros/building-blocks/parsing.md:258
 #, fuzzy
 msgid "// trailing comma\n"
 msgstr "// 末尾のコンマ\n"
 
-#: src/decl-macros/building-blocks/parsing.md:181
+#: src/decl-macros/building-blocks/parsing.md:260
 #, fuzzy
 msgid "// base case\n"
 msgstr "// 基本ケース\n"
 
-#: src/decl-macros/building-blocks/parsing.md:183
+#: src/decl-macros/building-blocks/parsing.md:262
 #, fuzzy
 msgid "// entry point\n"
 msgstr "// エントリポイント\n"
@@ -6008,7 +6038,7 @@ msgstr ""
 "前の章で実装した2つのマクロについて、 `macro` 構文と `macro_rules` 構文を比較し"
 "てみましょう:"
 
-#: src/decl-macros/macros2.md:38
+#: src/decl-macros/macros2.md:39
 msgid ""
 "As can be seen, they look very similar, with just a few differences as well as "
 "that `macro`s have two different forms."
@@ -6016,7 +6046,7 @@ msgstr ""
 "ご覧のように、両者は非常によく似ていますが、 `macro` 側には2つの異なる形式があ"
 "ることだけが少し違います。"
 
-#: src/decl-macros/macros2.md:40
+#: src/decl-macros/macros2.md:41
 msgid ""
 "Let's inspect the `count_tts` macro first, as that one looks more like what we "
 "are used to. As can be seen, it practically looks identical to the "
@@ -6028,7 +6058,7 @@ msgstr ""
 "ワード `macro` を使用すること、およびルールを（`;` ではなく） `,` で区切ること"
 "です。"
 
-#: src/decl-macros/macros2.md:43
+#: src/decl-macros/macros2.md:44
 msgid ""
 "There is a second form to this though, which is a shorthand for macros that "
 "only have one rule. Taking a look at `replace_expr` we can see that in this "
@@ -6041,7 +6071,7 @@ msgstr ""
 "述できることがわかります。括弧と `=>` トークンを無しに、マッチャーを名前の後に"
 "直接記述し、続けてトランスクライバーを記述できる。"
 
-#: src/decl-macros/macros2.md:47
+#: src/decl-macros/macros2.md:48
 msgid ""
 "Syntax for invoking `macro`s is the same as for `macro_rules` and function-"
 "like procedural macros, the name followed by a `!` followed by the macro input "
@@ -6050,11 +6080,11 @@ msgstr ""
 "`macro` の呼び出しの構文は `macro_rules` や関数風の手続き的マクロと同じです。つ"
 "まり、名前に続けて `!` 、続けてマクロの入力トークンツリーです。"
 
-#: src/decl-macros/macros2.md:49
+#: src/decl-macros/macros2.md:50
 msgid "`macro` are proper items"
 msgstr "`macro` が適切なアイテムに"
 
-#: src/decl-macros/macros2.md:51
+#: src/decl-macros/macros2.md:52
 msgid ""
 "Unlike with `macro_rules` macros, which are textually scoped and require "
 "`#[macro_export]`(and potentially a re-export) to be treated as an item, "
@@ -6064,7 +6094,7 @@ msgstr ""
 "的に再エクスポート)が必要となる、 `macro_rules` マクロと異なり、 `macro`マクロ"
 "はデフォルトで適切なRustのアイテムのように振る舞います。"
 
-#: src/decl-macros/macros2.md:53
+#: src/decl-macros/macros2.md:54
 msgid ""
 "As such, you can properly qualify them with visibility specifiers like `pub`, "
 "`pub(crate)`, `pub(in path)` and the like."
@@ -6072,7 +6102,7 @@ msgstr ""
 "そのため、`pub`、`pub(crate)`、`pub(in path)` などの可視性指定子で適切に修飾す"
 "ることができます。"
 
-#: src/decl-macros/macros2.md:58
+#: src/decl-macros/macros2.md:59
 msgid ""
 "Hygiene is by far the biggest difference between the two declarative macro "
 "systems. Unlike `macro_rules` which have [mixed site hygiene](./minutiae/"
@@ -6084,7 +6114,7 @@ msgstr ""
 "ハイジーンを持っています。これは識別子を呼び出しの外部に晒さないことを意味しま"
 "す。"
 
-#: src/decl-macros/macros2.md:61
+#: src/decl-macros/macros2.md:62
 msgid ""
 "As such the following compiles with a `macro_rules` macro, but fails with a "
 "`macro` definition:"
@@ -6092,7 +6122,7 @@ msgstr ""
 "そのため以下は、`macro_rules` マクロを使うとコンパイルされますが、`macro` 定義"
 "では失敗します:"
 
-#: src/decl-macros/macros2.md:64
+#: src/decl-macros/macros2.md:66
 #, fuzzy
 msgid ""
 "// try uncommenting the following line, and commenting out the line right "
@@ -6100,17 +6130,17 @@ msgid ""
 msgstr ""
 "// 以下の行のコメントを外し、直後の行をコメントアウトしてみてください。\n"
 
-#: src/decl-macros/macros2.md:67
+#: src/decl-macros/macros2.md:69
 #, fuzzy
 msgid "// macro foo {\n"
 msgstr "// マクロ foo {\n"
 
-#: src/decl-macros/macros2.md:83
+#: src/decl-macros/macros2.md:85
 #, fuzzy
 msgid "// this fails with a `macro`, but succeeds with a `macro_rules`\n"
 msgstr "// これは `macro` では失敗しますが、`macro_rules` では成功します。\n"
 
-#: src/decl-macros/macros2.md:88
+#: src/decl-macros/macros2.md:90
 msgid ""
 "There may be plans to allow escaping hygiene for identifiers(hygiene bending) "
 "in the future."
@@ -6119,42 +6149,38 @@ msgstr ""
 "れるかもしれません。"
 
 #: src/proc-macros.md:3
-#, fuzzy
 msgid "Note: This section is still very incomplete!"
 msgstr "注: このセクションはまだ非常に不完全です！"
 
 #: src/proc-macros.md:5
-#, fuzzy
 msgid ""
 "This chapter will introduce Rust's second syntax extension type, _procedural "
 "macros_."
 msgstr ""
-"この章では、Rustの2番目の構文拡張タイプである_procedural macros_を紹介します。"
+"この章では、Rustの構文拡張の2番目のタイプである _手続き型マクロ_ を紹介します。"
 
 #: src/proc-macros.md:7
-#, fuzzy
 msgid ""
 "As with the [declarative macros](./decl-macros.md) chapter, this one is also "
 "split into a [methodical](./proc-macros/methodical.md) and a (WIP) practical "
 "subchapter with the former being a more formal introduction and the latter "
 "being a more practical oriented one."
 msgstr ""
-"宣言的マクロ](./decl-macros.md)の章と同様に、この章も[方法論](./proc-macros/"
+"[宣言的マクロ](./decl-macros.md)の章と同様に、この章も[方法論](./proc-macros/"
 "methodical.md)と(WIP)実践的な小章に分かれており、前者はより形式的な紹介で、後者"
 "はより実践的なものです。"
 
 #: src/proc-macros.md:9
-#, fuzzy
 msgid ""
 "A lot of the basic information covered has been sourced from the [rust "
 "reference](https://doc.rust-lang.org/nightly/reference/introduction.html), as "
 "most knowledge about procedural macros is currently located there."
 msgstr ""
-"基本的な情報の多くは、[錆のリファレンス](https://doc.rust-lang.org/nightly/"
-"reference/introduction.html) を参照しています。"
+"基本的な情報の多くは[Rustのリファレンス](https://doc.rust-lang.org/nightly/"
+"reference/introduction.html)から得ています。手続き型マクロに関するほとんどの知"
+"識は、現在そこにあるからです。"
 
 #: src/proc-macros/methodical.md:3
-#, fuzzy
 msgid ""
 "This chapter will introduce Rust's procedural macro system by explaining the "
 "system as a whole."
@@ -6162,28 +6188,26 @@ msgstr ""
 "この章では、Rustの手続き型マクロシステムを紹介し、システム全体を説明します。"
 
 #: src/proc-macros/methodical.md:5
-#, fuzzy
 msgid ""
 "Unlike a [declarative macro](../decl-macros.md), a procedural macro takes the "
 "form of a Rust function taking in a token stream(or two) and outputting a "
 "token stream."
 msgstr ""
-"宣言型マクロ](../decl-macros.md)とは異なり、手続き型マクロは、トークンストリー"
-"ム(または2つ)を取り込み、トークンストリームを出力するRust関数の形をとります。"
+"[宣言型マクロ](../decl-macros.md)とは異なり、手続き型マクロは、トークンストリー"
+"ム(1つまたは2つ)を取り込み、トークンストリームを出力するRust関数の形をとりま"
+"す。"
 
 #: src/proc-macros/methodical.md:7
-#, fuzzy
 msgid ""
 "A proc-macro is at its core just a function exported from a crate with the "
 "`proc-macro` [crate type](https://doc.rust-lang.org/reference/linkage.html), "
 "so when writing multiple proc macros you can have them all live in one crate."
 msgstr ""
-"proc-macroは、基本的には`proc-macro` [crate type](https://doc.rust-lang.org/"
-"reference/linkage.html)を持つcrateからエクスポートされる関数です。複数のprocマ"
-"クロを書く場合、それらを1つのcrateにまとめることができます。"
+"手続き型マクロは、基本的には`proc-macro` [crate type](https://doc.rust-lang."
+"org/reference/linkage.html)を持つクレートからエクスポートされる関数です。複数の"
+"手続き型マクロを書く場合、それらを1つのクレートにまとめることができます。"
 
 #: src/proc-macros/methodical.md:9
-#, fuzzy
 msgid ""
 "**Note**: When using Cargo, to define a `proc-macro` crate you define and set "
 "the `lib.proc-macro` key in the `Cargo.toml` to true."
@@ -6192,7 +6216,6 @@ msgstr ""
 "toml` で `lib.proc-macro` キーを定義して true に設定します。"
 
 #: src/proc-macros/methodical.md:15
-#, fuzzy
 msgid ""
 "A `proc-macro` type crate implicitly links to the compiler-provided "
 "[proc_macro](https://doc.rust-lang.org/proc_macro/index.html) crate, which "
@@ -6205,17 +6228,17 @@ msgid ""
 "hygiene. See the [Hygiene and Spans](./hygiene.md) chapter for more "
 "information."
 msgstr ""
-"proc-macro` 型の木枠はコンパイラが提供する [proc_macro](https://doc.rust-lang."
-"org/proc_macro/index.html) 木枠に暗黙的にリンクしています。このクレートによって"
-"公開される2つの最も重要な型は、[`TokenStream`](https://doc.rust-lang.org/"
-"proc_macro/struct.TokenStream.html)です。これは、すでにおなじみのトークンツリー"
-"の proc-macro バリアントであり、[`Span`](https://doc.rust-lang.org/proc_macro/"
-"struct.Span.html)は、主にエラーレポートとハイジーンに使用されるソースコードの一"
-"部を記述します。詳しくは[Hygiene and Spans](./hygiene.md)の章を参照してくださ"
-"い。"
+"`proc-macro` タイプのクレートはコンパイラが提供する [proc_macro](https://doc."
+"rust-lang.org/proc_macro/index.html) クレートに暗黙的にリンクされています。この"
+"クレートは手続き型マクロを開発するために必要なすべてのものを含むものです。この"
+"クレートによって公開される2つの最も重要な型は、すでにおなじみのトークンツリー"
+"の proc-macro バリアントである [`TokenStream`](https://doc.rust-lang.org/"
+"proc_macro/struct.TokenStream.html)、エラーレポートとハイジーンに主に使用される"
+"ソースコードの一部を記述する[`Span`](https://doc.rust-lang.org/proc_macro/"
+"struct.Span.html)です。詳しくは[ハイジーンとSpan](./hygiene.md)の章を参照してく"
+"ださい。"
 
 #: src/proc-macros/methodical.md:18
-#, fuzzy
 msgid ""
 "As proc-macros therefore are functions living in a crate, they can be "
 "addressed as all the other items in a Rust project. All thats required to add "
@@ -6227,7 +6250,6 @@ msgstr ""
 "グラフにクレートを追加し、目的のアイテムをスコープに入れることだけです。"
 
 #: src/proc-macros/methodical.md:21
-#, fuzzy
 msgid ""
 "**Note**: Procedural macros invocations still run at the same stage in the "
 "compiler expansion-wise as declarative macros, just that they are standalone "
@@ -6235,70 +6257,65 @@ msgid ""
 "appends to."
 msgstr ""
 "**注意**: 注***: 手続き型マクロの呼び出しは、宣言型マクロと同じようにコンパイラ"
-"の拡張ステージで実行されます。"
+"の拡張ステージで実行されます。ただそれらはスタンドアローンのRustプログラムであ"
+"り、コンパイラがコンパイル・実行し、最終的に置換や追加を行います。"
 
 #: src/proc-macros/methodical.md:24
-#, fuzzy
 msgid "Types of procedural macros"
 msgstr "手続き型マクロの種類"
 
 #: src/proc-macros/methodical.md:26
-#, fuzzy
 msgid ""
 "With procedural macros, there actually exists 3 different kinds with each "
 "having slightly different properties."
 msgstr ""
-"プロシージャル・マクロには、実際には3つの種類があり、それぞれ少しずつ性質が異な"
-"ります。"
+"手続きマクロには、実際には3つの種類があり、それぞれ少しずつ性質が異なります。"
 
 #: src/proc-macros/methodical.md:27
 msgid ""
 "_function-like_ proc-macros which are used to implement `$name ! $arg` "
 "invocable macros"
 msgstr ""
-"関数型 proc マクロで、 `$name ！arg` を実装するために使われる proc マクロです。"
+"`$name ！arg`実行可能なマクロを実装するための、 _関数ライク_ の手続き型マクロ"
 
 #: src/proc-macros/methodical.md:28
-#, fuzzy
 msgid "_attribute_ proc-macros which are used to implement `#[$arg]` attributes"
-msgstr "`#[$arg]` 属性を実装するために使われる _attribute_ proc-macros"
+msgstr ""
+"`#[$arg]` アトリビュートを実装するために使われる _アトリビュート_ 手続きマクロ"
 
 #: src/proc-macros/methodical.md:29
-#, fuzzy
 msgid ""
 "_derive_ proc-macros which are used to implement a derive, an _input_ to a "
 "`#[derive(…)]` attribute"
 msgstr ""
-"deriveを実装するために使用される_derive_ proc-macros、`#[derive(...)]`属性への"
-"_input_。"
+"`#[derive(...)]` アトリビュート、その _入力_ 、を実装するために使われる "
+"_derive_ 手続き型マクロ"
 
 #: src/proc-macros/methodical.md:31
-#, fuzzy
 msgid ""
 "At their core, all 3 work almost the same with a few differences in their "
 "inputs and output reflected by their function definition. As mentioned all a "
 "procedural macro really is, is a function that maps a token stream so let's "
 "take a quick look at each basic definition and their differences."
 msgstr ""
-"核となる部分は3つともほとんど同じですが、関数の定義によって入出力に若干の違いが"
-"あります。前述したように、手続き型マクロの本質はトークンストリームをマッピング"
-"する関数です。"
+"核となる部分は3つともほとんど同じですが、関数定義に反映される入出力に若干の違い"
+"があります。前述したように、手続き型マクロの本質はトークンストリームをマッピン"
+"グする関数です。ということで、それぞれの基本的な定義と違いを簡単に見てみましょ"
+"う。"
 
 #: src/proc-macros/methodical.md:34
 msgid "_function-like_"
-msgstr "_関数型_"
+msgstr "_関数ライク_"
 
 #: src/proc-macros/methodical.md:42
 msgid "_attribute_"
 msgstr "_アトリビュート_"
 
 #: src/proc-macros/methodical.md:50
-#, fuzzy
 msgid "_derive_"
-msgstr "`# [ $arg ]`; _e.g._ `#[derive(Clone)]`, `#[no_mangle]`, …"
+msgstr "_derive_"
 
 #: src/proc-macros/methodical.md:58
-#, fuzzy
 msgid ""
 "As shown, the basic structure is the same for each, a public function marked "
 "with an attribute defining its procedural macro type returning a "
@@ -6310,25 +6327,25 @@ msgid ""
 "proc-macro panics the compiler will catch it and emit the payload as an error "
 "coming from the macro invocation."
 msgstr ""
-"このように、基本的な構造はそれぞれ同じで、手続き型マクロの型を定義する属性で"
-"マークされたパブリック関数が `TokenStream` を返します。戻り値の型が "
-"`TokenStream` であり、結果や何か他のものではないことに注意してください。しか"
-"し、これは proc マクロが失敗しないという意味ではありません。実際、proc マクロに"
-"はエラーを報告する 2 つの方法があり、1 つ目はパニックを起こす方法、2 つ目は "
-"[`compile_error!`](https://doc.rust-lang.org/std/macro.compile_error.html) を呼"
-"び出す方法です。proc-macro がパニックを起こした場合、コンパイラはそれをキャッチ"
-"し、マクロの呼び出しによるエラーとしてペイロードを出します。"
+"このように、基本的な構造はそれぞれ同じで、手続き型マクロの型を定義するアトリ"
+"ビュートでマークされたパブリック関数が `TokenStream` を返します。戻り値の型が "
+"`TokenStream` であり、Resultや何か他の、失敗し得ることを記述するものではないこ"
+"とに注意してください。しかし、これは proc マクロが失敗しないという意味ではあり"
+"ません。実際、proc マクロにはエラーを報告する 2 つの方法があり、1 つ目はパニッ"
+"クを起こす方法、2 つ目は [`compile_error!`](https://doc.rust-lang.org/std/"
+"macro.compile_error.html) を呼び出す方法です。手続き型マクロがパニックを起こし"
+"た場合、コンパイラはそれをキャッチし、マクロの呼び出しによるエラーとしてペイ"
+"ロードを出します。"
 
 #: src/proc-macros/methodical.md:63
-#, fuzzy
 msgid ""
 "**Beware**: The compiler will happily hang on endless loops spun up inside "
 "proc-macros causing the compilation of crates using the proc-macro to hang as "
 "well."
 msgstr ""
-"**注意してください**: 注意**: コンパイラーはプロック・マクロの中で紡ぎ出される"
-"無限ループに喜んでハングし、プロック・マクロを使用するクレートのコンパイルもハ"
-"ングします。"
+"**気を付けて**: コンパイラは手続き型マクロの中で紡ぎ出される無限ループに喜んで"
+"ハングします。結果、手続き型マクロを使用するクレートのコンパイルもハングしま"
+"す。"
 
 #: src/proc-macros/methodical/function-like.md:3
 #, fuzzy
@@ -6938,6 +6955,10 @@ msgstr ""
 msgid "The mechanism Rust's `macro_rules!` and procedural macros are built on."
 msgstr ""
 "Rustの `macro_rules!` と手続き型マクロは、このメカニズムに基づいています。"
+
+#, fuzzy
+#~ msgid "WIP"
+#~ msgstr "仕掛品"
 
 #, fuzzy
 #~ msgid "Techniques"
